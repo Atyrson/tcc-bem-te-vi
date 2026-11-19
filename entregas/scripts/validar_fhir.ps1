@@ -1,4 +1,4 @@
-# Valida as instâncias FHIR de entregas/fhir/ com o validador oficial do HL7.
+﻿# Valida as instâncias FHIR de entregas/fhir/ com o validador oficial do HL7.
 #
 # Uso, na raiz do repositório do TCC (PowerShell, com Java 11 ou superior):
 #
