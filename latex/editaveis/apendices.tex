@@ -1,0 +1,75 @@
+\begin{apendicesenv}
+
+\partapendices
+
+\chapter{Especificação de requisitos}
+\label{ap:requisitos}
+
+Este apêndice reúne a especificação de requisitos do trabalho. A Tabela~\ref{tab:cif-requisitos} lista os requisitos
+e as regras de negócio que o módulo CIF já implementa (Seção~\ref{sec:cif-fluxo}), com os arquivos e as linhas do
+commit \texttt{a9059f0} que os implementam. Os caminhos são relativos ao repositório do aplicativo.
+
+% Passo 5: acrescentar os demais requisitos e, para todos, fonte, prioridade e critério de aceitação.
+
+\begin{table}[htbp]
+	\centering
+	\caption{Requisitos e regras de negócio implementados no módulo CIF}
+	\label{tab:cif-requisitos}
+	\footnotesize
+	\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.34\textwidth}@{}}
+		\toprule
+		ID & Descrição & Implementação (arquivo: linhas) \\
+		\midrule
+		RF01 & Gerar o formulário conforme o sexo cadastrado do paciente, com 984 itens para o masculino e 1.002 para
+			o feminino & \arq{cif_api.py}: 196--208; \arq{cif_formulario.py}: 73--114 \\
+		RF02 & Salvar a avaliação como rascunho, com respostas parciais, e retomá-la depois & \arq{cif_api.py}:
+			244--329; \arq{cif_repository.py}: 141--254; \arq{cifForm.dart}: 890--925 \\
+		RF03 & Calcular uma prévia por capítulo e área, com os itens pendentes & \arq{cif_api.py}: 331--362;
+			\arq{cifForm.dart}: 393--400 \\
+		RF04 & Concluir a avaliação só quando todos os itens tiverem nota, com recálculo no servidor &
+			\arq{cif_repository.py}: 256--305; \arq{cif_api.py}: 364--402 \\
+		RF05 & Exibir o quadro resumo da avaliação concluída, com acesso às respostas originais &
+			\arq{cifSummary.dart}: 199--215, 307--313 \\
+		RF06 & Listar as avaliações do paciente, numeradas pela ordem de criação & \arq{cif_api.py}: 405--419;
+			\arq{cifHistoryProvider.dart}: 34--47 \\
+		RF07 & Comparar duas avaliações concluídas, com a diferença por área e capítulo &
+			\arq{cifComparisonProvider.dart}: 79--147; \arq{cifModels.dart}: 1001--1045 \\
+		\midrule
+		RN01 & A nota de um item digitado é um inteiro de 0 a 4, e item sem nota não vale zero &
+			\arq{calculador.py}: 568--569, 770--791 \\
+		RN02 & A nota de um item calculado é a média aritmética das células citadas na fórmula da planilha &
+			\arq{calculador.py}: 229--244, 593--618 \\
+		RN03 & A falta de nota na cadeia deixa pendentes o item, o capítulo e a área & \arq{calculador.py}:
+			612--613, 799--805 \\
+		RN04 & O cálculo não arredonda valores intermediários, e o valor exibido tem duas casas decimais &
+			\arq{calculador.py}: 247--254, 571--583 \\
+		RN05 & O sexo, masculino ou feminino, seleciona as variantes de b6, s6 e das raízes das áreas b e s &
+			\arq{calculador.py}: 24--29, 359--380, 713--734 \\
+		RN06 & Item calculado é somente leitura & \arq{calculador.py}: 758--767 \\
+		RN07 & Em b167 (E105), a segunda ocorrência de E119 é retirada, e a fórmula original fica registrada &
+			\arq{calculador.py}: 347--351, 675--686 \\
+		RN08 & Na linha 263 de Fatores Ambientais, o código válido é e595, e não e598 & \arq{calculador.py}:
+			331--337 \\
+		RN09 & A avaliação não tem resultado geral, e os resultados das quatro áreas ficam separados &
+			\arq{calculador.py}: 699--704, 817 \\
+		RN10 & Avaliação concluída não pode ser editada & \arq{cif_repository.py}: 228--229, 276--278;
+			\arq{cif_api.py}: 386--390 \\
+		RN11 & Só se comparam avaliações concluídas do mesmo paciente e com as mesmas versões de catálogo e regras &
+			\arq{cifComparisonProvider.dart}: 87--98, 129--139; \arq{cifModels.dart}: 1005--1012 \\
+		\midrule
+		RNF01 & Cada avaliação guarda as versões do catálogo e das regras e é sempre recalculada com elas &
+			\arq{001_create_avaliacoes_cif.sql}: 10--11; \arq{cif_versions.py}: 45--64 \\
+		RNF02 & Só o servidor calcula resultados, e o aplicativo não reimplementa as fórmulas & \arq{cif_api.py}:
+			1--4; \arq{cifFormProvider.dart}: 10--12 \\
+		RNF03 & A conclusão bloqueia o registro durante o recálculo, para não concluir um estado diferente do salvo &
+			\arq{cif_repository.py}: 266--271, 292--302 \\
+		\bottomrule
+	\end{tabularx}
+	\fonte{Elaborada pelo autor a partir do código do aplicativo no commit \texttt{a9059f0} \cite{higa2026bemtevi}.}
+\end{table}
+
+\chapter{Segundo Apêndice}
+
+Texto do segundo apêndice.
+
+\end{apendicesenv}

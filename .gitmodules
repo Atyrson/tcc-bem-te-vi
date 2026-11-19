@@ -1,0 +1,4 @@
+[submodule "app"]
+	path = app
+	url = https://github.com/Atyrson/bem-te-vi-projeto.git
+	branch = feat/cif-avaliacoes

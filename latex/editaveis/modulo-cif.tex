@@ -1,0 +1,202 @@
+\section{Módulo CIF implementado}
+\label{sec:modulo-cif}
+
+O módulo de avaliação CIF é o principal resultado parcial desta etapa. O autor o implementou no aplicativo antes da
+escrita deste trabalho, e a versão analisada é a do commit \texttt{a9059f0} \cite{higa2026bemtevi}. Nesta seção, ele
+é lido como fonte de requisitos (Seção~\ref{sec:tecnicas}), com o item b167, ``Funções mentais da linguagem'', como
+exemplo condutor. Os caminhos de arquivo são relativos ao repositório do aplicativo. Os arquivos em Python estão em
+\arq{Backend/} e \arq{scripts/cif/}, e os arquivos em Dart, em \arq{lib/}. Os requisitos e as regras extraídos do
+módulo recebem identificador já nesta seção, no formato da Seção~\ref{sec:criterios}, e são especificados na
+Seção~\ref{sec:especificacao}. O Apêndice~\ref{ap:requisitos} indica os arquivos e as linhas que implementam cada um.
+
+\subsection{Catálogo e regras de cálculo}
+\label{sec:cif-catalogo}
+
+A equipe de fisioterapia registra a CIF em uma planilha com uma aba para cada componente: Funções do Corpo (b),
+Estrutura do Corpo (s), Atividades e Participação (d) e Fatores Ambientais (e). A coluna D traz o código e a coluna E
+traz a nota, e as notas dos códigos mais amplos são fórmulas. A regra está escrita na célula A1 da aba Funções do
+Corpo: só os códigos destacados recebem nota, e os demais recebem a média aritmética dos códigos imediatamente mais
+detalhados.
+
+O catálogo do aplicativo foi extraído dessa planilha por um script que lê o arquivo sem executar fórmulas e registra,
+para cada código, a linha de origem, a célula da nota e a fórmula, além do SHA-256 da planilha
+(\arq{scripts/cif/extrair_catalogo.py}, linhas 51--137). Para este trabalho, a extração foi conferida. A planilha
+guardada no repositório do TCC tem o mesmo SHA-256, e o script, executado de novo sobre ela, reproduz o catálogo sem
+diferença (\arq{entregas/scripts/conferir_catalogo_cif.py}, no repositório do TCC).
+
+O catálogo tem 4 áreas e 30 capítulos, com 1.455 códigos e 1.460 campos, dos quais 231 têm fórmula. O formulário não
+mostra todo o catálogo. Das 1.229 células sem fórmula, ele mostra só as que a cadeia de fórmulas alcança a partir da
+nota de cada área (\arq{scripts/cif/calculador.py}, linhas 382--449): são 984 itens para o sexo masculino e 1.002
+para o feminino (RF01). As 222 células restantes ficam fora do cálculo, e 209 delas são categorias ``não
+especificadas'', de código terminado em 9. A diferença entre os sexos vem de fórmulas paralelas na planilha, que
+trocam os capítulos b6 e s6 conforme o sexo (RN05). Os 23 itens exclusivos do formulário feminino e os 5 do
+masculino são funções e estruturas ligadas à reprodução.
+
+A Figura~\ref{fig:cif-b167} mostra o exemplo condutor. O item b167 é a média de dois itens calculados, b1670 e b1671,
+e de dois itens digitados, b1672 e b1678. Cada item calculado é, por sua vez, a média de quatro itens digitados. As
+três categorias não especificadas do grupo ficam fora das fórmulas e, por isso, fora do formulário, que mostra o grupo
+como dez itens de resposta.
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}[
+			font=\scriptsize,
+			calc/.style={draw, very thick, rounded corners=2pt, align=left, inner sep=3pt},
+			ent/.style={draw, rounded corners=2pt, align=left, inner sep=3pt},
+			fora/.style={draw, dashed, rounded corners=2pt, align=left, inner sep=3pt, text=black!65},
+			seta/.style={-{Stealth[length=1.6mm]}},
+		]
+		% Netos (coluna 3)
+		\node[ent, text width=5.0cm, anchor=west] (n1) at (10.2, 0) {b16700, b16701, b16702 e b16708\\(E107--E110): notas 1, 2, 3 e 4};
+		\node[fora, text width=5.0cm, anchor=west] (n1f) at (10.2, -0.9) {b16709 (E111): não especificada};
+		\node[ent, text width=5.0cm, anchor=west] (n2) at (10.2, -2.0) {b16710, b16711, b16712 e b16718\\(E113--E116): notas 0, 1, 1 e 2};
+		\node[fora, text width=5.0cm, anchor=west] (n2f) at (10.2, -2.9) {b16719 (E117): não especificada};
+		% Filhos (coluna 2)
+		\node[calc, text width=4.6cm, anchor=west] (c1) at (4.9, -0.45) {b1670 (E106): recepção\\média = 2,5};
+		\node[calc, text width=4.6cm, anchor=west] (c2) at (4.9, -2.45) {b1671 (E112): expressão\\média = 1};
+		\node[ent, text width=4.6cm, anchor=west] (c3) at (4.9, -3.8) {b1672 (E118): nota 3};
+		\node[ent, text width=4.6cm, anchor=west] (c4) at (4.9, -4.5) {b1678 (E119): nota 4};
+		\node[fora, text width=4.6cm, anchor=west] (c5) at (4.9, -5.2) {b1679 (E120): não especificada};
+		% Raiz do exemplo (coluna 1)
+		\node[calc, text width=4.25cm, anchor=west] (r) at (0, -2.6) {b167 (E105)\\Funções mentais\\da linguagem\\[3pt]
+			Fórmula aplicada: média\\de E106, E112, E118 e E119\\= 2,625 (exibido 2,63)\\[3pt]
+			Fórmula da planilha, com\\E119 duas vezes: 2,9};
+		% Ligações
+		\foreach \c in {c1, c2, c3, c4} {\draw[seta] (\c.west) -- ++(-3mm,0) |- (r.east);}
+		\draw[seta, dashed] (c5.west) -- ++(-3mm,0) |- (r.east);
+		\draw[seta] (n1.west) -- ++(-3mm,0) |- (c1.east);
+		\draw[seta, dashed] (n1f.west) -- ++(-3mm,0) |- (c1.east);
+		\draw[seta] (n2.west) -- ++(-3mm,0) |- (c2.east);
+		\draw[seta, dashed] (n2f.west) -- ++(-3mm,0) |- (c2.east);
+	\end{tikzpicture}
+	\caption{Exemplo condutor: o item b167 da planilha ao cálculo, com notas fictícias}
+	\label{fig:cif-b167}
+	\fonte{Elaborada pelo autor a partir de \arq{catalogo.v0.1.json} e do calculador do aplicativo
+	\cite{higa2026bemtevi}. Borda grossa: item calculado. Borda fina: item digitado. Tracejado: item fora da fórmula
+	e do formulário. As setas apontam do item para a média que o usa.}
+\end{figure}
+
+O cálculo fica em uma classe que usa só o catálogo e é chamada pela API em toda prévia e conclusão, e o aplicativo
+não calcula resultados (RNF02). Cada item digitado recebe um inteiro de 0 a 4, e item sem nota não vale zero (RN01).
+Um item calculado recebe a média das células citadas na fórmula (RN02), com frações exatas, e só o valor exibido é
+arredondado, com duas casas decimais (RN04). Se faltar uma nota na cadeia, o item, o capítulo e a área ficam
+pendentes, e a avaliação não pode ser concluída (RN03). Não há resultado geral, e os quatro resultados de área ficam
+separados (RN09). Com as notas fictícias da Figura~\ref{fig:cif-b167}, o calculador dá 2,625 para b167, exibido como
+2,63. Pela fórmula original da planilha, que conta b1678 duas vezes, o resultado seria 2,9, e o aplicativo aplica a
+correção decidida na auditoria (RN07). Esses valores foram obtidos com o próprio calculador
+(\arq{entregas/scripts/conferir_calculo_cif.py}), e os 17 testes automatizados do calculador e do extrator passam no
+commit analisado, com o Python em modo UTF-8.
+
+\subsection{Auditoria das fórmulas}
+\label{sec:cif-auditoria}
+
+A extração gerou uma auditoria com 212 ocorrências nas fórmulas (\arq{catalogos/cif/auditoria.v0.1.json}), que o
+próprio repositório ressalva não serem erros confirmados (\arq{docs/cif/regras-e-auditoria.md}, linhas 141--143). Em
+197 delas, a fórmula só deixa de fora categorias não especificadas. Seis achados foram destacados para revisão, e a
+Tabela~\ref{tab:cif-achados} resume as decisões registradas. Os achados 5 e 6 tratam de uma segunda planilha da
+equipe, o Quadro Resumo de Qualificadores Resultantes, que não está no repositório do TCC. As decisões são
+provisórias até a validação clínica (decisão 13, linha 251), e quatro questões continuam abertas, entre elas a
+representação de ``não especificado'' e dos facilitadores. Essas questões entram nas pendências da
+Seção~\ref{sec:consolidacao}.
+
+\begin{table}[htb]
+	\centering
+	\caption{Achados da auditoria das fórmulas da planilha CIF e decisões registradas}
+	\label{tab:cif-achados}
+	\footnotesize
+	\begin{tabularx}{\textwidth}{@{}c>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.4\textwidth}@{}}
+		\toprule
+		Nº & Achado & Decisão no commit analisado \\
+		\midrule
+		1 & E119 (b1678) entra duas vezes na média de b167 (E105) & Repetição retirada (RN07) \\
+		2 & Quatro códigos aparecem em duas linhas; na linha 263, o código é e598 e o título cita e595 & e595 adotado
+			(RN08); repetições mantidas, com respostas indexadas pela célula \\
+		3 & b1109 fica fora da média de b110 (E8) & Exclusão mantida como intencional \\
+		4 & As fórmulas de mulher e de homem usam endereços diferentes & Variantes explícitas por sexo (RN05) \\
+		5 & Somas de distribuição com referências diferentes (Quadro Resumo, aba TRADUÇÃO) & Aba mantida fora do
+			cálculo clínico \\
+		6 & Resumo final com média geral (Quadro Resumo, aba final, B44) & Sem resultado geral (RN09) \\
+		\bottomrule
+	\end{tabularx}
+	\fonte{Elaborada pelo autor a partir de \arq{docs/cif/regras-e-auditoria.md} (achados nas linhas 92--190 e
+	decisões nas linhas 192--254) e de \arq{scripts/cif/calculador.py} \cite{higa2026bemtevi}.}
+\end{table}
+
+\subsection{Diferenças em relação à CIF da OMS}
+\label{sec:cif-oms}
+
+A planilha da equipe é uma adaptação da CIF. Ela usa os códigos e a escala de 0 a 4 da classificação, mas simplifica
+a qualificação e acrescenta uma regra de cálculo própria, a média entre níveis. A Tabela~\ref{tab:cif-oms} compara as
+duas com base no manual prático da OMS \cite{who2013howtouse}.
+
+\begin{table}[htb]
+	\centering
+	\caption{CIF da OMS e adaptação implementada no Bem-Te-Vi}
+	\label{tab:cif-oms}
+	\footnotesize
+	\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.2\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.3\textwidth}@{}}
+		\toprule
+		Aspecto & CIF da OMS (página do manual) & Módulo do Bem-Te-Vi \\
+		\midrule
+		Primeiro qualificador & 0 a 4, com faixas de 0--4\%, 5--24\%, 25--49\%, 50--95\% e 96--100\% (p. 26) & 0 a 4,
+			só inteiros \\
+		Qualificadores 8 e 9 & 8 significa não especificado, e 9, não aplicável (p. 26--27) & Não existem; item sem nota
+			fica pendente \\
+		Fatores ambientais & Barreira ou facilitador; no facilitador, o ponto que separa o qualificador é trocado
+			pelo sinal + (p. 26) & Só 0 a 4; facilitadores dependem de decisão da equipe \\
+		Atividades e participação & Dois qualificadores, desempenho e capacidade (p. 37) & Uma nota por item \\
+		Estruturas do corpo & Até três qualificadores: extensão, natureza e localização (p. 33) & Uma nota por item \\
+		Item que não se aplica ao sexo & Qualificador 9, como nas funções da gravidez para homens (p. 61) & Formulário
+			diferente para cada sexo \\
+		Categoria ampla & Todo código registrado leva o próprio qualificador (p. 26) & Nota calculada pela média das
+			categorias mais detalhadas \\
+		\bottomrule
+	\end{tabularx}
+	\fonte{Elaborada pelo autor a partir de \citeonline{who2013howtouse} e do código do aplicativo
+	\cite{higa2026bemtevi}.}
+\end{table}
+
+Duas diferenças afetam o modelo de dados. A primeira é o item que não se aplica: a OMS o registra com o qualificador
+9, e a planilha o retira do formulário. Com isso, a estrutura do formulário muda com o sexo, e o modelo em HL7 FHIR
+terá de representar essa variação (Seção~\ref{sec:modelo-fhir}). A segunda é a média. As faixas da escala têm
+larguras diferentes, de 5 pontos percentuais (0--4\%) a 46 (50--95\%), e a média aritmética trata como iguais as
+distâncias entre notas vizinhas. A regra é da equipe, está escrita na planilha e foi implementada como tal, mas o seu
+uso clínico precisa de validação, e por isso fica registrada como pendência.
+
+\subsection{Fluxo no aplicativo e requisitos implementados}
+\label{sec:cif-fluxo}
+
+O fluxo começa no histórico do paciente, que lista as avaliações numeradas pela ordem de criação, com o estado e a
+versão do catálogo (RF06). O formulário é gerado conforme o sexo do paciente, agrupa os itens por área e capítulo,
+mostra o progresso e leva ao próximo item sem nota (RF01; Figura~\ref{fig:cif-telas}a). O rascunho guarda respostas
+parciais e pode ser salvo ao sair da tela (RF02), e a prévia, calculada no servidor, mostra o que ainda está
+pendente (RF03). Na conclusão, o servidor bloqueia o registro, recalcula e só conclui se o resultado for definitivo
+(RF04 e RNF03). Depois disso, a avaliação não pode mais ser editada (RN10). O quadro resumo mostra os resultados por
+área e capítulo, com acesso às respostas originais (RF05; Figura~\ref{fig:cif-telas}b). A comparação aceita duas
+avaliações concluídas do mesmo paciente e com as mesmas versões de catálogo e de regras, e mostra a diferença sem
+classificá-la como melhora ou piora (RF07 e RN11; Figura~\ref{fig:cif-telas}c). As telas da figura são do protótipo
+e usam dados demonstrativos. Por isso, mostram 126 itens e fatores ambientais com o sinal de facilitador, que o
+aplicativo não aceita.
+
+\begin{figure}[htb]
+	\centering
+	\newcommand{\tela}[3]{%
+		\begin{minipage}[t]{0.3\textwidth}\centering
+			\includegraphics[width=\linewidth, trim=#2, clip]{figuras/cif/#1}\\[2pt]
+			\footnotesize #3
+		\end{minipage}}%
+	\tela{02-formulario}{188 61 190 60}{(a) Formulário}\hfill
+	\tela{04-quadro-resumo}{212 96 214 96}{(b) Quadro resumo}\hfill
+	\tela{05-comparacao}{212 96 214 96}{(c) Comparação}
+	\caption{Telas do fluxo de avaliação CIF no protótipo}
+	\label{fig:cif-telas}
+	\fonte{Protótipo do aplicativo no Figma, com dados demonstrativos.}
+\end{figure}
+
+Desse levantamento saem 7 requisitos funcionais, 11 regras de negócio e 3 requisitos não funcionais, listados no
+Apêndice~\ref{ap:requisitos} com os arquivos e as linhas que os implementam. A numeração continua na
+Seção~\ref{sec:especificacao}. O levantamento também mostra uma lacuna. A tabela \arq{avaliacoes_cif} não registra o
+profissional que aplicou a avaliação (\arq{Backend/migrations/001_create_avaliacoes_cif.sql}, linhas 4--17), embora a
+Resolução COFFITO 414/2012 exija, no prontuário eletrônico, o nome completo e o número de registro no CREFITO do
+fisioterapeuta \cite[art.~2º, parágrafo único]{coffito414:2012}. Essa lacuna vira requisito na
+Seção~\ref{sec:especificacao}.

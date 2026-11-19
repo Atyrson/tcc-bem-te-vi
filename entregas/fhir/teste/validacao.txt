@@ -1,0 +1,20 @@
+# Resultado do validador oficial do HL7 (validator_cli), 17/11/2026
+# Comando: .\entregas\scripts\validar_fhir.ps1 (FHIR 4.0.1, BR-Core 1.7.1, SDC 4.0.0)
+# Casos negativos conferidos no mesmo dia: paciente sem CPF/CNS (erro br-core-pat-2), nota 5 (erro de máximo) e item do sexo feminino respondido para paciente masculino (erro de enableWhen).
+
+-- entregas\fhir\teste\Patient-paciente-ficticio.json ----------------------------------------------------------
+Success: 0 errors, 0 warnings, 1 notes
+  Information: Tudo OK
+----------------------------------------------------------------------------------------------------------------
+
+-- entregas\fhir\teste\Questionnaire-cif-esqueleto.json ------------------------------------------------------------
+Success: 0 errors, 0 warnings, 1 notes
+  Information: Tudo OK
+--------------------------------------------------------------------------------------------------------------------
+
+-- entregas\fhir\teste\QuestionnaireResponse-cif-esqueleto.json --------------------------------------------------------------------
+Success: 0 errors, 0 warnings, 1 notes
+  Information: Tudo OK
+------------------------------------------------------------------------------------------------------------------------------------
+
+Done. Times: Loading: 04:14.286, validation: 00:05.896 (#3). Max Memory = 3Gb

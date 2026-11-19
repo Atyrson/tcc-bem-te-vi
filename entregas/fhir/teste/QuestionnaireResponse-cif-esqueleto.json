@@ -1,0 +1,141 @@
+{
+  "resourceType": "QuestionnaireResponse",
+  "id": "cif-esqueleto-exemplo",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Respostas fictícias do grupo do b167 (exemplo condutor).</p></div>"
+  },
+  "questionnaire": "https://bemtevi.unb.br/fhir/Questionnaire/cif-esqueleto|0.1.0",
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/paciente-ficticio"
+  },
+  "authored": "2026-11-17",
+  "item": [
+    {
+      "linkId": "sexo",
+      "answer": [
+        {
+          "valueCoding": {
+            "system": "http://hl7.org/fhir/administrative-gender",
+            "code": "male"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "b",
+      "item": [
+        {
+          "linkId": "b1",
+          "item": [
+            {
+              "linkId": "b:E105",
+              "answer": [
+                {
+                  "valueDecimal": 2.625
+                }
+              ]
+            },
+            {
+              "linkId": "b:E106",
+              "answer": [
+                {
+                  "valueDecimal": 2.5
+                }
+              ]
+            },
+            {
+              "linkId": "b:E107",
+              "answer": [
+                {
+                  "valueInteger": 1
+                }
+              ]
+            },
+            {
+              "linkId": "b:E108",
+              "answer": [
+                {
+                  "valueInteger": 2
+                }
+              ]
+            },
+            {
+              "linkId": "b:E109",
+              "answer": [
+                {
+                  "valueInteger": 3
+                }
+              ]
+            },
+            {
+              "linkId": "b:E110",
+              "answer": [
+                {
+                  "valueInteger": 4
+                }
+              ]
+            },
+            {
+              "linkId": "b:E112",
+              "answer": [
+                {
+                  "valueDecimal": 1.0
+                }
+              ]
+            },
+            {
+              "linkId": "b:E113",
+              "answer": [
+                {
+                  "valueInteger": 0
+                }
+              ]
+            },
+            {
+              "linkId": "b:E114",
+              "answer": [
+                {
+                  "valueInteger": 1
+                }
+              ]
+            },
+            {
+              "linkId": "b:E115",
+              "answer": [
+                {
+                  "valueInteger": 1
+                }
+              ]
+            },
+            {
+              "linkId": "b:E116",
+              "answer": [
+                {
+                  "valueInteger": 2
+                }
+              ]
+            },
+            {
+              "linkId": "b:E118",
+              "answer": [
+                {
+                  "valueInteger": 3
+                }
+              ]
+            },
+            {
+              "linkId": "b:E119",
+              "answer": [
+                {
+                  "valueInteger": 4
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

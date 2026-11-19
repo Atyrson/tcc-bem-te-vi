@@ -1,0 +1,40 @@
+{
+  "resourceType": "Patient",
+  "id": "paciente-ficticio",
+  "meta": {
+    "profile": [
+      "https://br-core.saude.gov.br/fhir/StructureDefinition/br-core-patient"
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Paciente fictício, criado só para testar o modelo.</p></div>"
+  },
+  "identifier": [
+    {
+      "use": "official",
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "TAX"
+          }
+        ]
+      },
+      "system": "https://saude.gov.br/fhir/sid/cpf",
+      "value": "12345678909"
+    }
+  ],
+  "name": [
+    {
+      "use": "official",
+      "text": "Paciente Fictício",
+      "family": "Fictício",
+      "given": [
+        "Paciente"
+      ]
+    }
+  ],
+  "gender": "male",
+  "birthDate": "1990-05-10"
+}

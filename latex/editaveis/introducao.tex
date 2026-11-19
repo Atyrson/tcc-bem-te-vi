@@ -1,0 +1,194 @@
+\chapter{Introdução}
+
+
+\section{Contextualização}
+
+A plataforma tecnológica BEM-TE-VI da Universidade de Brasília abriga o projeto v-FES cycling, que combina o ciclismo
+com o apoio da estimulação elétrica funcional (FES) e a realidade virtual na reabilitação neurológica.
+O acompanhamento dos participantes do projeto depende de avaliações regulares realizadas pela equipe de fisioterapia, e
+cada avaliação utiliza uma ferramenta específica: uma versão adaptada da Classificação Internacional de Funcionalidade, Incapacidade e Saúde (CIF),
+a escala ASIA/ISNCSCI, a Escala de Alcance de Metas (GAS), o Miniexame de Estado Mental (MEEM), o eletrodiagnóstico, a densitometria pelo método DEXA
+e a anamnese.
+
+Os dados obtidos por meio desses instrumentos têm natureza distinta. A CIF, administrada pela Organização Mundial da Saúde, organiza
+as funções e estruturas do corpo, as atividades e a participação e os fatores ambientais em códigos hierárquicos, aos quais são atribuídos qualificadores
+\cite{who2001icf}. O MEEM gera pontuações, o eletrodiagnóstico registra medições por grupos musculares,
+a densitometria registra medições regionais e de composição corporal, e a anamnese armazena texto livre.
+As ferramentas também diferem na estrutura dos campos e nas regras de preenchimento.
+
+O plano de trabalho da iniciação científica associado ao projeto descreve os registros dessas avaliações
+como distribuídos entre arquivos de texto, tabelas, arquivos PDF, imagens e formulários, sem um modelo padronizado. Esse
+mesmo plano prevê a criação de um banco de dados clínico estruturado e validado, que deveria servir de base para um futuro
+sistema de inteligência artificial generativa voltado para a personalização do plano de treinamento \cite{ochoadiaz2026plano}. 
+desse sistema são objeto de um estudo de doutorado associado a este projeto.
+
+Com o objetivo de reunir os registros em um único local, foi desenvolvido o aplicativo Bem-Te-Vi, que consiste
+em uma aplicação Flutter, uma API FastAPI e um banco de dados PostgreSQL. A primeira versão incluía login, cadastro
+de pacientes e formulários de avaliação. Nesta etapa, foi adicionado um módulo de avaliação CIF com catálogos
+versionados obtidos a partir das tabelas da equipe, cálculo hierárquico de pontos, esboço, tabela resumida, histórico e
+comparação de avaliações do mesmo paciente. Também foi revisada a implementação dos demais módulos, com a correção de erros pontuais,
+entre eles a validação do cadastro, que agora exige nome, data de nascimento, número de identificação (CPF) e sexo, sendo que este último dado é necessário, pois
+determina a variante da escala CIF utilizada \cite{higa2026bemtevi}.
+
+Na versão atual, o aplicativo reúne todos os sete formulários, mas trata cada um deles separadamente, com estrutura própria e
+regras de armazenamento independentes. Apenas o fluxo CIF oferece funções de acompanhamento, como histórico
+e comparação. Os demais formulários registram cada avaliação separadamente.
+
+
+
+\section{Problema e pergunta de pesquisa}
+\label{sec:problema}
+
+Os registros das avaliações do projeto v-FES cycling estão distribuídos entre arquivos de texto, planilhas, PDFs,
+imagens e formulários sem um modelo padronizado \cite{ochoadiaz2026plano}. O aplicativo Bem-Te-Vi unificou parte desses registros em sete formulários clínicos,
+cada um com sua própria estrutura e regras. Seu tamanho varia de
+6 a 1.003 campos, conforme indicado na Tabela~\ref{tab:formularios}.
+
+\begin{table}[htb]
+	\centering
+	\caption{Formulários clínicos do Bem-Te-Vi e quantidade de campos}
+	\label{tab:formularios}
+	\small
+	\begin{tabular}{lrp{0.48\textwidth}}
+		\toprule
+		Formulário & Campos & Composição \\
+		\midrule
+		CIF & 985 / 1.003 & 984 respostas (sexo masculino) ou 1.002 (feminino) e a data da avaliação \\
+		ASIA/ISNCSCI & 140 & 112 sensoriais, 20 motores e 8 complementares \\
+		GAS & 134 & 13 metas com 10 campos cada e 4 de cabeçalho \\
+		Eletrodiagnóstico & 88 & 12 grupos musculares com 7 campos cada e 4 de cabeçalho \\
+		Densitometria (DEXA) & 42 & medidas regionais, tendências, composição corporal, peso e altura \\
+		MEEM & 34 & 30 itens de pontuação e 4 de identificação e contexto \\
+		Anamnese & 6 & 5 de identificação, contato e data e 1 de anotações \\
+		\bottomrule
+	\end{tabular}
+	\fonte{Elaborada pelo autor a partir do código do aplicativo \cite{higa2026bemtevi}.}
+\end{table}
+  
+No total, os formulários contêm 1.429 campos para a avaliação completa
+de um paciente do sexo masculino e 1.447 para o sexo feminino, sendo que aproximadamente 69\% desses campos
+pertencem à CIF, além disso, os instrumentos também diferem em sua organização interna. A GAS repete
+o mesmo bloco de campos para cada objetivo, e o eletrodiagnóstico repete um bloco para cada
+grupo muscular. A ASIA separa as respostas sensoriais das motoras, a CIF varia de acordo com o sexo
+do paciente e a anamnese contém texto livre.
+  
+Concentrar esses dados em um só aplicativo não basta quando o significado e os vínculos de cada campo ficam implícitos
+no código. Na versão atual, os formulários GAS, ASIA, anamnese, eletrodiagnóstico, MEEM e densitometria localizam o
+paciente pelo nome completo e, se não o encontram, criam um novo cadastro apenas com esse nome. A tela da ASIA exibe um
+campo de comentários que não é enviado ao servidor. O MEEM registra sempre o mesmo avaliador, "Dr. Examinador", e a
+densitometria grava como data do exame a data do envio. Esses
+comportamentos são esperados em formulários criados antes da definição de um modelo de dados comum e de regras acordadas
+com a equipe, e por isso servem aqui como ponto de partida para os requisitos.
+  
+Esses casos correspondem a dimensões de qualidade descritas na literatura sobre registros eletrônicos de saúde. \citeonline{weiskopf2013dataquality} organizam a avaliação dessa qualidade em
+completude, correção, concordância, plausibilidade e atualidade.
+O comentário descartado compromete a completude, enquanto o avaliador fixo e a data de envio comprometem a correção. A
+identificação pelo nome tem consequência mais grave. \citeonline{just2016patientmatching} mostram que divergências nos
+campos de identificação estão entre as principais causas de cadastros duplicados de pacientes. No Bem-Te-Vi, um erro de digitação
+no nome basta para dividir o histórico de um paciente entre dois cadastros.
+  
+O acompanhamento das avaliações depende dessa mesma base. Histórico, estado de cada avaliação, resumos e comparações só
+são confiáveis quando cada resposta está ligada ao paciente, ao instrumento e à data corretos. Nenhum dos problemas
+descritos se resolve apenas com código. É preciso definir como identificar o paciente, quem responde pela avaliação,
+qual data vale como data do exame e quais campos devem ser acompanhados ao longo do tempo, e essas regras precisam
+estar especificadas antes de qualquer reestruturação do banco ou do aplicativo. Há ainda a questão da troca de dados.
+Uma base com estrutura própria resolve a organização interna, mas não conversa com outros sistemas de saúde. No
+Brasil, a Rede Nacional de Dados em Saúde (RNDS) adota o padrão HL7 FHIR para o intercâmbio de informações clínicas,
+e modelar a base segundo esse padrão desde o início evita uma conversão posterior. Por esses motivos, este trabalho
+trata o problema como uma questão de engenharia de requisitos e parte da seguinte pergunta: quais requisitos e qual
+modelo de dados devem orientar a evolução do aplicativo Bem-Te-Vi para estruturar os dados clínicos de forma
+interoperável e apoiar o acompanhamento das avaliações?
+
+A pergunta central se desdobra nas seguintes questões:
+
+\begin{description}
+	\item [P1] Os recursos do HL7 FHIR conseguem representar os sete formulários clínicos, de 6 a 1.003 campos,
+	sem perda de informação? Quais estruturas, como blocos repetidos, variação por sexo, pontuações calculadas e
+	texto livre, exigem tratamento específico?
+	\item [P2] Quais requisitos funcionais, requisitos não funcionais e regras de negócio o aplicativo precisa
+	atender para acompanhar as avaliações, tomando como base o que o módulo CIF já implementa?
+	\item [P3] Qual é o nível de automação atual de cada escala, e quais etapas podem ser automatizadas por regra do
+	próprio instrumento, sem depender de julgamento clínico?
+\end{description}
+
+\section{Justificativa}
+
+Na reabilitação, a avaliação não é um registro isolado. \citeonline{rauch2008icf} descrevem o manejo clínico como um
+ciclo de avaliar, definir metas, intervir e reavaliar, e defendem sistemas eletrônicos de documentação para sustentar
+esse ciclo. No Brasil, a CIF foi adotada no Sistema Único de Saúde \cite{cns452:2012}, o que reforça a importância de
+registrá-la de forma estruturada. No Bem-Te-Vi, apenas o fluxo CIF permite consultar o histórico e comparar avaliações.
+Nos demais instrumentos, acompanhar um paciente ainda exige reunir registros manualmente. Definir o que centralizar e como relacionar os dados, antes da implementação, reduz o risco de retrabalho na base e no aplicativo.
+A economia de tempo e de etapas manuais, porém, é uma expectativa, que só poderá ser medida depois da implementação.
+
+Para a Engenharia de Software, o problema reúne atividades centrais da engenharia de requisitos: elicitar requisitos com
+especialistas de outra área, modelar dados heterogêneos, especificar regras de negócio e manter a rastreabilidade entre
+a fonte clínica, o requisito e o critério de aceitação. São atividades em que falhas são comuns. No levantamento
+NaPiRE, requisitos incompletos e requisitos ambíguos aparecem entre os problemas mais frequentes relatados pela
+indústria \cite{mendezfernandez2017napire}. Na saúde, \citeonline{cysneiros2002health} acrescenta exigências próprias
+do domínio, como privacidade, confiabilidade e o uso de um vocabulário que a equipe de desenvolvimento não domina.
+Para organizar o processo, este trabalho adota como referência a ISO/IEC/IEEE 29148 \cite{iso29148:2018}.
+
+O trabalho também é viável no prazo da disciplina. O aplicativo, o módulo CIF, o protótipo no Figma e os formulários
+já existem e podem ser analisados como artefatos. As regras de cálculo da CIF estão nas planilhas da equipe e no
+catálogo do aplicativo, e as das demais escalas estão descritas na literatura de cada instrumento, o que permite
+especificar e verificar o modelo sem depender de novas sessões com a equipe.
+
+
+
+\section{Objetivos}
+
+\subsection{Objetivo geral}
+
+Especificar os requisitos e o modelo de dados interoperável, baseado no padrão HL7 FHIR, para estruturar os dados
+clínicos do aplicativo Bem-Te-Vi e apoiar o acompanhamento das avaliações do projeto v-FES cycling, tomando como ponto
+de partida o módulo de avaliação CIF desenvolvido pelo autor.
+
+\subsection{Objetivos específicos}
+
+\begin{enumerate}
+	\item Inventariar os sete formulários clínicos do aplicativo, descrevendo a estrutura de campos de cada um, as funções
+	já disponíveis e os problemas de registro encontrados no código, como a identificação do paciente pelo nome;
+	\item Descrever o módulo de avaliação CIF implementado, com catálogo versionado, cálculo hierárquico das pontuações,
+	rascunho, quadro resumo, histórico e comparação, e extrair dele os requisitos e as regras de negócio que já
+	estão em funcionamento;
+	\item Avaliar o nível de automação de cada escala, distinguindo os dados digitados, os valores que o aplicativo já
+	calcula, os que podem ser calculados por regra definida no próprio instrumento e os que dependem de julgamento clínico;
+	\item Especificar e priorizar os requisitos funcionais, os requisitos não funcionais e as regras de negócio, com fonte,
+	justificativa e critério de aceitação para cada item;
+	\item Modelar a base de dados clínicos com os recursos do HL7 FHIR, considerando os perfis adotados pela Rede
+	Nacional de Dados em Saúde, e mapear os formulários para esse modelo, com o CIF em maior detalhe;
+	\item Verificar o modelo quanto à cobertura dos campos dos sete formulários e quanto à resposta aos problemas de
+	registro inventariados, usando instâncias de exemplo com dados fictícios;
+	\item Consolidar a matriz de rastreabilidade e as pendências que orientarão a implementação da base no TCC 2.
+\end{enumerate}
+
+\section{Escopo e delimitação}
+
+O trabalho se divide em duas etapas. O TCC 1 especifica os requisitos e o modelo de dados em HL7 FHIR e apresenta,
+como resultado parcial, o módulo CIF já implementado. O TCC 2 implementa a base de dados e avalia os requisitos priorizados, em continuidade ao desenvolvimento previsto no plano de iniciação
+científica \cite{ochoadiaz2026plano}. O escopo do TCC 2 será definido a partir dos resultados desta etapa. Além do
+módulo CIF, já desenvolvido, nenhuma alteração no banco de dados ou no código do aplicativo faz parte do TCC 1. O
+aplicativo e o protótipo entram como artefatos de análise.
+
+Não há sessões de elicitação ou validação com a equipe de fisioterapia nesta etapa. As fontes dos requisitos são o
+código do aplicativo, as planilhas da CIF que deram origem ao catálogo, o plano de trabalho e a literatura dos
+instrumentos. A verificação do modelo usa instâncias de exemplo com dados fictícios, e as decisões que exigem
+julgamento clínico ficam registradas como pendências para validação no TCC 2.
+
+Os sete formulários clínicos são analisados pela estrutura, e não campo a campo. O modelo em HL7 FHIR deve cobrir
+todos eles, mas o mapeamento detalhado se concentra na CIF, que já conta com histórico, quadro resumo e comparação
+implementados e responde por cerca de 69\% dos campos. Os campos e funções que não forem tratados ficam registrados
+como pendências para o TCC 2.
+
+O plano de trabalho prevê que a base de dados alimente um sistema de inteligência artificial generativa. Os algoritmos
+desse sistema são objeto do doutorado vinculado ao projeto. No TCC 1, cabe apenas descrever os dados que esse
+módulo deverá consumir. Também ficam fora do escopo a interpretação clínica dos resultados, que continua com a equipe, a
+integração efetiva com a RNDS, que exige credenciamento institucional, e outros padrões, como o openEHR, citados apenas
+como referência.
+
+Todas as atividades usam somente dados fictícios. O uso de dados reais de pacientes depende de autorização
+institucional e não está previsto nesta etapa.
+
+\section{Organização do trabalho}
+
+%

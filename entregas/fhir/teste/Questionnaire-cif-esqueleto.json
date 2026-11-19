@@ -1,0 +1,290 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "cif-esqueleto",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Esqueleto do questionário da CIF adaptada: grupo do b167 e um item exclusivo do sexo feminino.</p></div>"
+  },
+  "url": "https://bemtevi.unb.br/fhir/Questionnaire/cif-esqueleto",
+  "version": "0.1.0",
+  "name": "CIFEsqueleto",
+  "title": "Avaliação CIF adaptada (esqueleto de teste)",
+  "status": "draft",
+  "subjectType": [
+    "Patient"
+  ],
+  "item": [
+    {
+      "linkId": "sexo",
+      "text": "Sexo do paciente",
+      "type": "choice",
+      "required": true,
+      "answerOption": [
+        {
+          "valueCoding": {
+            "system": "http://hl7.org/fhir/administrative-gender",
+            "code": "male"
+          }
+        },
+        {
+          "valueCoding": {
+            "system": "http://hl7.org/fhir/administrative-gender",
+            "code": "female"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "b",
+      "text": "FUNÇÕES DO CORPO",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "b1",
+          "text": "b1 FUNÇÕES MENTAIS",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "b:E105",
+              "text": "b167 Funções mentais da linguagem",
+              "type": "decimal",
+              "readOnly": true,
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "iif(%resource.repeat(item).where(linkId in ('b:E106' | 'b:E112' | 'b:E118' | 'b:E119')).answer.value.count() = 4, %resource.repeat(item).where(linkId in ('b:E106' | 'b:E112' | 'b:E118' | 'b:E119')).answer.value.aggregate($total + $this, 0) / 4, {})"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "b:E106",
+              "text": "b1670 Recepção da linguagem",
+              "type": "decimal",
+              "readOnly": true,
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "iif(%resource.repeat(item).where(linkId in ('b:E107' | 'b:E108' | 'b:E109' | 'b:E110')).answer.value.count() = 4, %resource.repeat(item).where(linkId in ('b:E107' | 'b:E108' | 'b:E109' | 'b:E110')).answer.value.aggregate($total + $this, 0) / 4, {})"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "b:E107",
+              "text": "b16700 Recepção da linguagem oral",
+              "type": "integer",
+              "required": true,
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/minValue",
+                  "valueInteger": 0
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+                  "valueInteger": 4
+                }
+              ]
+            },
+            {
+              "linkId": "b:E108",
+              "text": "b16701 Recepção da linguagem escrita",
+              "type": "integer",
+              "required": true,
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/minValue",
+                  "valueInteger": 0
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+                  "valueInteger": 4
+                }
+              ]
+            },
+            {
+              "linkId": "b:E109",
+              "text": "b16702 Recepção da linguagem de sinais",
+              "type": "integer",
+              "required": true,
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/minValue",
+                  "valueInteger": 0
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+                  "valueInteger": 4
+                }
+              ]
+            },
+            {
+              "linkId": "b:E110",
+              "text": "b16708 Recepção de linguagem, outra especificada",
+              "type": "integer",
+              "required": true,
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/minValue",
+                  "valueInteger": 0
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+                  "valueInteger": 4
+                }
+              ]
+            },
+            {
+              "linkId": "b:E112",
+              "text": "b1671 Expressão da linguagem",
+              "type": "decimal",
+              "readOnly": true,
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-calculatedExpression",
+                  "valueExpression": {
+                    "language": "text/fhirpath",
+                    "expression": "iif(%resource.repeat(item).where(linkId in ('b:E113' | 'b:E114' | 'b:E115' | 'b:E116')).answer.value.count() = 4, %resource.repeat(item).where(linkId in ('b:E113' | 'b:E114' | 'b:E115' | 'b:E116')).answer.value.aggregate($total + $this, 0) / 4, {})"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "b:E113",
+              "text": "b16710 Expressão da linguagem oral",
+              "type": "integer",
+              "required": true,
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/minValue",
+                  "valueInteger": 0
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+                  "valueInteger": 4
+                }
+              ]
+            },
+            {
+              "linkId": "b:E114",
+              "text": "b16711 Expressão da linguagem escrita",
+              "type": "integer",
+              "required": true,
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/minValue",
+                  "valueInteger": 0
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+                  "valueInteger": 4
+                }
+              ]
+            },
+            {
+              "linkId": "b:E115",
+              "text": "b16712 Expressão da linguagem de sinais",
+              "type": "integer",
+              "required": true,
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/minValue",
+                  "valueInteger": 0
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+                  "valueInteger": 4
+                }
+              ]
+            },
+            {
+              "linkId": "b:E116",
+              "text": "b16718 Expressão da  linguagem, outra especificada",
+              "type": "integer",
+              "required": true,
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/minValue",
+                  "valueInteger": 0
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+                  "valueInteger": 4
+                }
+              ]
+            },
+            {
+              "linkId": "b:E118",
+              "text": "b1672 Funções da linguagem",
+              "type": "integer",
+              "required": true,
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/minValue",
+                  "valueInteger": 0
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+                  "valueInteger": 4
+                }
+              ]
+            },
+            {
+              "linkId": "b:E119",
+              "text": "b1678 Funções mentais de linguagem, outras especificadas",
+              "type": "integer",
+              "required": true,
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/minValue",
+                  "valueInteger": 0
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+                  "valueInteger": 4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "b6",
+          "text": "b6 FUNÇÕES GENITURINÁRIAS E REPRODUTIVAS",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "b:E408",
+              "text": "b6500 Regularidade do ciclo menstrual",
+              "type": "integer",
+              "required": true,
+              "enableWhen": [
+                {
+                  "question": "sexo",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://hl7.org/fhir/administrative-gender",
+                    "code": "female"
+                  }
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/minValue",
+                  "valueInteger": 0
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+                  "valueInteger": 4
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
