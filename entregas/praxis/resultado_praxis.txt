@@ -1,0 +1,92 @@
+﻿
+## 1. Les├úo completa em T6
+- N├¡vel sensitivo (D, E)   esperado T6 | T6      Praxis T6 | T6        servidor T6 | T6        esperado=Praxis; servidor=Praxis
+- N├¡vel motor (D, E)       esperado T6 | T6      Praxis T6 | T6        servidor T6 | T6        esperado=Praxis; servidor=Praxis
+- N├¡vel neurol├│gico        esperado T6           Praxis T6             servidor T6             esperado=Praxis; servidor=Praxis
+- Grau AIS                 esperado A            Praxis A              servidor A              esperado=Praxis; servidor=Praxis
+- ZPP sensitiva (D, E)     esperado T6 | T6      Praxis T6 | T6        servidor T6 | T6        esperado=Praxis; servidor=Praxis
+- ZPP motora (D, E)        esperado T6 | T6      Praxis T6 | T6        servidor T1 | T1        esperado=Praxis; servidorÔëáPraxis
+
+## 2. Incompleta sensitiva em T6 (tato leve em S4-5 e press├úo anal profunda)
+- N├¡vel sensitivo (D, E)   esperado T6 | T6      Praxis T6 | T6        servidor T6 | T6        esperado=Praxis; servidor=Praxis
+- N├¡vel motor (D, E)       esperado T6 | T6      Praxis T6 | T6        servidor T6 | T6        esperado=Praxis; servidor=Praxis
+- N├¡vel neurol├│gico        esperado T6           Praxis T6             servidor T6             esperado=Praxis; servidor=Praxis
+- Grau AIS                 esperado B            Praxis B              servidor C              esperado=Praxis; servidorÔëáPraxis
+- ZPP sensitiva (D, E)     esperado NA | NA      Praxis NA | NA        servidor S4_5 | S4_5    esperado=Praxis; servidorÔëáPraxis
+- ZPP motora (D, E)        esperado T6 | T6      Praxis T6 | T6        servidor T1 | T1        esperado=Praxis; servidorÔëáPraxis
+
+## 3. Incompleta sensitiva em C5, com grau 3 em C6 (um n├¡vel abaixo do n├¡vel motor)
+- N├¡vel sensitivo (D, E)   esperado C5 | C5      Praxis C5 | C5        servidor C5 | C5        esperado=Praxis; servidor=Praxis
+- N├¡vel motor (D, E)       esperado C5 | C5      Praxis C5 | C5        servidor C5 | C5        esperado=Praxis; servidor=Praxis
+- N├¡vel neurol├│gico        esperado C5           Praxis C5             servidor C5             esperado=Praxis; servidor=Praxis
+- Grau AIS                 esperado B            Praxis B              servidor C              esperado=Praxis; servidorÔëáPraxis
+- ZPP sensitiva (D, E)     esperado NA | NA      Praxis NA | NA        servidor S4_5 | S4_5    esperado=Praxis; servidorÔëáPraxis
+- ZPP motora (D, E)        esperado C6 | C6      Praxis C6 | C6        servidor C6 | C6        esperado=Praxis; servidor=Praxis
+
+## 4. Incompleta motora em C5, com grau 1 em L2 (mais de tr├¬s n├¡veis abaixo)
+- N├¡vel sensitivo (D, E)   esperado C5 | C5      Praxis C5 | C5        servidor C5 | C5        esperado=Praxis; servidor=Praxis
+- N├¡vel motor (D, E)       esperado C5 | C5      Praxis C5 | C5        servidor C5 | C5        esperado=Praxis; servidor=Praxis
+- N├¡vel neurol├│gico        esperado C5           Praxis C5             servidor C5             esperado=Praxis; servidor=Praxis
+- Grau AIS                 esperado C            Praxis C              servidor B              esperado=Praxis; servidorÔëáPraxis
+- ZPP sensitiva (D, E)     esperado NA | NA      Praxis NA | NA        servidor S4_5 | S4_5    esperado=Praxis; servidorÔëáPraxis
+- ZPP motora (D, E)        esperado L2 | L2      Praxis L2 | L2        servidor L2 | L2        esperado=Praxis; servidor=Praxis
+
+## 5. Incompleta motora em C5 s├│ pela contra├º├úo anal volunt├íria
+- N├¡vel sensitivo (D, E)   esperado C5 | C5      Praxis C5 | C5        servidor C5 | C5        esperado=Praxis; servidor=Praxis
+- N├¡vel motor (D, E)       esperado C5 | C5      Praxis C5 | C5        servidor C5 | C5        esperado=Praxis; servidor=Praxis
+- N├¡vel neurol├│gico        esperado C5           Praxis C5             servidor C5             esperado=Praxis; servidor=Praxis
+- Grau AIS                 esperado C            Praxis C              servidor ND             esperado=Praxis; servidorÔëáPraxis
+- ZPP sensitiva (D, E)     esperado NA | NA      Praxis NA | NA        servidor NA | NA        esperado=Praxis; servidor=Praxis
+- ZPP motora (D, E)        esperado NA | NA      Praxis NA | NA        servidor NA | NA        esperado=Praxis; servidor=Praxis
+
+## 6. Incompleta motora em C5, com grau 3 em todos os m├║sculos-chave abaixo
+- N├¡vel sensitivo (D, E)   esperado C5 | C5      Praxis C5 | C5        servidor C5 | C5        esperado=Praxis; servidor=Praxis
+- N├¡vel motor (D, E)       esperado C5 | C5      Praxis C5 | C5        servidor C5 | C5        esperado=Praxis; servidor=Praxis
+- N├¡vel neurol├│gico        esperado C5           Praxis C5             servidor C5             esperado=Praxis; servidor=Praxis
+- Grau AIS                 esperado D            Praxis D              servidor D              esperado=Praxis; servidor=Praxis
+- ZPP sensitiva (D, E)     esperado NA | NA      Praxis NA | NA        servidor S4_5 | S4_5    esperado=Praxis; servidorÔëáPraxis
+- ZPP motora (D, E)        esperado S1 | S1      Praxis S1 | S1        servidor S1 | S1        esperado=Praxis; servidor=Praxis
+
+## 7. N├¡veis diferentes nos dois lados (C5 e C8): propor├º├úo abaixo do n├¡vel neurol├│gico
+- N├¡vel sensitivo (D, E)   esperado C5 | C8      Praxis C5 | C8        servidor C5 | C8        esperado=Praxis; servidor=Praxis
+- N├¡vel motor (D, E)       esperado C5 | C8      Praxis C5 | C8        servidor C5 | C8        esperado=Praxis; servidor=Praxis
+- N├¡vel neurol├│gico        esperado C5           Praxis C5             servidor C5             esperado=Praxis; servidor=Praxis
+- Grau AIS                 esperado D            Praxis D              servidor C              esperado=Praxis; servidorÔëáPraxis
+- ZPP sensitiva (D, E)     esperado NA | NA      Praxis NA | NA        servidor S4_5 | S4_5    esperado=Praxis; servidorÔëáPraxis
+- ZPP motora (D, E)        esperado L4 | L4      Praxis L4 | L4        servidor L4 | L4        esperado=Praxis; servidor=Praxis
+
+## 8. Incompleta motora em C5 por m├║sculo n├úo chave em L2 (c├│digo 21 do formul├írio)
+- N├¡vel sensitivo (D, E)   esperado C5 | C5      Praxis C5 | C5        servidor C5 | C5        esperado=Praxis; servidor=Praxis
+- N├¡vel motor (D, E)       esperado C5 | C5      Praxis C5 | C5        servidor C5 | C5        esperado=Praxis; servidor=Praxis
+- N├¡vel neurol├│gico        esperado C5           Praxis C5             servidor C5             esperado=Praxis; servidor=Praxis
+- Grau AIS                 esperado C            Praxis C              servidor B              esperado=Praxis; servidorÔëáPraxis
+- ZPP sensitiva (D, E)     esperado NA | NA      Praxis NA | NA        servidor S4_5 | S4_5    esperado=Praxis; servidorÔëáPraxis
+- ZPP motora (D, E)        esperado L2 | L2      Praxis L2 | L2        servidor C5 | C5        esperado=Praxis; servidorÔëáPraxis
+
+## 9. Les├úo em T6 com S4-5 n├úo test├ível (NT) do lado direito
+- N├¡vel sensitivo (D, E)   esperado T6 | T6      Praxis T6 | T6        servidor erro (TypeError) esperado=Praxis; servidorÔëáPraxis
+- N├¡vel motor (D, E)       esperado T6 | T6      Praxis T6 | T6        servidor erro (TypeError) esperado=Praxis; servidorÔëáPraxis
+- N├¡vel neurol├│gico        esperado T6           Praxis T6             servidor erro (TypeError) esperado=Praxis; servidorÔëáPraxis
+- Grau AIS                 esperado ND           Praxis A,B            servidor erro (TypeError) esperadoÔëáPraxis; servidorÔëáPraxis
+- ZPP sensitiva (D, E)     esperado ND | T6      Praxis NA,T6 | T6     servidor erro (TypeError) esperadoÔëáPraxis; servidorÔëáPraxis
+- ZPP motora (D, E)        esperado T6 | T6      Praxis T6 | T6        servidor erro (TypeError) esperado=Praxis; servidorÔëáPraxis
+
+## 10. Exame normal em paciente com d├®ficit anterior
+- N├¡vel sensitivo (D, E)   esperado INT | INT    Praxis INT | INT      servidor INT | INT      esperado=Praxis; servidor=Praxis
+- N├¡vel motor (D, E)       esperado INT | INT    Praxis INT | INT      servidor INT | INT      esperado=Praxis; servidor=Praxis
+- N├¡vel neurol├│gico        esperado INT          Praxis INT            servidor INT            esperado=Praxis; servidor=Praxis
+- Grau AIS                 esperado E            Praxis E              servidor C              esperado=Praxis; servidorÔëáPraxis
+- ZPP sensitiva (D, E)     esperado NA | NA      Praxis NA | NA        servidor NA | NA        esperado=Praxis; servidor=Praxis
+- ZPP motora (D, E)        esperado NA | NA      Praxis NA | NA        servidor NA | NA        esperado=Praxis; servidor=Praxis
+
+## Resumo do grau AIS (caso: esperado / Praxis / servidor)
+-  1: A / A / A
+-  2: B / B / C
+-  3: B / B / C
+-  4: C / C / B
+-  5: C / C / ND
+-  6: D / D / D
+-  7: D / D / C
+-  8: C / C / B
+-  9: ND / A,B / erro
+- 10: E / E / C

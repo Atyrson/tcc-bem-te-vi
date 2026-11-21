@@ -1,0 +1,1670 @@
+instrumento;grupo;valor;sexo;grau;onde_calcula;gravado;fonte
+CIF;b;b (G4);Masculino;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E6,E137,E224,E246,E315,I384,E430,E511)
+CIF;b;b1 (E6);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E8,E14,E24:E26,E37,E45,E53,E55,E62,E68,E73,E79,E88,E95,E105,E121,E126:E127,E134,E133)
+CIF;b;b110 (E8);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E9:E12)
+CIF;b;b1100 (E9);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1101 (E10);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1102 (E11);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1108 (E12);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b114 (E14);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E15,E16,E17,E22)
+CIF;b;b1140 (E15);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1141 (E16);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1142 (E17);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E18:E20)
+CIF;b;b11420 (E18);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b11421 (E19);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b11428 (E20);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1148 (E22);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b117 (E24);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b122 (E25);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b126 (E26);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E27:E35)
+CIF;b;b1260 (E27);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1261 (E28);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1262 (E29);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1263 (E30);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1264 (E31);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1265 (E32);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1266 (E33);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1267 (E34);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1268 (E35);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b130 (E37);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E38:E43)
+CIF;b;b1300 (E38);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1301 (E39);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1302 (E40);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1303 (E41);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1304 (E42);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1308 (E43);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b134 (E45);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E46:E51)
+CIF;b;b1340 (E46);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1341 (E47);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1342 (E48);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1343 (E49);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1344 (E50);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1348 (E51);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b139 (E53);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b140 (E55);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E56:E60)
+CIF;b;b1400 (E56);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1401 (E57);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1402 (E58);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1403 (E59);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1408 (E60);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b144 (E62);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E63:E66)
+CIF;b;b1440 (E63);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1441 (E64);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1442 (E65);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1448 (E66);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b147 (E68);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E69:E71)
+CIF;b;b1470 (E69);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1471 (E70);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1478 (E71);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b152 (E73);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E74:E77)
+CIF;b;b1520 (E74);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1521 (E75);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1522 (E76);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1528 (E77);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b156 (E79);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E80:E86)
+CIF;b;b1560 (E80);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1561 (E81);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1562 (E82);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1563 (E83);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1564 (E84);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1565 (E85);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1568 (E86);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b160 (E88);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E89:E93)
+CIF;b;b1600 (E89);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1601 (E90);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1602 (E91);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1603 (E92);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1608 (E93);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b164 (E95);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E96:E104)
+CIF;b;b1640 (E96);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1641 (E97);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1642 (E98);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1643 (E99);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1644 (E100);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1645 (E101);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1646 (E102);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1648 (E103);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1649 (E104);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b167 (E105);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E106,E112,E118,E119,E119)
+CIF;b;b1670 (E106);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E107:E110)
+CIF;b;b16700 (E107);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b16701 (E108);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b16702 (E109);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b16708 (E110);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1671 (E112);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E113:E116)
+CIF;b;b16710 (E113);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b16711 (E114);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b16712 (E115);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b16718 (E116);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1672 (E118);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1678 (E119);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b172 (E121);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E122:E124)
+CIF;b;b1720 (E122);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1721 (E123);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1728 (E124);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b176 (E126);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b180 (E127);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E128:E131)
+CIF;b;b1800 (E128);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1801 (E129);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1802 (E130);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b1808 (E131);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b198 (E134);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b189 (E133);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b2 (E137);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E139,E157,E164,E167,E175,E181,E190,E192:E196,E203,E205,E220,E221)
+CIF;b;b210 (E139);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E140,E147,E148,E155)
+CIF;b;b2100 (E140);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E141:E145)
+CIF;b;b21000 (E141);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b21001 (E142);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b21002 (E143);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b21003 (E144);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b21008 (E145);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b2101 (E147);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b2102 (E148);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E149:E153)
+CIF;b;b21020 (E149);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b21021 (E150);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b21022 (E151);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b21023 (E152);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b21028 (E153);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b2108 (E155);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b215 (E157);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E158:E162)
+CIF;b;b2150 (E158);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b2151 (E159);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b2152 (E160);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b2153 (E161);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b2158 (E162);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b220 (E164);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b230 (E167);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E168:E173)
+CIF;b;b2300 (E168);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b2301 (E169);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b2302 (E170);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b2303 (E171);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b2304 (E172);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b2308 (E173);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b235 (E175);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E176:E179)
+CIF;b;b2350 (E176);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b2351 (E177);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b2352 (E178);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b2358 (E179);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b240 (E181);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E182:E188)
+CIF;b;b2400 (E182);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b2401 (E183);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b2402 (E184);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b2403 (E185);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b2404 (E186);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b2405 (E187);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b2408 (E188);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b249 (E190);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b250 (E192);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b255 (E193);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b260 (E194);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b265 (E195);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b270 (E196);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E197:E202)
+CIF;b;b2700 (E197);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b2701 (E198);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b2702 (E199);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b2703 (E200);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b2708 (E201);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b2709 (E202);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b279 (E203);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b280 (E205);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E206,E207,E217,E218,E219)
+CIF;b;b2800 (E206);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b2801 (E207);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E208:E215)
+CIF;b;b28010 (E208);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b28011 (E209);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b28012 (E210);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b28013 (E211);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b28014 (E212);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b28015 (E213);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b28016 (E214);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b28018 (E215);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b2802 (E217);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b2803 (E218);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b2804 (E219);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b289 (E220);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b298 (E221);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b3 (E224);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E225,E230,E231,E238,E243)
+CIF;b;b310 (E225);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E226:E228)
+CIF;b;b3100 (E226);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b3101 (E227);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b3108 (E228);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b320 (E230);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b330 (E231);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E232:E236)
+CIF;b;b3300 (E232);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b3301 (E233);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b3302 (E234);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b3303 (E235);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b3308 (E236);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b340 (E238);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E239:E241)
+CIF;b;b3400 (E239);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b3401 (E240);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b3408 (E241);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b398 (E243);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b4 (E246);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E248,E255,E261,E269,E276,E287,E289,E267,E295,E301,E303:E304,E310:E312)
+CIF;b;b410 (E248);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E249:E253)
+CIF;b;b4100 (E249);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b4101 (E250);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b4102 (E251);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b4103 (E252);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b4108 (E253);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b415 (E255);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E256:E259)
+CIF;b;b4150 (E256);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b4151 (E257);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b4152 (E258);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b4158 (E259);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b420 (E261);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E262:E265)
+CIF;b;b4200 (E262);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b4201 (E263);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b4202 (E264);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b4208 (E265);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b430 (E269);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E270:E274)
+CIF;b;b4300 (E270);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b4301 (E271);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b4302 (E272);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b4303 (E273);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b4308 (E274);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b435 (E276);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E277,E282:E285)
+CIF;b;b4350 (E277);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E278:E280)
+CIF;b;b43500 (E278);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b43501 (E279);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b43508 (E280);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b4351 (E282);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b4352 (E283);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b4353 (E284);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b4358 (E285);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b439 (E287);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b440 (E289);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E290:E293)
+CIF;b;b4400 (E290);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b4401 (E291);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b4402 (E292);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b4408 (E293);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b429 (E267);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b445 (E295);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E296:E299)
+CIF;b;b4450 (E296);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b4451 (E297);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b4452 (E298);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b4458 (E299);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b449 (E301);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b450 (E303);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b455 (E304);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E305:E308)
+CIF;b;b4550 (E305);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b4551 (E306);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b4552 (E307);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b4558 (E308);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b460 (E310);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b469 (E311);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b498 (E312);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b5 (E315);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E317,E332,E339:E340,E348:E349,E355,E357,E363,E373,E378:E380)
+CIF;b;b510 (E317);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E318:E322,E323,E329:E330)
+CIF;b;b5100 (E318);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b5101 (E319);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b5102 (E320);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b5103 (E321);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b5104 (E322);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b5105 (E323);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E324:E327)
+CIF;b;b51050 (E324);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b51051 (E325);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b51052 (E326);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b51058 (E327);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b5106 (E329);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b5108 (E330);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b515 (E332);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E333:E337)
+CIF;b;b5150 (E333);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b5151 (E334);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b5152 (E335);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b5153 (E336);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b5158 (E337);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b520 (E339);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b525 (E340);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E341:E346)
+CIF;b;b5250 (E341);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b5251 (E342);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b5252 (E343);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b5253 (E344);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b5254 (E345);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b5258 (E346);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b530 (E348);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b535 (E349);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E350:E353)
+CIF;b;b5350 (E350);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b5351 (E351);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b5352 (E352);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b5358 (E353);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b539 (E355);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b540 (E357);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E358:E361)
+CIF;b;b5401 (E358);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b5402 (E359);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b5403 (E360);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b5408 (E361);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b545 (E363);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E365,E364,E369:E372)
+CIF;b;b54500 (E365);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b5450 (E364);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E365:E368)
+CIF;b;b54501 (E366);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b54508 (E367);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b54509 (E368);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b5451 (E369);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b5452 (E370);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b5458 (E371);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b5459 (E372);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b550 (E373);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E374:E376)
+CIF;b;b5500 (E374);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b5501 (E375);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b5508 (E376);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b555 (E378);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b559 (E379);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b598 (E380);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b6 (I384);Masculino;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E391,E386,E397:E398,E400,E426:E427)
+CIF;b;b620 (E391);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E392:E395)
+CIF;b;b6200 (E392);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b6201 (E393);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b6202 (E394);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b6208 (E395);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b610 (E386);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E387:E389)
+CIF;b;b6100 (E387);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b6101 (E388);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b6108 (E389);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b630 (E397);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b639 (E398);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b640 (E400);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E401:E405)
+CIF;b;b6400 (E401);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b6401 (E402);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b6402 (E403);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b6403 (E404);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b6408 (E405);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b679 (E426);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b698 (E427);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7 (E430);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E432,E438,E444,E451,E453,E463,E473,E479,E480,E486,E487,E494,E501,E502,E507,E508)
+CIF;b;b710 (E432);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E433:E436)
+CIF;b;b7100 (E433);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7101 (E434);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7102 (E435);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7108 (E436);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b715 (E438);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E439:E442)
+CIF;b;b7150 (E439);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7151 (E440);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7152 (E441);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7158 (E442);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b720 (E444);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E445:E449)
+CIF;b;b7200 (E445);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7201 (E446);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7202 (E447);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7203 (E448);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7208 (E449);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b729 (E451);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b730 (E453);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E454:E461)
+CIF;b;b7300 (E454);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7301 (E455);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7302 (E456);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7303 (E457);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7304 (E458);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7305 (E459);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7306 (E460);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7308 (E461);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b735 (E463);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E464:E471)
+CIF;b;b7350 (E464);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7351 (E465);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7352 (E466);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7353 (E467);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7354 (E468);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7355 (E469);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7356 (E470);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7358 (E471);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b740 (E473);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E474:E477)
+CIF;b;b7400 (E474);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7401 (E475);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7402 (E476);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7408 (E477);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b749 (E479);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b750 (E480);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E481:E484)
+CIF;b;b7500 (E481);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7501 (E482);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7502 (E483);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7508 (E484);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b755 (E486);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b760 (E487);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E488:E492)
+CIF;b;b7600 (E488);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7601 (E489);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7602 (E490);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7603 (E491);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7608 (E492);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b765 (E494);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E495:E499)
+CIF;b;b7650 (E495);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7651 (E496);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7652 (E497);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7653 (E498);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7658 (E499);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b770 (E501);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b780 (E502);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E503:E505)
+CIF;b;b7800 (E503);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7801 (E504);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b7808 (E505);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b789 (E507);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b798 (E508);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b8 (E511);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E512:E520)
+CIF;b;b810 (E512);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b820 (E513);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b830 (E514);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b840 (E515);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b849 (E516);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b850 (E517);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b860 (E518);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b869 (E519);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b898 (E520);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s (H3);Masculino;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E5,E44,E80,E112,E150,H173,E209,E306)
+CIF;s;s1 (E5);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E7,E27,E38:E41)
+CIF;s;s110 (E7);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E8,E15:E19,E24:E25)
+CIF;s;s1100 (E8);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E9:E13)
+CIF;s;s11000 (E9);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s11001 (E10);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s11002 (E11);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s11003 (E12);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s11008 (E13);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s1101 (E15);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s1102 (E16);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s1103 (E17);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s1104 (E18);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s1105 (E19);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E20:E22)
+CIF;s;s11050 (E20);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s11051 (E21);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s11058 (E22);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s1106 (E24);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s1108 (E25);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s120 (E27);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E28,E35:E36)
+CIF;s;s1200 (E28);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E29:E33)
+CIF;s;s12000 (E29);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s12001 (E30);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s12002 (E31);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s12003 (E32);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s12008 (E33);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s1201 (E35);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s1208 (E36);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s130 (E38);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s140 (E39);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s150 (E40);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s198 (E41);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s2 (E44);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E46,E47,E56,E63:E64,E70,E77)
+CIF;s;s210 (E46);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s220 (E47);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E48:E54)
+CIF;s;s2200 (E48);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s2201 (E49);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s2202 (E50);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s2203 (E51);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s2204 (E52);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s2205 (E53);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s2208 (E54);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s230 (E56);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E57:E61)
+CIF;s;s2300 (E57);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s2301 (E58);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s2302 (E59);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s2303 (E60);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s2308 (E61);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s240 (E63);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s250 (E64);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E65:E68)
+CIF;s;s2500 (E65);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s2501 (E66);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s2502 (E67);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s2508 (E68);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s260 (E70);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E71:E75)
+CIF;s;s2600 (E71);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s2601 (E72);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s2602 (E73);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s2603 (E74);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s2608 (E75);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s298 (E77);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s3 (E80);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E82,E88,E100,E105,E109)
+CIF;s;s310 (E82);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E83:E86)
+CIF;s;s3100 (E83);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s3101 (E84);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s3102 (E85);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s3108 (E86);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s320 (E88);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E89:E91,E94,E95,E98)
+CIF;s;s3200 (E89);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s3201 (E90);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s3202 (E91);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E92:E93)
+CIF;s;s32020 (E92);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s32021 (E93);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s3203 (E94);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s3204 (E95);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s3208 (E98);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s330 (E100);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E101:E103)
+CIF;s;s3300 (E101);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s3301 (E102);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s3308 (E103);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s340 (E105);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E106:E107)
+CIF;s;s3400 (E106);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s3408 (E107);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s398 (E109);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s4 (E112);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E114,E124,E132,E147:E148)
+CIF;s;s410 (E114);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E115,E120:E122)
+CIF;s;s4100 (E115);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E116:E118)
+CIF;s;s41000 (E116);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s41001 (E117);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s41008 (E118);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s4101 (E120);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s4102 (E121);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s4108 (E122);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s420 (E124);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E125:E130)
+CIF;s;s4200 (E125);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s4201 (E126);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s4202 (E127);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s4203 (E128);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s4204 (E129);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s4208 (E130);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s430 (E132);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E133:E134,E139:E140,E145)
+CIF;s;s4300 (E133);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s4301 (E134);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s4302 (E139);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s4303 (E140);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E142:E143)
+CIF;s;s43031 (E142);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s43038 (E143);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s4308 (E145);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s498 (E147);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s499 (E148);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s5 (E150);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E152:E155,E160:E163,E170)
+CIF;s;s510 (E152);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s520 (E153);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s530 (E154);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s540 (E155);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E156:E158)
+CIF;s;s5400 (E156);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s5401 (E157);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s5408 (E158);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s550 (E160);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s560 (E161);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s570 (E162);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s580 (E163);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E164:E168)
+CIF;s;s5800 (E164);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s5801 (E165);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s5802 (E166);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s5803 (E167);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s5808 (E168);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s598 (E170);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s6 (H173);Masculino;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E175,E182,G183,E206)
+CIF;s;s610 (E175);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E176:E180)
+CIF;s;s6100 (E176);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s6101 (E177);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s6102 (E178);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s6103 (E179);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s6108 (E180);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s620 (E182);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s630 (G183);Masculino;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E197:E198,E203:E204)
+CIF;s;s6304 (E197);Masculino;1;;sim;catalogo.v0.1.json
+CIF;s;s6305 (E198);Masculino;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E199:E201)
+CIF;s;s63050 (E199);Masculino;1;;sim;catalogo.v0.1.json
+CIF;s;s63051 (E200);Masculino;1;;sim;catalogo.v0.1.json
+CIF;s;s63058 (E201);Masculino;1;;sim;catalogo.v0.1.json
+CIF;s;s6306 (E203);Masculino;1;;sim;catalogo.v0.1.json
+CIF;s;s6308 (E204);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s698 (E206);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s7 (E209);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E303,E296,E283,E259,E252,E227,E220,E212)
+CIF;s;s798 (E303);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s770 (E296);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E297:E301)
+CIF;s;s7700 (E297);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s7701 (E298);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s7702 (E299);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s7703 (E300);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s7708 (E301);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s760 (E283);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E284,E292:E295)
+CIF;s;s7600 (E284);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E285:E290)
+CIF;s;s76000 (E285);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s76001 (E286);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s76002 (E287);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s76003 (E288);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s76004 (E289);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s76008 (E290);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s7601 (E292);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s7602 (E293);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s7608 (E294);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s7609 (E295);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s750 (E259);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E260,E267,E274,E281,E282)
+CIF;s;s7500 (E260);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E261:E265)
+CIF;s;s75000 (E261);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s75001 (E262);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s75002 (E263);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s75003 (E264);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s75008 (E265);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s7501 (E267);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E268:E272)
+CIF;s;s75010 (E268);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s75011 (E269);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s75012 (E270);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s75013 (E271);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s75018 (E272);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s7502 (E274);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E275:E279)
+CIF;s;s75020 (E275);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s75021 (E276);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s75022 (E277);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s75023 (E278);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s75028 (E279);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s7508 (E281);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s7509 (E282);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s740 (E252);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E253:E257)
+CIF;s;s7400 (E253);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s7401 (E254);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s7402 (E255);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s7403 (E256);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s7408 (E257);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s730 (E227);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E228,E235,E242,E250:E251)
+CIF;s;s7300 (E228);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E229:E233)
+CIF;s;s73000 (E229);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s73001 (E230);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s72002 (E231);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s73003 (E232);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s73008 (E233);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s7301 (E235);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E236:E240)
+CIF;s;s73010 (E236);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s73011 (E237);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s73012 (E238);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s73013 (E239);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s73018 (E240);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s7302 (E242);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E243:E248)
+CIF;s;s73020 (E243);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s73020 (E244);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s73021 (E245);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s73022 (E246);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s73023 (E247);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s73028 (E248);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s7308 (E250);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s7309 (E251);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s720 (E220);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E221:E225)
+CIF;s;s7200 (E221);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s7201 (E222);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s7202 (E223);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s7203 (E224);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s7208 (E225);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s7100 (E212);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s8 (E306);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E308,E317,E322,E327:E328)
+CIF;s;s810 (E308);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E309:E315)
+CIF;s;s8100 (E309);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s8101 (E310);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s8102 (E311);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s8103 (E312);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s8104 (E313);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s8105 (E314);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s8108 (E315);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s820 (E317);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E318:E320)
+CIF;s;s8200 (E318);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s8201 (E319);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s8208 (E320);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s830 (E322);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E323:E325)
+CIF;s;s8300 (E323);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s8301 (E324);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s8308 (E325);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s840 (E327);ambos;1;;sim;catalogo.v0.1.json
+CIF;s;s898 (E328);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d (E3);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E5,E37,E68,E113,E210,E251,E303,E354,E390)
+CIF;d;d1 (E5);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E7:E16,E21:E27,E32:E34)
+CIF;d;d110 (E7);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d115 (E8);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d120 (E9);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d129 (E10);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d130 (E11);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d135 (E12);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d140 (E13);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d145 (E14);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d150 (E15);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d155 (E16);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E17:E19)
+CIF;d;d1550 (E17);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d1551 (E18);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d1558 (E19);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d159 (E21);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d160 (E22);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d163 (E23);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d166 (E24);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d170 (E25);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d172 (E26);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d175 (E27);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E28:E30)
+CIF;d;d1750 (E28);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d1751 (E29);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d1758 (E30);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d177 (E32);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d179 (E33);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d198 (E34);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d2 (E37);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E39,E46,E53,E59,E65)
+CIF;d;d210 (E39);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E40:E44)
+CIF;d;d2100 (E40);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d2101 (E41);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d2102 (E42);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d2103 (E43);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d2108 (E44);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d220 (E46);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E47:E51)
+CIF;d;d2200 (E47);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d2201 (E48);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d2202 (E49);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d2203 (E50);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d2208 (E51);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d230 (E53);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E54:E57)
+CIF;d;d2301 (E54);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d2302 (E55);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d2303 (E56);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d2308 (E57);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d240 (E59);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E60:E63)
+CIF;d;d2400 (E60);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d2401 (E61);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d2402 (E62);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d2408 (E63);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d298 (E65);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d3 (E68);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E70,E71,E77,E78,E80,E81,E87,E88,E90,E89,E79,E98,E103,E110)
+CIF;d;d310 (E70);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d315 (E71);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E72:E75)
+CIF;d;d3150 (E72);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d3151 (E73);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d3152 (E74);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d3158 (E75);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d320 (E77);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d325 (E78);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d330 (E80);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d335 (E81);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E82:E85)
+CIF;d;d3350 (E82);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d3351 (E83);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d3352 (E84);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d3358 (E85);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d340 (E87);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d345 (E88);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d350 (E90);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E91:E96)
+CIF;d;d3500 (E91);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d3501 (E92);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d3502 (E93);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d3503 (E94);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d3504 (E95);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d3508 (E96);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d349 (E89);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d329 (E79);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d335 (E98);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E99:E101)
+CIF;d;d3550 (E99);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d3551 (E100);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d3558 (E101);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d360 (E103);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E104:E107)
+CIF;d;d3600 (E104);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d3601 (E105);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d3602 (E106);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d3608 (E107);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d398 (E110);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4 (E113);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E115,E125,E133,E138,E139,E148,E151,E153,E160,E169,E170,E177,E183,E185,E191,E192,E193,E199,E205,E206,E207)
+CIF;d;d410 (E115);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E116:E123)
+CIF;d;d4100 (E116);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4101 (E117);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4102 (E118);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4103 (E119);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4104 (E120);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4105 (E121);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4106 (E122);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4108 (E123);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d415 (E125);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E126:E131)
+CIF;d;d4150 (E126);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4151 (E127);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4152 (E128);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4153 (E129);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4154 (E130);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4158 (E131);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d420 (E133);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E134:E136)
+CIF;d;d4200 (E134);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4201 (E135);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4208 (E136);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d429 (E138);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d430 (E139);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E140:E146)
+CIF;d;d4300 (E140);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4301 (E141);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4302 (E142);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4303 (E143);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4304 (E144);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4305 (E145);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4308 (E146);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d435 (E148);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E149:E151)
+CIF;d;d4350 (E149);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4351 (E150);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4358 (E151);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d440 (E153);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E154:E158)
+CIF;d;d4400 (E154);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4401 (E155);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4402 (E156);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4403 (E157);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4408 (E158);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d445 (E160);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E161:E167)
+CIF;d;d4450 (E161);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4451 (E162);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4452 (E163);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4453 (E164);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4454 (E165);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4455 (E166);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4458 (E167);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d449 (E169);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d450 (E170);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E171:E175)
+CIF;d;d4500 (E171);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4501 (E172);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4502 (E173);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4503 (E174);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4508 (E175);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d455 (E177);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E178:E183)
+CIF;d;d4550 (E178);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4551 (E179);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4552 (E180);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4553 (E181);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4554 (E182);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4558 (E183);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d460 (E185);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E186:E189)
+CIF;d;d4600 (E186);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4601 (E187);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4602 (E188);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4608 (E189);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d465 (E191);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d469 (E192);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d470 (E193);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E194:E197)
+CIF;d;d4700 (E194);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4701 (E195);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4702 (E196);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4708 (E197);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d475 (E199);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E200:E203)
+CIF;d;d4750 (E200);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4751 (E201);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4752 (E202);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d4758 (E203);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d480 (E205);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d489 (E206);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d498 (E207);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d5 (E210);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E212,E218,E226,E232,E240:E242,E248)
+CIF;d;d510 (E212);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E213:E216)
+CIF;d;d5100 (E213);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d5101 (E214);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d5102 (E215);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d5108 (E216);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d520 (E218);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E219:E224)
+CIF;d;d5200 (E219);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d5201 (E220);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d5202 (E221);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d5203 (E222);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d5204 (E223);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d5208 (E224);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d530 (E226);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E227:E230)
+CIF;d;d5300 (E227);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d5301 (E228);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d5302 (E229);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d5308 (E230);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d540 (E232);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E233:E238)
+CIF;d;d5400 (E233);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d5401 (E234);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d5402 (E235);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d5403 (E236);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d5404 (E237);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d5408 (E238);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d550 (E240);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d560 (E241);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d570 (E242);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E243:E246)
+CIF;d;d5700 (E243);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d5701 (E244);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d5702 (E245);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d5708 (E246);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d598 (E248);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d6 (E251);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E253,E259,E264:E265,E270,E279:E280,E290,E299,E300)
+CIF;d;d610 (E253);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E254:E257)
+CIF;d;d6100 (E254);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d6101 (E255);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d6102 (E256);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d6108 (E257);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d620 (E259);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E260:E262)
+CIF;d;d6200 (E260);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d6201 (E261);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d6208 (E262);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d629 (E264);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d630 (E265);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E266:E268)
+CIF;d;d6300 (E266);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d6301 (E267);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d6308 (E268);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d640 (E270);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E271:E277)
+CIF;d;d6400 (E271);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d6401 (E272);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d6402 (E273);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d6403 (E274);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d6404 (E275);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d6405 (E276);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d6408 (E277);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d649 (E279);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d650 (E280);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E281:E288)
+CIF;d;d6500 (E281);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d6501 (E282);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d6502 (E283);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d6503 (E284);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d6504 (E285);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d6505 (E286);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d6506 (E287);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d6508 (E288);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d660 (E290);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E291:E297)
+CIF;d;d6600 (E291);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d6601 (E292);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d6602 (E293);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d6603 (E294);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d6604 (E295);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d6605 (E296);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d6608 (E297);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d669 (E299);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d698 (E300);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d7 (E303);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E305,E314,E322:E324,E330,E338,E345,E350,E351)
+CIF;d;d710 (E305);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E306:E312)
+CIF;d;d7100 (E306);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d7101 (E307);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d7102 (E308);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d7103 (E309);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d7104 (E310);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d7105 (E311);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d7108 (E312);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d720 (E314);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E315:E320)
+CIF;d;d7200 (E315);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d7201 (E316);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d7202 (E317);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d7203 (E318);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d7204 (E319);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d7208 (E320);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d729 (E322);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d730 (E323);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d740 (E324);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E325:E328)
+CIF;d;d7400 (E325);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d7401 (E326);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d7402 (E327);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d7408 (E328);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d750 (E330);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E331:E336)
+CIF;d;d7500 (E331);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d7501 (E332);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d7502 (E333);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d7503 (E334);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d7504 (E335);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d7508 (E336);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d760 (E338);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E339:E343)
+CIF;d;d7600 (E339);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d7601 (E340);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d7602 (E341);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d7603 (E342);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d7608 (E343);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d770 (E345);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E346:E351)
+CIF;d;d7700 (E346);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d7701 (E347);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d7702 (E348);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d7708 (E349);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d779 (E350);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d798 (E351);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d8 (E354);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E356:E361,E363:E364,E370,E376:E377,E379:E381,E386:E387)
+CIF;d;d810 (E356);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d815 (E357);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d820 (E358);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d825 (E359);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d830 (E360);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d839 (E361);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d840 (E363);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d845 (E364);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E365:E368)
+CIF;d;d8450 (E365);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d8451 (E366);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d8452 (E367);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d8458 (E368);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d850 (E370);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E371:E374)
+CIF;d;d8500 (E371);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d8501 (E372);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d8502 (E373);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d8508 (E374);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d855 (E376);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d859 (E377);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d860 (E379);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d865 (E380);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d870 (E381);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E382:E384)
+CIF;d;d8700 (E382);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d8701 (E383);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d8708 (E384);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d879 (E386);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d898 (E387);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d9 (E390);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E392,E398,E407,E412:E415)
+CIF;d;d910 (E392);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E393:E396)
+CIF;d;d9100 (E393);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d9101 (E394);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d9102 (E395);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d9108 (E396);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d920 (E398);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E399:E405)
+CIF;d;d9200 (E399);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d9201 (E400);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d9202 (E401);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d9203 (E402);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d9204 (E403);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d9205 (E404);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d9208 (E405);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d930 (E407);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E408:E410)
+CIF;d;d9300 (E408);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d9301 (E409);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d9308 (E410);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d940 (E412);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d950 (E413);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d998 (E414);ambos;1;;sim;catalogo.v0.1.json
+CIF;d;d999 (E415);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e (E3);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E5,E74,E126,E142,E159)
+CIF;e;e1 (E5);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E7,E12,E17,E22,E27,E32,E37,E42,E47,E53,E59,E65,E71)
+CIF;e;e110 (E7);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E8:E10)
+CIF;e;e1100 (E8);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e1101 (E9);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e1108 (E10);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e115 (E12);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E13:E15)
+CIF;e;e1150 (E13);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e1151 (E14);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e1158 (E15);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e120 (E17);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E18:E20)
+CIF;e;e1200 (E18);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e1201 (E19);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e1208 (E20);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e125 (E22);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E23:E25)
+CIF;e;e1250 (E23);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e1251 (E24);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e1258 (E25);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e130 (E27);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E28:E30)
+CIF;e;e1300 (E28);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e1301 (E29);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e1308 (E30);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e135 (E32);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E33:E35)
+CIF;e;e1350 (E33);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e1351 (E34);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e1358 (E35);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e140 (E37);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E38:E40)
+CIF;e;e1400 (E38);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e1401 (E39);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e1408 (E40);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e145 (E42);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E43:E45)
+CIF;e;e1450 (E43);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e1451 (E44);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e1458 (E45);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e150 (E47);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E48:E51)
+CIF;e;e1500 (E48);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e1501 (E49);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e1502 (E50);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e1508 (E51);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e155 (E53);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E54:E57)
+CIF;e;e1550 (E54);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e1551 (E55);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e1552 (E56);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e1558 (E57);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e160 (E59);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E60:E64)
+CIF;e;e1600 (E60);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e1601 (E61);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e1602 (E62);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e1603 (E63);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e1608 (E64);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e165 (E65);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E66:E69)
+CIF;e;e1650 (E66);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e1651 (E67);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e1652 (E68);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e1658 (E69);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e198 (E71);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e2 (E74);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E76,E81,E86,E91,E100,E101,E102,E107,E112,E117,E118,E12)
+CIF;e;e210 (E76);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E77:E79)
+CIF;e;e2100 (E77);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e2101 (E78);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e2108 (E79);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e215 (E81);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E82:E84)
+CIF;e;e2150 (E82);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e2151 (E83);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e2158 (E84);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e220 (E86);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E87:E89)
+CIF;e;e2200 (E87);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e2201 (E88);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e2208 (E89);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e225 (E91);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E92:E98)
+CIF;e;e2250 (E92);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e2251 (E93);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e2252 (E94);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e2253 (E95);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e2254 (E96);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e2255 (E97);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e2258 (E98);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e230 (E100);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e235 (E101);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e240 (E102);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E103:E106)
+CIF;e;e2400 (E103);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e2401 (E104);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e2408 (E105);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e2409 (E106);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e245 (E107);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E108:E111)
+CIF;e;e2450 (E108);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e2451 (E109);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e2458 (E110);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e2459 (E111);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e250 (E112);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E113:E115)
+CIF;e;e2500 (E113);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e2501 (E114);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e2508 (E115);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e255 (E117);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e260 (E118);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E119:E121)
+CIF;e;e2600 (E119);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e2601 (E120);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e2608 (E121);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e3 (E126);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E128:E139)
+CIF;e;e310 (E128);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e315 (E129);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e320 (E130);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e325 (E131);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e330 (E132);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e335 (E133);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e340 (E134);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e345 (E135);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e350 (E136);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e355 (E137);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e360 (E138);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e398 (E139);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e4 (E142);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E144:E156)
+CIF;e;e410 (E144);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e415 (E145);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e420 (E146);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e425 (E147);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e430 (E148);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e435 (E149);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e440 (E150);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e445 (E151);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e450 (E152);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e455 (E153);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e460 (E154);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e465 (E155);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e498 (E156);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5 (E159);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E161,E167,E174,E180,E185,E191,E197,E203,E209,E215,E221,E227,E233,E239,E245,E251,E257,E263,E269:E269)
+CIF;e;e510 (E161);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E162:E165)
+CIF;e;e5100 (E162);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5101 (E163);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5102 (E164);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5108 (E165);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e515 (E167);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E168:E172)
+CIF;e;e5150 (E168);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5151 (E169);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5151 (E170);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5152 (E171);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5158 (E172);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e520 (E174);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E175:E178)
+CIF;e;e5200 (E175);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5201 (E176);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5202 (E177);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5208 (E178);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e525 (E180);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E181:E183)
+CIF;e;e5250 (E181);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5251 (E182);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5258 (E183);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e530 (E185);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E186:E189)
+CIF;e;e5300 (E186);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5301 (E187);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5302 (E188);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5308 (E189);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e535 (E191);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E192:E195)
+CIF;e;e5350 (E192);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5351 (E193);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5352 (E194);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5358 (E195);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e540 (E197);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E198:E201)
+CIF;e;e5400 (E198);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5401 (E199);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5402 (E200);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5408 (E201);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e545 (E203);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E204:E207)
+CIF;e;e5450 (E204);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5451 (E205);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5452 (E206);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5458 (E207);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e550 (E209);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E210:E213)
+CIF;e;e5500 (E210);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5501 (E211);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5502 (E212);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5508 (E213);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e555 (E215);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E216:E219)
+CIF;e;e5550 (E216);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5551 (E217);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5552 (E218);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5558 (E219);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e560 (E221);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E222:E225)
+CIF;e;e5600 (E222);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5601 (E223);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5602 (E224);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5608 (E225);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e565 (E227);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E228:E231)
+CIF;e;e5650 (E228);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5651 (E229);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5652 (E230);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5658 (E231);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e570 (E233);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E234:E237)
+CIF;e;e5700 (E234);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5701 (E235);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5702 (E236);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5708 (E237);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e575 (E239);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E240:E243)
+CIF;e;e5750 (E240);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5751 (E241);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5752 (E242);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5758 (E243);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e580 (E245);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E246:E249)
+CIF;e;e5800 (E246);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5801 (E247);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5802 (E248);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5808 (E249);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e585 (E251);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E252:E255)
+CIF;e;e5850 (E252);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5851 (E253);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5852 (E254);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5858 (E255);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e590 (E257);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E258:E261)
+CIF;e;e5900 (E258);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5901 (E259);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5902 (E260);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5908 (E261);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e595 (E263);ambos;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E264:E267)
+CIF;e;e5950 (E264);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5951 (E265);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5952 (E266);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e5958 (E267);ambos;1;;sim;catalogo.v0.1.json
+CIF;e;e598 (E269);ambos;1;;sim;catalogo.v0.1.json
+CIF;b;b (E4);Feminino;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E6,E137,E224,E246,E315,E384,E430,E511)
+CIF;b;b6 (E384);Feminino;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E391,E386,E397:E398,E400,E407,E413,E420,E426:E427)
+CIF;b;b650 (E407);Feminino;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E408:E411)
+CIF;b;b6500 (E408);Feminino;1;;sim;catalogo.v0.1.json
+CIF;b;b6501 (E409);Feminino;1;;sim;catalogo.v0.1.json
+CIF;b;b6502 (E410);Feminino;1;;sim;catalogo.v0.1.json
+CIF;b;b6508 (E411);Feminino;1;;sim;catalogo.v0.1.json
+CIF;b;b660 (E413);Feminino;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E414:E418)
+CIF;b;b6600 (E414);Feminino;1;;sim;catalogo.v0.1.json
+CIF;b;b6601 (E415);Feminino;1;;sim;catalogo.v0.1.json
+CIF;b;b6602 (E416);Feminino;1;;sim;catalogo.v0.1.json
+CIF;b;b6603 (E417);Feminino;1;;sim;catalogo.v0.1.json
+CIF;b;b6608 (E418);Feminino;1;;sim;catalogo.v0.1.json
+CIF;b;b670 (E420);Feminino;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E421:E424)
+CIF;b;b6700 (E421);Feminino;1;;sim;catalogo.v0.1.json
+CIF;b;b6701 (E422);Feminino;1;;sim;catalogo.v0.1.json
+CIF;b;b6702 (E423);Feminino;1;;sim;catalogo.v0.1.json
+CIF;b;b6708 (E424);Feminino;1;;sim;catalogo.v0.1.json
+CIF;s;s (E3);Feminino;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E5,E44,E80,E112,E150,E173,E209,E306)
+CIF;s;s6 (E173);Feminino;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E175,E182:E183,E206)
+CIF;s;s630 (E183);Feminino;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E184,E185,E191:E192,E204)
+CIF;s;s6300 (E184);Feminino;1;;sim;catalogo.v0.1.json
+CIF;s;s6301 (E185);Feminino;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E186:E189)
+CIF;s;s63010 (E186);Feminino;1;;sim;catalogo.v0.1.json
+CIF;s;s63011 (E187);Feminino;1;;sim;catalogo.v0.1.json
+CIF;s;s63012 (E188);Feminino;1;;sim;catalogo.v0.1.json
+CIF;s;s63018 (E189);Feminino;1;;sim;catalogo.v0.1.json
+CIF;s;s6302 (E191);Feminino;1;;sim;catalogo.v0.1.json
+CIF;s;s6303 (E192);Feminino;2;servidor;sim;catalogo.v0.1.json: AVERAGE(E193:E196)
+CIF;s;s63030 (E193);Feminino;1;;sim;catalogo.v0.1.json
+CIF;s;s63031 (E194);Feminino;1;;sim;catalogo.v0.1.json
+CIF;s;s63032 (E195);Feminino;1;;sim;catalogo.v0.1.json
+CIF;s;s63033 (E196);Feminino;1;;sim;catalogo.v0.1.json
+ASIA;motor;força C5 direito;ambos;1;;sim;Backend/schema.sql: 58-59
+ASIA;motor;força C5 esquerdo;ambos;1;;sim;Backend/schema.sql: 58-59
+ASIA;motor;força C6 direito;ambos;1;;sim;Backend/schema.sql: 58-59
+ASIA;motor;força C6 esquerdo;ambos;1;;sim;Backend/schema.sql: 58-59
+ASIA;motor;força C7 direito;ambos;1;;sim;Backend/schema.sql: 58-59
+ASIA;motor;força C7 esquerdo;ambos;1;;sim;Backend/schema.sql: 58-59
+ASIA;motor;força C8 direito;ambos;1;;sim;Backend/schema.sql: 58-59
+ASIA;motor;força C8 esquerdo;ambos;1;;sim;Backend/schema.sql: 58-59
+ASIA;motor;força T1 direito;ambos;1;;sim;Backend/schema.sql: 58-59
+ASIA;motor;força T1 esquerdo;ambos;1;;sim;Backend/schema.sql: 58-59
+ASIA;motor;força L2 direito;ambos;1;;sim;Backend/schema.sql: 58-59
+ASIA;motor;força L2 esquerdo;ambos;1;;sim;Backend/schema.sql: 58-59
+ASIA;motor;força L3 direito;ambos;1;;sim;Backend/schema.sql: 58-59
+ASIA;motor;força L3 esquerdo;ambos;1;;sim;Backend/schema.sql: 58-59
+ASIA;motor;força L4 direito;ambos;1;;sim;Backend/schema.sql: 58-59
+ASIA;motor;força L4 esquerdo;ambos;1;;sim;Backend/schema.sql: 58-59
+ASIA;motor;força L5 direito;ambos;1;;sim;Backend/schema.sql: 58-59
+ASIA;motor;força L5 esquerdo;ambos;1;;sim;Backend/schema.sql: 58-59
+ASIA;motor;força S1 direito;ambos;1;;sim;Backend/schema.sql: 58-59
+ASIA;motor;força S1 esquerdo;ambos;1;;sim;Backend/schema.sql: 58-59
+ASIA;sensorial;tato leve C2 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve C2 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada C2 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada C2 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve C3 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve C3 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada C3 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada C3 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve C4 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve C4 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada C4 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada C4 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve C5 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve C5 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada C5 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada C5 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve C6 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve C6 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada C6 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada C6 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve C7 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve C7 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada C7 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada C7 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve C8 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve C8 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada C8 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada C8 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve T1 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve T1 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada T1 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada T1 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve T2 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve T2 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada T2 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada T2 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve T3 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve T3 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada T3 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada T3 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve T4 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve T4 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada T4 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada T4 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve T5 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve T5 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada T5 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada T5 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve T6 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve T6 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada T6 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada T6 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve T7 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve T7 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada T7 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada T7 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve T8 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve T8 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada T8 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada T8 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve T9 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve T9 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada T9 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada T9 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve T10 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve T10 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada T10 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada T10 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve T11 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve T11 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada T11 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada T11 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve T12 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve T12 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada T12 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada T12 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve L1 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve L1 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada L1 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada L1 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve L2 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve L2 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada L2 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada L2 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve L3 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve L3 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada L3 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada L3 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve L4 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve L4 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada L4 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada L4 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve L5 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve L5 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada L5 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada L5 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve S1 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve S1 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada S1 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada S1 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve S2 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve S2 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada S2 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada S2 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve S3 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve S3 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada S3 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada S3 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve S4_5 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;tato leve S4_5 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada S4_5 direito;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sensorial;picada S4_5 esquerdo;ambos;1;;sim;Backend/schema.sql: 66-69
+ASIA;sacral;contração anal voluntária;ambos;1;;sim;Backend/schema.sql: 29
+ASIA;sacral;pressão anal profunda;ambos;1;;sim;Backend/schema.sql: 30
+ASIA;motor;músculo não chave mais baixo direito;ambos;1;;sim;Backend/schema.sql: 31-32
+ASIA;motor;músculo não chave mais baixo esquerdo;ambos;1;;sim;Backend/schema.sql: 31-32
+ASIA;classificação;nível sensorial direito;ambos;2;servidor;sim;Backend/asiaCalculator.py: 22-50
+ASIA;classificação;nível sensorial esquerdo;ambos;2;servidor;sim;Backend/asiaCalculator.py: 22-50
+ASIA;classificação;nível motor direito;ambos;2;servidor;sim;Backend/asiaCalculator.py: 22-50
+ASIA;classificação;nível motor esquerdo;ambos;2;servidor;sim;Backend/asiaCalculator.py: 22-50
+ASIA;classificação;nível neurológico da lesão;ambos;2;servidor;sim;Backend/asiaCalculator.py: 22-50
+ASIA;classificação;completude;ambos;2;servidor;sim;Backend/asiaCalculator.py: 22-50
+ASIA;classificação;grau AIS;ambos;2;servidor;sim;Backend/asiaCalculator.py: 22-50
+ASIA;classificação;ZPP sensorial direito;ambos;2;servidor;sim;Backend/asiaCalculator.py: 22-50
+ASIA;classificação;ZPP sensorial esquerdo;ambos;2;servidor;sim;Backend/asiaCalculator.py: 22-50
+ASIA;classificação;ZPP motora direito;ambos;2;servidor;sim;Backend/asiaCalculator.py: 22-50
+ASIA;classificação;ZPP motora esquerdo;ambos;2;servidor;sim;Backend/asiaCalculator.py: 22-50
+ASIA;totais;total UEMS direito;ambos;2;servidor;sim;Backend/asiaCalculator.py: 22-50
+ASIA;totais;total UEMS esquerdo;ambos;2;servidor;sim;Backend/asiaCalculator.py: 22-50
+ASIA;totais;total LEMS direito;ambos;2;servidor;sim;Backend/asiaCalculator.py: 22-50
+ASIA;totais;total LEMS esquerdo;ambos;2;servidor;sim;Backend/asiaCalculator.py: 22-50
+ASIA;totais;total tato leve direito;ambos;2;servidor;sim;Backend/asiaCalculator.py: 22-50
+ASIA;totais;total tato leve esquerdo;ambos;2;servidor;sim;Backend/asiaCalculator.py: 22-50
+ASIA;totais;total picada direito;ambos;2;servidor;sim;Backend/asiaCalculator.py: 22-50
+ASIA;totais;total picada esquerdo;ambos;2;servidor;sim;Backend/asiaCalculator.py: 22-50
+ASIA;totais;total UEMS (direito + esquerdo);ambos;2;tela;não;lib/Core/Models/resultsModels.dart: 75-80
+ASIA;totais;total LEMS (direito + esquerdo);ambos;2;tela;não;lib/Core/Models/resultsModels.dart: 75-80
+ASIA;totais;total tato leve (direito + esquerdo);ambos;2;tela;não;lib/Core/Models/resultsModels.dart: 75-80
+ASIA;totais;total picada (direito + esquerdo);ambos;2;tela;não;lib/Core/Models/resultsModels.dart: 75-80
+GAS;meta 1;importância;ambos;1;;sim;Backend/schema.sql: 93
+GAS;meta 1;dificuldade;ambos;1;;sim;Backend/schema.sql: 94
+GAS;meta 1;linha de base;ambos;1;;sim;Backend/schema.sql: 95
+GAS;meta 1;alcançado;ambos;1;;sim;Backend/schema.sql: 96
+GAS;meta 1;ponderação 1 (importância x dificuldade);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 1;ponderação 2 (quadrado da 1);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 1;ponderação 3 (base ponderada);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 1;ponderação 4 (alcançado ponderado);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 2;importância;ambos;1;;sim;Backend/schema.sql: 93
+GAS;meta 2;dificuldade;ambos;1;;sim;Backend/schema.sql: 94
+GAS;meta 2;linha de base;ambos;1;;sim;Backend/schema.sql: 95
+GAS;meta 2;alcançado;ambos;1;;sim;Backend/schema.sql: 96
+GAS;meta 2;ponderação 1 (importância x dificuldade);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 2;ponderação 2 (quadrado da 1);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 2;ponderação 3 (base ponderada);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 2;ponderação 4 (alcançado ponderado);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 3;importância;ambos;1;;sim;Backend/schema.sql: 93
+GAS;meta 3;dificuldade;ambos;1;;sim;Backend/schema.sql: 94
+GAS;meta 3;linha de base;ambos;1;;sim;Backend/schema.sql: 95
+GAS;meta 3;alcançado;ambos;1;;sim;Backend/schema.sql: 96
+GAS;meta 3;ponderação 1 (importância x dificuldade);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 3;ponderação 2 (quadrado da 1);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 3;ponderação 3 (base ponderada);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 3;ponderação 4 (alcançado ponderado);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 4;importância;ambos;1;;sim;Backend/schema.sql: 93
+GAS;meta 4;dificuldade;ambos;1;;sim;Backend/schema.sql: 94
+GAS;meta 4;linha de base;ambos;1;;sim;Backend/schema.sql: 95
+GAS;meta 4;alcançado;ambos;1;;sim;Backend/schema.sql: 96
+GAS;meta 4;ponderação 1 (importância x dificuldade);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 4;ponderação 2 (quadrado da 1);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 4;ponderação 3 (base ponderada);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 4;ponderação 4 (alcançado ponderado);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 5;importância;ambos;1;;sim;Backend/schema.sql: 93
+GAS;meta 5;dificuldade;ambos;1;;sim;Backend/schema.sql: 94
+GAS;meta 5;linha de base;ambos;1;;sim;Backend/schema.sql: 95
+GAS;meta 5;alcançado;ambos;1;;sim;Backend/schema.sql: 96
+GAS;meta 5;ponderação 1 (importância x dificuldade);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 5;ponderação 2 (quadrado da 1);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 5;ponderação 3 (base ponderada);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 5;ponderação 4 (alcançado ponderado);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 6;importância;ambos;1;;sim;Backend/schema.sql: 93
+GAS;meta 6;dificuldade;ambos;1;;sim;Backend/schema.sql: 94
+GAS;meta 6;linha de base;ambos;1;;sim;Backend/schema.sql: 95
+GAS;meta 6;alcançado;ambos;1;;sim;Backend/schema.sql: 96
+GAS;meta 6;ponderação 1 (importância x dificuldade);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 6;ponderação 2 (quadrado da 1);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 6;ponderação 3 (base ponderada);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 6;ponderação 4 (alcançado ponderado);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 7;importância;ambos;1;;sim;Backend/schema.sql: 93
+GAS;meta 7;dificuldade;ambos;1;;sim;Backend/schema.sql: 94
+GAS;meta 7;linha de base;ambos;1;;sim;Backend/schema.sql: 95
+GAS;meta 7;alcançado;ambos;1;;sim;Backend/schema.sql: 96
+GAS;meta 7;ponderação 1 (importância x dificuldade);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 7;ponderação 2 (quadrado da 1);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 7;ponderação 3 (base ponderada);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 7;ponderação 4 (alcançado ponderado);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 8;importância;ambos;1;;sim;Backend/schema.sql: 93
+GAS;meta 8;dificuldade;ambos;1;;sim;Backend/schema.sql: 94
+GAS;meta 8;linha de base;ambos;1;;sim;Backend/schema.sql: 95
+GAS;meta 8;alcançado;ambos;1;;sim;Backend/schema.sql: 96
+GAS;meta 8;ponderação 1 (importância x dificuldade);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 8;ponderação 2 (quadrado da 1);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 8;ponderação 3 (base ponderada);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 8;ponderação 4 (alcançado ponderado);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 9;importância;ambos;1;;sim;Backend/schema.sql: 93
+GAS;meta 9;dificuldade;ambos;1;;sim;Backend/schema.sql: 94
+GAS;meta 9;linha de base;ambos;1;;sim;Backend/schema.sql: 95
+GAS;meta 9;alcançado;ambos;1;;sim;Backend/schema.sql: 96
+GAS;meta 9;ponderação 1 (importância x dificuldade);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 9;ponderação 2 (quadrado da 1);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 9;ponderação 3 (base ponderada);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 9;ponderação 4 (alcançado ponderado);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 10;importância;ambos;1;;sim;Backend/schema.sql: 93
+GAS;meta 10;dificuldade;ambos;1;;sim;Backend/schema.sql: 94
+GAS;meta 10;linha de base;ambos;1;;sim;Backend/schema.sql: 95
+GAS;meta 10;alcançado;ambos;1;;sim;Backend/schema.sql: 96
+GAS;meta 10;ponderação 1 (importância x dificuldade);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 10;ponderação 2 (quadrado da 1);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 10;ponderação 3 (base ponderada);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 10;ponderação 4 (alcançado ponderado);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 11;importância;ambos;1;;sim;Backend/schema.sql: 93
+GAS;meta 11;dificuldade;ambos;1;;sim;Backend/schema.sql: 94
+GAS;meta 11;linha de base;ambos;1;;sim;Backend/schema.sql: 95
+GAS;meta 11;alcançado;ambos;1;;sim;Backend/schema.sql: 96
+GAS;meta 11;ponderação 1 (importância x dificuldade);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 11;ponderação 2 (quadrado da 1);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 11;ponderação 3 (base ponderada);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 11;ponderação 4 (alcançado ponderado);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 12;importância;ambos;1;;sim;Backend/schema.sql: 93
+GAS;meta 12;dificuldade;ambos;1;;sim;Backend/schema.sql: 94
+GAS;meta 12;linha de base;ambos;1;;sim;Backend/schema.sql: 95
+GAS;meta 12;alcançado;ambos;1;;sim;Backend/schema.sql: 96
+GAS;meta 12;ponderação 1 (importância x dificuldade);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 12;ponderação 2 (quadrado da 1);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 12;ponderação 3 (base ponderada);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 12;ponderação 4 (alcançado ponderado);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 13;importância;ambos;1;;sim;Backend/schema.sql: 93
+GAS;meta 13;dificuldade;ambos;1;;sim;Backend/schema.sql: 94
+GAS;meta 13;linha de base;ambos;1;;sim;Backend/schema.sql: 95
+GAS;meta 13;alcançado;ambos;1;;sim;Backend/schema.sql: 96
+GAS;meta 13;ponderação 1 (importância x dificuldade);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 13;ponderação 2 (quadrado da 1);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 13;ponderação 3 (base ponderada);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;meta 13;ponderação 4 (alcançado ponderado);ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;avaliação;somatório p1;ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;avaliação;somatório p2;ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;avaliação;somatório p3;ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;avaliação;somatório p4;ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;avaliação;escore T inicial;ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;avaliação;escore T alcançado;ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+GAS;avaliação;evolução;ambos;2;tela e servidor;sim;"Backend/gasCalculator.py: 10-46; lib/Presentation/Screens/gasForm.dart: 59-90"
+MEEM;orientação temporal;item 1;ambos;1;;sim;Backend/schema.sql: 149
+MEEM;orientação temporal;item 2;ambos;1;;sim;Backend/schema.sql: 150
+MEEM;orientação temporal;item 3;ambos;1;;sim;Backend/schema.sql: 151
+MEEM;orientação temporal;item 4;ambos;1;;sim;Backend/schema.sql: 152
+MEEM;orientação temporal;item 5;ambos;1;;sim;Backend/schema.sql: 153
+MEEM;orientação espacial;item 6;ambos;1;;sim;Backend/schema.sql: 154
+MEEM;orientação espacial;item 7;ambos;1;;sim;Backend/schema.sql: 155
+MEEM;orientação espacial;item 8;ambos;1;;sim;Backend/schema.sql: 156
+MEEM;orientação espacial;item 9;ambos;1;;sim;Backend/schema.sql: 157
+MEEM;orientação espacial;item 10;ambos;1;;sim;Backend/schema.sql: 158
+MEEM;memória imediata;item 11;ambos;1;;sim;Backend/schema.sql: 159
+MEEM;memória imediata;item 12;ambos;1;;sim;Backend/schema.sql: 160
+MEEM;memória imediata;item 13;ambos;1;;sim;Backend/schema.sql: 161
+MEEM;atenção e cálculo;item 14;ambos;1;;sim;Backend/schema.sql: 162
+MEEM;atenção e cálculo;item 15;ambos;1;;sim;Backend/schema.sql: 163
+MEEM;atenção e cálculo;item 16;ambos;1;;sim;Backend/schema.sql: 164
+MEEM;atenção e cálculo;item 17;ambos;1;;sim;Backend/schema.sql: 165
+MEEM;atenção e cálculo;item 18;ambos;1;;sim;Backend/schema.sql: 166
+MEEM;memória evocativa;item 19;ambos;1;;sim;Backend/schema.sql: 167
+MEEM;memória evocativa;item 20;ambos;1;;sim;Backend/schema.sql: 168
+MEEM;memória evocativa;item 21;ambos;1;;sim;Backend/schema.sql: 169
+MEEM;linguagem;item 22;ambos;1;;sim;Backend/schema.sql: 170
+MEEM;linguagem;item 23;ambos;1;;sim;Backend/schema.sql: 171
+MEEM;linguagem;item 24;ambos;1;;sim;Backend/schema.sql: 172
+MEEM;linguagem;item 25;ambos;1;;sim;Backend/schema.sql: 173
+MEEM;linguagem;item 26;ambos;1;;sim;Backend/schema.sql: 174
+MEEM;linguagem;item 27;ambos;1;;sim;Backend/schema.sql: 175
+MEEM;linguagem;item 28;ambos;1;;sim;Backend/schema.sql: 176
+MEEM;linguagem;item 29;ambos;1;;sim;Backend/schema.sql: 177
+MEEM;linguagem;item 30;ambos;1;;sim;Backend/schema.sql: 178
+MEEM;dado do cálculo;escolaridade;ambos;1;;sim;Backend/schema.sql: 148
+MEEM;escore;pontuação total;ambos;2;tela e servidor;sim;"lib/Core/Providers/meemFormProvider.dart: 45-70; Backend/main.py: 354-366"
+MEEM;escore;pontuação esperada para a escolaridade;ambos;2;tela;não;lib/Core/Providers/meemFormProvider.dart: 72-88
+Eletrodiagnóstico;Bíceps Braquial;reobase direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Bíceps Braquial;acomodação direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Bíceps Braquial;cronaxia direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Bíceps Braquial;índice de acomodação direito;ambos;2;tela;sim;lib/Core/Providers/eletroFormProvider.dart: 23-39
+Eletrodiagnóstico;Bíceps Braquial;reobase esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Bíceps Braquial;acomodação esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Bíceps Braquial;cronaxia esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Bíceps Braquial;índice de acomodação esquerdo;ambos;2;tela;sim;lib/Core/Providers/eletroFormProvider.dart: 23-39
+Eletrodiagnóstico;Extensores de Punho;reobase direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Extensores de Punho;acomodação direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Extensores de Punho;cronaxia direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Extensores de Punho;índice de acomodação direito;ambos;2;tela;sim;lib/Core/Providers/eletroFormProvider.dart: 23-39
+Eletrodiagnóstico;Extensores de Punho;reobase esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Extensores de Punho;acomodação esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Extensores de Punho;cronaxia esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Extensores de Punho;índice de acomodação esquerdo;ambos;2;tela;sim;lib/Core/Providers/eletroFormProvider.dart: 23-39
+Eletrodiagnóstico;Tríceps Braquial;reobase direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Tríceps Braquial;acomodação direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Tríceps Braquial;cronaxia direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Tríceps Braquial;índice de acomodação direito;ambos;2;tela;sim;lib/Core/Providers/eletroFormProvider.dart: 23-39
+Eletrodiagnóstico;Tríceps Braquial;reobase esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Tríceps Braquial;acomodação esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Tríceps Braquial;cronaxia esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Tríceps Braquial;índice de acomodação esquerdo;ambos;2;tela;sim;lib/Core/Providers/eletroFormProvider.dart: 23-39
+Eletrodiagnóstico;Grande Dorsal;reobase direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Grande Dorsal;acomodação direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Grande Dorsal;cronaxia direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Grande Dorsal;índice de acomodação direito;ambos;2;tela;sim;lib/Core/Providers/eletroFormProvider.dart: 23-39
+Eletrodiagnóstico;Grande Dorsal;reobase esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Grande Dorsal;acomodação esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Grande Dorsal;cronaxia esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Grande Dorsal;índice de acomodação esquerdo;ambos;2;tela;sim;lib/Core/Providers/eletroFormProvider.dart: 23-39
+Eletrodiagnóstico;Deltóide;reobase direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Deltóide;acomodação direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Deltóide;cronaxia direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Deltóide;índice de acomodação direito;ambos;2;tela;sim;lib/Core/Providers/eletroFormProvider.dart: 23-39
+Eletrodiagnóstico;Deltóide;reobase esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Deltóide;acomodação esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Deltóide;cronaxia esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Deltóide;índice de acomodação esquerdo;ambos;2;tela;sim;lib/Core/Providers/eletroFormProvider.dart: 23-39
+Eletrodiagnóstico;Reto Abdominal;reobase direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Reto Abdominal;acomodação direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Reto Abdominal;cronaxia direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Reto Abdominal;índice de acomodação direito;ambos;2;tela;sim;lib/Core/Providers/eletroFormProvider.dart: 23-39
+Eletrodiagnóstico;Reto Abdominal;reobase esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Reto Abdominal;acomodação esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Reto Abdominal;cronaxia esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Reto Abdominal;índice de acomodação esquerdo;ambos;2;tela;sim;lib/Core/Providers/eletroFormProvider.dart: 23-39
+Eletrodiagnóstico;Vasto Medial;reobase direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Vasto Medial;acomodação direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Vasto Medial;cronaxia direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Vasto Medial;índice de acomodação direito;ambos;2;tela;sim;lib/Core/Providers/eletroFormProvider.dart: 23-39
+Eletrodiagnóstico;Vasto Medial;reobase esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Vasto Medial;acomodação esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Vasto Medial;cronaxia esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Vasto Medial;índice de acomodação esquerdo;ambos;2;tela;sim;lib/Core/Providers/eletroFormProvider.dart: 23-39
+Eletrodiagnóstico;Vasto Lateral;reobase direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Vasto Lateral;acomodação direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Vasto Lateral;cronaxia direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Vasto Lateral;índice de acomodação direito;ambos;2;tela;sim;lib/Core/Providers/eletroFormProvider.dart: 23-39
+Eletrodiagnóstico;Vasto Lateral;reobase esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Vasto Lateral;acomodação esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Vasto Lateral;cronaxia esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Vasto Lateral;índice de acomodação esquerdo;ambos;2;tela;sim;lib/Core/Providers/eletroFormProvider.dart: 23-39
+Eletrodiagnóstico;Tibial Anterior;reobase direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Tibial Anterior;acomodação direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Tibial Anterior;cronaxia direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Tibial Anterior;índice de acomodação direito;ambos;2;tela;sim;lib/Core/Providers/eletroFormProvider.dart: 23-39
+Eletrodiagnóstico;Tibial Anterior;reobase esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Tibial Anterior;acomodação esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Tibial Anterior;cronaxia esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Tibial Anterior;índice de acomodação esquerdo;ambos;2;tela;sim;lib/Core/Providers/eletroFormProvider.dart: 23-39
+Eletrodiagnóstico;Tríceps Sural;reobase direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Tríceps Sural;acomodação direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Tríceps Sural;cronaxia direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Tríceps Sural;índice de acomodação direito;ambos;2;tela;sim;lib/Core/Providers/eletroFormProvider.dart: 23-39
+Eletrodiagnóstico;Tríceps Sural;reobase esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Tríceps Sural;acomodação esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Tríceps Sural;cronaxia esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Tríceps Sural;índice de acomodação esquerdo;ambos;2;tela;sim;lib/Core/Providers/eletroFormProvider.dart: 23-39
+Eletrodiagnóstico;Glúteos;reobase direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Glúteos;acomodação direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Glúteos;cronaxia direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Glúteos;índice de acomodação direito;ambos;2;tela;sim;lib/Core/Providers/eletroFormProvider.dart: 23-39
+Eletrodiagnóstico;Glúteos;reobase esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Glúteos;acomodação esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Glúteos;cronaxia esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Glúteos;índice de acomodação esquerdo;ambos;2;tela;sim;lib/Core/Providers/eletroFormProvider.dart: 23-39
+Eletrodiagnóstico;Isquiotibiais;reobase direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Isquiotibiais;acomodação direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Isquiotibiais;cronaxia direito;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Isquiotibiais;índice de acomodação direito;ambos;2;tela;sim;lib/Core/Providers/eletroFormProvider.dart: 23-39
+Eletrodiagnóstico;Isquiotibiais;reobase esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Isquiotibiais;acomodação esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Isquiotibiais;cronaxia esquerdo;ambos;1;;sim;Backend/schema.sql: 131-136
+Eletrodiagnóstico;Isquiotibiais;índice de acomodação esquerdo;ambos;2;tela;sim;lib/Core/Providers/eletroFormProvider.dart: 23-39
+Densitometria;dados do cálculo;peso;ambos;1;;sim;Backend/schema.sql: 186
+Densitometria;dados do cálculo;altura;ambos;1;;sim;Backend/schema.sql: 187
+Densitometria;dados do cálculo;IMC;ambos;2;tela;sim;lib/Presentation/Screens/dex.dart: 225-235
+Densitometria;coluna lombar;BMD L1;ambos;1;;sim;"Backend/schema.sql: 196; lib/Presentation/Screens/dex.dart: 68-101"
+Densitometria;coluna lombar;BMD L2;ambos;1;;sim;"Backend/schema.sql: 196; lib/Presentation/Screens/dex.dart: 68-101"
+Densitometria;coluna lombar;BMD L3;ambos;1;;sim;"Backend/schema.sql: 196; lib/Presentation/Screens/dex.dart: 68-101"
+Densitometria;coluna lombar;BMD L4;ambos;1;;sim;"Backend/schema.sql: 196; lib/Presentation/Screens/dex.dart: 68-101"
+Densitometria;coluna lombar;BMD L1-L2;ambos;1;;sim;"Backend/schema.sql: 196; lib/Presentation/Screens/dex.dart: 68-101"
+Densitometria;coluna lombar;BMD L1-L3;ambos;1;;sim;"Backend/schema.sql: 196; lib/Presentation/Screens/dex.dart: 68-101"
+Densitometria;coluna lombar;BMD L1-L4;ambos;1;;sim;"Backend/schema.sql: 196; lib/Presentation/Screens/dex.dart: 68-101"
+Densitometria;coluna lombar;BMD L2-L3;ambos;1;;sim;"Backend/schema.sql: 196; lib/Presentation/Screens/dex.dart: 68-101"
+Densitometria;coluna lombar;BMD L2-L4;ambos;1;;sim;"Backend/schema.sql: 196; lib/Presentation/Screens/dex.dart: 68-101"
+Densitometria;coluna lombar;BMD L3-L4;ambos;1;;sim;"Backend/schema.sql: 196; lib/Presentation/Screens/dex.dart: 68-101"
+Densitometria;coluna lombar;BMD da tendência;ambos;1;;sim;Backend/schema.sql: 205
+Densitometria;corpo inteiro;BMD Cabeça;ambos;1;;sim;"Backend/schema.sql: 196; lib/Presentation/Screens/dex.dart: 68-101"
+Densitometria;corpo inteiro;BMD Braços;ambos;1;;sim;"Backend/schema.sql: 196; lib/Presentation/Screens/dex.dart: 68-101"
+Densitometria;corpo inteiro;BMD Pernas;ambos;1;;sim;"Backend/schema.sql: 196; lib/Presentation/Screens/dex.dart: 68-101"
+Densitometria;corpo inteiro;BMD Tronco;ambos;1;;sim;"Backend/schema.sql: 196; lib/Presentation/Screens/dex.dart: 68-101"
+Densitometria;corpo inteiro;BMD Costelas;ambos;1;;sim;"Backend/schema.sql: 196; lib/Presentation/Screens/dex.dart: 68-101"
+Densitometria;corpo inteiro;BMD Coluna;ambos;1;;sim;"Backend/schema.sql: 196; lib/Presentation/Screens/dex.dart: 68-101"
+Densitometria;corpo inteiro;BMD Pelve;ambos;1;;sim;"Backend/schema.sql: 196; lib/Presentation/Screens/dex.dart: 68-101"
+Densitometria;corpo inteiro;BMD Total;ambos;1;;sim;"Backend/schema.sql: 196; lib/Presentation/Screens/dex.dart: 68-101"
+Densitometria;corpo inteiro;BMD da tendência;ambos;1;;sim;Backend/schema.sql: 205
+Densitometria;fêmur direito;BMD Colo;ambos;1;;sim;"Backend/schema.sql: 196; lib/Presentation/Screens/dex.dart: 68-101"
+Densitometria;fêmur direito;BMD Total;ambos;1;;sim;"Backend/schema.sql: 196; lib/Presentation/Screens/dex.dart: 68-101"
+Densitometria;fêmur direito;BMD da tendência;ambos;1;;sim;Backend/schema.sql: 205
+Densitometria;fêmur esquerdo;BMD Colo;ambos;1;;sim;"Backend/schema.sql: 196; lib/Presentation/Screens/dex.dart: 68-101"
+Densitometria;fêmur esquerdo;BMD Total;ambos;1;;sim;"Backend/schema.sql: 196; lib/Presentation/Screens/dex.dart: 68-101"
+Densitometria;fêmur esquerdo;BMD da tendência;ambos;1;;sim;Backend/schema.sql: 205
+Densitometria;composição corporal;% de gordura;ambos;1;;sim;Backend/schema.sql: 206
+Densitometria;composição corporal;massa total;ambos;1;;sim;Backend/schema.sql: 207
+Densitometria;composição corporal;massa gorda;ambos;1;;sim;Backend/schema.sql: 208
+Densitometria;composição corporal;massa magra;ambos;1;;sim;Backend/schema.sql: 209

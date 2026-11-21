@@ -1,0 +1,16 @@
+﻿{
+    "name":  "praxis",
+    "version":  "1.0.0",
+    "description":  "Conferência dos casos fictícios da ASIA com o algoritmo do Praxis (ISNCSCI 2019)",
+    "scripts":  {
+                    "test":  "echo \"Error: no test specified\" \u0026\u0026 exit 1"
+                },
+    "keywords":  [
+
+                 ],
+    "author":  "",
+    "license":  "UNLICENSED",
+    "dependencies":  {
+                         "isncsci":  "2.0.6"
+                     }
+}

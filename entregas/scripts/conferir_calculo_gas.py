@@ -1,4 +1,4 @@
-"""Confere a diferença entre o escore da GAS calculado no servidor e na tela.
+"""Confere o escore da GAS calculado no servidor e na tela com a fórmula publicada.
 
 Uso, na raiz do repositório do TCC:
 
@@ -9,6 +9,11 @@ de app/Backend/ (commit fixado no submódulo). A tela é escrita em Dart e não
 roda aqui; a função conta_da_tela() transcreve a conta de
 lib/Presentation/Screens/gasForm.dart (linhas 59-90) e de
 lib/Core/Models/GoalsModels.dart (linhas 46-49). As metas são fictícias.
+
+A fórmula publicada é a de Kiresuk e Sherman (1968, p. 449, equação 6), com a
+correlação entre metas rho = 0,3 sugerida pelos autores e por Turner-Stokes (2009,
+p. 364, conforme a errata publicada com o artigo). O peso de cada meta é
+importância x dificuldade (Turner-Stokes, 2009, p. 365).
 """
 from math import sqrt
 from pathlib import Path
@@ -30,6 +35,17 @@ def conta_da_tela(metas):
         return 0.0, 0.0, 0.0
     base = 50.0 + 10 * p3 / sqrt(p2)
     alcancado = 50.0 + 10 * p4 / sqrt(p2)
+    return base, alcancado, alcancado - base
+
+
+def conta_publicada(metas, rho=0.3):
+    """Escore T de Kiresuk e Sherman (1968): 50 + 10 soma(w x) / raiz((1 - rho) soma(w^2) + rho (soma w)^2)."""
+    w = [m['importance'] * m['difficulty'] for m in metas]
+    den = sqrt((1 - rho) * sum(x ** 2 for x in w) + rho * sum(w) ** 2)
+    if den <= 0:
+        return 0.0, 0.0, 0.0
+    base = 50.0 + 10 * sum(m['baseline'] * x for m, x in zip(metas, w)) / den
+    alcancado = 50.0 + 10 * sum(m['achieved'] * x for m, x in zip(metas, w)) / den
     return base, alcancado, alcancado - base
 
 
@@ -56,9 +72,10 @@ def main():
     sys.stdout.reconfigure(encoding='utf-8')
     for titulo, metas in CASOS:
         print(f'## {titulo}')
-        for nome, conta in (('servidor', conta_do_servidor), ('tela', conta_da_tela)):
+        for nome, conta in (('servidor', conta_do_servidor), ('tela', conta_da_tela),
+                           ('publicada', conta_publicada)):
             base, alcancado, evolucao = conta(metas)
-            print(f'- {nome:8}: escore inicial {base:.1f}; alcançado {alcancado:.1f}; evolução {evolucao:+.1f}')
+            print(f'- {nome:9}: escore inicial {base:.1f}; alcançado {alcancado:.1f}; evolução {evolucao:+.1f}')
 
 
 if __name__ == '__main__':

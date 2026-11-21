@@ -1,4 +1,183 @@
 \chapter{Referencial teórico}
 \label{cap:referencial}
 
-% Conteúdo planejado em ESTRUTURA-TCC1.md.
+% Conteúdo planejado em ESTRUTURA-TCC1.md. Abertura do capítulo a escrever quando todas as seções estiverem prontas.
+
+\section{Reabilitação neurológica e lesão medular}
+\label{sec:ref-reabilitacao}
+
+A lesão medular traumática tem consequências graves para a condição física, a vida social e a vida profissional de
+quem a sofre \cite[p.~1]{ahuja2017traumatic}, e a sua avaliação neurológica segue um padrão comum, o ISNCSCI, que
+foi adotado de forma uniforme pelas equipes clínicas e é a principal medida de desfecho neurológico
+\cite[p.~8]{ahuja2017traumatic}. Entre as consequências secundárias está a osteoporose, que se instala de forma
+rápida e grave depois da lesão e aumenta o risco de fratura, a ponto de até metade das pessoas com lesão medular
+sofrer uma fratura de baixo impacto em algum momento \cite[p.~278]{battaglino2012sci}.
+
+A estimulação elétrica funcional (FES) provoca a contração de músculos paralisados ou enfraquecidos por meio de
+correntes aplicadas aos nervos motores periféricos e coordena essas contrações para produzir uma função
+\cite[p.~327]{peckham2005fes}. Como a técnica depende de neurônios motores inferiores intactos
+\cite[p.~329]{peckham2005fes}, nem toda pessoa responde a ela. Em um estudo do grupo da Universidade de Brasília que
+buscava condições para orientar a indicação do ciclismo assistido por FES, 57\% de 14 voluntários com paraplegia
+responderam à estimulação com contração visível \cite[p.~209,~211]{guimaraes2016fes}. Em uma revisão sistemática que reuniu 92 estudos sobre esse
+exercício, os desfechos mais acompanhados foram a saúde muscular, a potência, a aptidão aeróbica, a saúde óssea, a
+força e os desfechos funcionais e neurológicos \cite[p.~1,~8]{vanderscheer2021fes}, e as mudanças ósseas podem exigir pelo menos um ano de treino \cite[p.~10]{vanderscheer2021fes}. A
+combinação com a realidade virtual, que o v-FES cycling também adota, foi testada por
+\citeonline[p.~1]{duffell2019fes} em um estudo piloto com 11 participantes, no qual o biofeedback de realidade
+virtual estimulou o esforço voluntário durante o ciclismo e o efeito foi medido pelo escore motor do ISNCSCI antes e
+depois do treino. Vários desses desfechos têm formulário próprio no Bem-Te-Vi: a densitometria registra a densidade
+óssea, a ASIA registra o exame neurológico, e o eletrodiagnóstico registra a resposta do músculo à estimulação.
+
+O acompanhamento, portanto, depende de avaliações repetidas. \citeonline[p.~331]{rauch2008icf} descrevem a
+reabilitação como um ciclo iterativo de avaliação, atribuição de intervenções, intervenção e reavaliação, no qual as
+metas são definidas a partir da avaliação inicial. No mesmo sentido, \citeonline[p.~9]{ahuja2017traumatic}
+recomendam que o primeiro exame do ISNCSCI sirva de linha de base para a
+comparação durante todo o seguimento. A comparação entre duas avaliações, no entanto, não indica por si só se a
+diferença tem importância clínica. A diferença mínima clinicamente importante é a menor diferença de escore que o
+paciente percebe como benéfica e que justificaria mudar a conduta \cite[p.~408]{jaeschke1989mcid}, e, mesmo no
+ISNCSCI, ainda falta definir quantos pontos de ganho devem ser considerados clinicamente importantes
+\cite[p.~9]{ahuja2017traumatic}. Por isso, o aplicativo pode calcular a diferença entre avaliações, mas a sua
+interpretação depende de limiares clínicos e fica com a equipe (Seção~\ref{sec:ref-automacao}).
+
+\section{Instrumentos de avaliação}
+\label{sec:ref-instrumentos}
+
+Esta seção resume, para cada formulário do Bem-Te-Vi (Tabela~\ref{tab:formularios}), os dados que o instrumento
+coleta e os valores que a fonte manda calcular a partir deles, porque são essas regras que a
+Seção~\ref{sec:automacao} compara com o código do aplicativo. A Tabela~\ref{tab:instrumentos}, ao final da seção,
+reúne o conjunto.
+
+\textbf{CIF.} A Classificação Internacional de Funcionalidade, Incapacidade e Saúde organiza a descrição da
+funcionalidade em quatro componentes, funções do corpo, estruturas do corpo, atividades e participação e fatores
+ambientais \cite{who2001icf}, identificados pelos prefixos b, s, d e e. Os códigos formam uma hierarquia em que o
+capítulo tem um dígito, o segundo nível tem dois e o terceiro e o quarto níveis acrescentam um dígito cada
+\cite[p.~26,~28]{who2013howtouse}. Cada código registrado recebe um qualificador que vai de 0, nenhum problema, a 4,
+problema completo, ou que assume os valores 8, quando a informação não basta para qualificar, e 9, quando a categoria
+não se aplica \cite[p.~26--27]{who2013howtouse}. O manual da OMS prevê que essas informações sejam agregadas para
+análise estatística \cite[p.~13]{who2013howtouse}, mas não descreve como obter a nota de uma categoria a partir das
+notas das categorias mais detalhadas. No aplicativo, essa regra vem da planilha da equipe
+(Seção~\ref{sec:cif-oms}).
+
+\textbf{ASIA.} Os padrões internacionais para a classificação neurológica da lesão medular (ISNCSCI), chamados de
+ASIA no aplicativo, partem de dados brutos coletados nos dois lados do corpo: o tato leve e a picada, com notas de 0
+a 2, em 28 dermátomos; a força, com notas de 0 a 5, em dez músculos-chave; e, nos segmentos sacrais, a contração
+anal voluntária e a pressão anal profunda. O segmento que não pode ser examinado recebe a marcação NT, de não
+testável \cite[p.~9,~12,~22]{rupp2021isncsci}. A partir desses dados, o padrão deriva, em uma ordem definida, os
+escores, os níveis sensitivo e motor de cada lado, o nível neurológico da lesão, o grau na escala de comprometimento
+da ASIA (AIS) e a zona de preservação parcial (ZPP) \cite[p.~15--22]{rupp2021isncsci}. O grau AIS funciona como uma
+árvore de decisão \cite[p.~18,~22]{rupp2021isncsci}:
+\begin{itemize}
+	\item A, quando não há função sensitiva nem motora em S4-5;
+	\item B, quando há sensibilidade em S4-5, mas nenhuma função motora a mais de três níveis abaixo do nível motor;
+	\item C ou D, quando há contração anal voluntária, ou quando, além da sensibilidade em S4-5, há alguma função
+	motora, de músculo-chave ou não, a mais de três níveis abaixo do nível motor. O grau é C se menos da metade dos
+	músculos-chave abaixo do nível neurológico tiver força de pelo menos 3, e D se metade ou mais tiver;
+	\item E, quando o exame é normal em quem tinha déficit anterior.
+\end{itemize}
+A ZPP indica o segmento mais caudal com alguma função abaixo do nível e só se aplica quando falta a função sacral
+correspondente; se não houver preservação abaixo do nível, registra-se o próprio nível
+\cite[p.~18--19]{rupp2021isncsci}. Quando um NT impede alguma dessas determinações, o resultado é registrado como ND,
+não determinável \cite[p.~3,~19]{rupp2021isncsci}. Mesmo com regras detalhadas, a classificação incorreta continua
+sendo um problema importante, sobretudo em exames com segmentos NT, e \citeonline[p.~453]{schuld2012isncsci}
+mostraram que algoritmos computacionais que tratam esses casos alcançam acurácia equivalente à de especialistas.
+
+\textbf{GAS.} Na escala de alcance de metas (GAS, do inglês \textit{goal attainment scaling}), cada meta definida
+para o paciente é pontuada de $-2$ a $+2$, sendo 0 o resultado esperado, e pode receber um peso igual ao produto da
+importância atribuída pelo paciente pela dificuldade estimada pela equipe \cite[p.~364--365]{turnerstokes2009gas}.
+As pontuações das metas se combinam em um escore T, com média 50 e desvio-padrão 10
+\cite[p.~364]{turnerstokes2009gas}, calculado pela Equação~\ref{eq:gas} \cite[p.~449]{kiresuk1968goal}, que vale
+tanto para a linha de base quanto para o resultado alcançado \cite[p.~365]{turnerstokes2009gas}:
+\begin{equation}
+	\label{eq:gas}
+	T = 50 + \frac{10 \sum w_i x_i}{\sqrt{(1 - \rho) \sum w_i^2 + \rho \left( \sum w_i \right)^2}}
+\end{equation}
+\noindent em que $w_i$ é o peso da meta $i$, $x_i$ é a sua pontuação e $\rho$ é a correlação esperada entre as
+metas. \citeonline[p.~449]{kiresuk1968goal} consideram suficiente, na maior parte dos casos, assumir
+$\rho = 0{,}3$, valor também adotado por \citeonline[p.~364]{turnerstokes2009gas}. Com uma única meta,
+$\sum w_i^2$ e $\left( \sum w_i \right)^2$ se igualam, e o valor de $\rho$ deixa de influenciar o resultado.
+
+\textbf{MEEM.} O Mini-Exame do Estado Mental avalia orientação, memória, atenção e linguagem, e o escore total, que
+vai até 30 pontos, é a soma dos pontos obtidos nos itens \cite[p.~190]{folstein1975minimental}. Na versão sugerida
+para uso no Brasil, \citeonline[p.~777]{brucki2003mem} publicaram os escores medianos de 433 pessoas saudáveis por
+faixa de escolaridade: 20 para analfabetos, 25 para quem tinha de 1 a 4 anos de estudo, 26,5 para 5 a 8 anos, 28
+para 9 a 11 anos e 29 para mais de 11 anos. Os autores optaram por não delimitar pontos de corte, porque eles podem
+variar conforme a doença investigada \cite[p.~780]{brucki2003mem}. Os valores descrevem, portanto, o desempenho de
+pessoas saudáveis, e usá-los como limite para classificar o resultado de um paciente é uma decisão de quem aplica o
+instrumento.
+
+\textbf{Eletrodiagnóstico e densitometria.} No eletrodiagnóstico, o aplicativo registra a reobase, a cronaxia e a
+acomodação de cada grupo muscular. A reobase é a corrente limiar para um estímulo de duração infinitamente longa, e
+a cronaxia é a duração do pulso que excita o tecido com o dobro da reobase \cite[p.~176]{geddes2004chronaxie}. A
+mesma fonte descreve a acomodação como a resistência da célula a um estímulo de subida lenta, que passa a exigir
+intensidade maior para a excitação \cite[p.~178]{geddes2004chronaxie}, mas não define o índice de acomodação
+calculado pelo aplicativo, para o qual este trabalho não encontrou outra referência. Na densitometria, a posição
+oficial da International Society for Clinical Densitometry (ISCD) recomenda usar, em adultos com lesão medular, a
+densidade mineral óssea do quadril total, do fêmur distal e da tíbia proximal para diagnosticar osteoporose, prever
+o risco de fratura nos membros inferiores e acompanhar a resposta ao tratamento, desde que existam dados normativos
+\cite{morse2019bone}. O índice de massa corporal calculado no mesmo formulário é tratado aqui como definição
+matemática, a massa dividida pelo quadrado da altura.
+
+\textbf{Anamnese.} A anamnese não tem regra de cálculo, e a questão que ela coloca é o que estruturar e o que manter
+como texto livre. \citeonline[p.~181]{rosenbloom2011clinical} discutem a tensão entre a expressividade da narrativa
+clínica e a documentação estruturada, que favorece o reuso dos dados, e recomendam que o profissional escolha o
+método conforme o fluxo de trabalho e o conteúdo da nota, obtendo os dados reutilizáveis da documentação estruturada
+ou do processamento posterior do texto.
+
+\begin{table}[htb]
+	\centering
+	\caption{Instrumentos de avaliação: dados coletados e valores derivados previstos pela fonte}
+	\label{tab:instrumentos}
+	\footnotesize
+	\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.16\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+		\toprule
+		Instrumento & Dados coletados & Valores derivados previstos \\
+		\midrule
+		CIF & Qualificador de 0 a 4, 8 ou 9 por código & Nenhuma nota agregada por categoria \\
+		ASIA & Sensibilidade (0 a 2) e força (0 a 5) por segmento e lado; função sacral; NT & Escores, níveis, nível
+			neurológico, grau AIS e ZPP \\
+		GAS & Importância, dificuldade e pontuação ($-2$ a $+2$) de cada meta & Peso da meta; escores T inicial e
+			alcançado \\
+		MEEM & Pontos dos itens & Escore total (0 a 30); medianas por escolaridade como referência \\
+		Eletrodiag\-nóstico & Reobase, cronaxia e acomodação por grupo muscular & Nenhum índice na fonte consultada \\
+		Densitometria & Densidade mineral óssea por região & Diagnóstico de osteoporose, com dados normativos \\
+		Anamnese & Identificação, contato, datas e texto livre & Nenhum \\
+		\bottomrule
+	\end{tabularx}
+	\fonte{Elaborada pelo autor a partir das fontes citadas nesta seção.}
+\end{table}
+
+\section{Engenharia de requisitos}
+\label{sec:ref-requisitos}
+
+% A escrever. Inclui, como subseção, a qualidade de dados clínicos (Weiskopf; Weng, 2013; Just et al., 2016),
+% decisão de 19/11/2026 registrada em ESTRUTURA-TCC1.md.
+
+\section{Interoperabilidade em saúde e HL7 FHIR}
+\label{sec:ref-fhir}
+
+% A escrever (plano em ESTRUTURA-TCC1.md).
+
+\section{Níveis de automação}
+\label{sec:ref-automacao}
+
+\citeonline[p.~286]{parasuraman2000automation} propõem que a automação pode ser aplicada a quatro classes de
+funções, a aquisição de informação, a análise de informação, a seleção de decisão e a implementação da ação, e que,
+em cada classe, o grau de automação varia de baixo a alto. Automatizar a aquisição significa fazer a máquina captar e
+registrar os dados de entrada, enquanto automatizar a análise inclui integrar várias variáveis em um único valor
+\cite[p.~288]{parasuraman2000automation}. A automação da decisão, por sua vez, abrange os sistemas com regras
+condicionais que prescrevem uma escolha quando certas condições ocorrem, com exemplos na medicina
+\cite[p.~289]{parasuraman2000automation}. Os autores admitem níveis altos de automação da informação quando ela é
+muito confiável e, quando a confiabilidade não pode ser garantida, desde que o operador mantenha acesso aos dados
+brutos \cite[p.~292]{parasuraman2000automation}.
+
+Em uma metanálise de 18 experimentos baseada nesse modelo, \citeonline[p.~476]{onnasch2014human} verificaram que
+graus mais altos de automação melhoram o desempenho de rotina, mas prejudicam o desempenho e a consciência da
+situação quando a automação falha, e que esses efeitos negativos se tornam mais prováveis na passagem da análise de
+informação para a seleção de ação. Por isso, os autores recomendam manter o operador envolvido na seleção de decisão
+\cite[p.~486]{onnasch2014human}. Este trabalho adota essa fronteira na classificação dos valores das escalas
+(Seção~\ref{sec:criterios}): calcular um escore a partir das respostas é automação da análise, ao passo que
+interpretar esse escore para decidir sobre o paciente é uma decisão que permanece com o profissional.
+
+\section{Trabalhos relacionados}
+\label{sec:ref-relacionados}
+
+% A escrever (plano em ESTRUTURA-TCC1.md).

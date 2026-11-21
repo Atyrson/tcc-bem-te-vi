@@ -1,4 +1,210 @@
 \section{Nível de automação das escalas}
 \label{sec:automacao}
 
-% Conteúdo planejado em ESTRUTURA-TCC1.md, seção 4.3.
+\subsection{Classificação por instrumento}
+\label{sec:aut-classificacao}
+
+Os quatro graus da Seção~\ref{sec:criterios} foram aplicados aos valores dos sete formulários, no commit
+\texttt{a9059f0} \cite{higa2026bemtevi}. Conta como valor cada item do instrumento e cada dado que entra em um
+cálculo previsto por ele, como o peso e a altura no IMC e a escolaridade na pontuação esperada do MEEM, enquanto
+identificação, datas, nome do examinador, equipamento e texto livre ficaram de fora. Com esse recorte, a anamnese
+não tem valor a classificar, porque seus campos são de identificação, contato e data, além de um campo de anotações
+(Tabela~\ref{tab:formularios}). Na GAS, a contagem considera as 13 metas que o formulário sempre apresenta
+(\arq{gasForm.dart}, linhas 147--231), e, na CIF, os itens da cadeia de fórmulas de cada sexo, como na
+Seção~\ref{sec:cif-catalogo}. A Tabela~\ref{tab:aut-graus} resume o resultado e antecipa, na última coluna, a
+comparação com os instrumentos feita na Seção~\ref{sec:aut-conformidade}. A lista item a item, com o arquivo e a
+linha de origem de cada valor e a indicação de onde ele é calculado e se é gravado, está em
+\arq{entregas/automacao/automacao-itens.csv}, no repositório do TCC, gerada por
+\arq{entregas/scripts/gerar_tabela_automacao.py}.
+
+\begin{table}[htb]
+	\centering
+	\caption{Valores de cada formulário por grau de automação}
+	\label{tab:aut-graus}
+	\footnotesize
+	\begin{tabularx}{\textwidth}{@{}lrrrr>{\raggedright\arraybackslash}X@{}}
+		\toprule
+		Formulário & Grau 1 & Grau 2 & Grau 3 & Grau 4 & Situação do grau 2 \\
+		\midrule
+		CIF\textsuperscript{a} & 984 / 1.002 & 220 / 224 & 0 & 0 & Regras da planilha da equipe
+			(Seção~\ref{sec:modulo-cif}) \\
+		ASIA & 136 & 23 & 0 & 0 & Níveis conformes; grau AIS e ZPP divergem (DC3 a DC5); 4 totais não
+			gravados \\
+		GAS\textsuperscript{b} & 52 & 59 & 0 & 0 & Pesos conformes; escores T divergem com duas metas ou mais
+			(DC1) \\
+		MEEM & 31 & 2 & 0 & 0 & Total conforme; pontuação esperada diverge em uma faixa (DC2) e não é gravada \\
+		Eletrodiagnóstico & 72 & 24 & 0 & 0 & Índice de acomodação sem fonte para comparar \\
+		Densitometria & 32 & 1 & 0 & 0 & IMC conforme \\
+		Anamnese & 0 & 0 & 0 & 0 & -- \\
+		\midrule
+		Total\textsuperscript{a} & 1.307 / 1.325 & 329 / 333 & 0 & 0 & \\
+		\bottomrule
+	\end{tabularx}
+	\fonte{Elaborada pelo autor a partir do código do aplicativo \cite{higa2026bemtevi}, com
+	\arq{entregas/scripts/gerar_tabela_automacao.py}. Grau 1: digitado. Grau 2: calculado pelo aplicativo. Grau 3:
+	calculável por regra do instrumento. Grau 4: dependente de julgamento clínico. (a) Sexo masculino / feminino.
+	(b) 13 metas com 4 valores digitados e 4 ponderações cada, mais 4 somatórios, os escores T inicial e alcançado e
+	a evolução.}
+\end{table}
+
+No exemplo condutor, os dez itens de resposta do grupo b167 são do grau 1, e b1670, b1671 e o próprio b167 são do
+grau 2, já que o aplicativo obtém a nota 2,63 do b167 a partir das notas digitadas (Figura~\ref{fig:cif-b167}).
+Estar no grau 2, porém, não garante que o valor fique registrado nem que siga o instrumento. Os quatro totais da ASIA
+que somam os dois lados, isto é, os totais motores dos membros superiores e dos inferiores e os totais de tato leve
+e de picada, são calculados na tela a partir dos totais de cada lado (\arq{resultsModels.dart}, linhas 75--80) e não
+têm coluna no banco, e o mesmo acontece com a pontuação esperada do MEEM (Seção~\ref{sec:inv-calculos}). A
+correção das fórmulas é examinada na Seção~\ref{sec:aut-conformidade}.
+
+O principal resultado da classificação é o grau 3 vazio. No planejamento deste trabalho, esperava-se encontrar nesse
+grau o escore total do MEEM, os escores T da GAS e o nível neurológico e o grau AIS da ASIA, valores que o
+instrumento define por regra determinística, mas a leitura do código mostrou que o aplicativo já calcula todos eles
+(Seção~\ref{sec:inv-calculos}). O mesmo vale para regras menores, como a soma dos dois lados nos quatro totais da
+ficha do ISNCSCI \cite[p.~21]{rupp2021isncsci}. Na densitometria, a posição oficial da ISCD para lesão medular
+condiciona o diagnóstico de osteoporose à existência de dados normativos e relaciona o risco de fratura a limites de
+T-score ou Z-score \cite{morse2019bone}, mas o formulário registra só a densidade mineral óssea de cada região, sem
+T-score, Z-score ou referência normativa, e por isso essas regras não se aplicam aos dados gravados. Dentro de uma
+avaliação, portanto, não há cálculo previsto pelos instrumentos que o aplicativo deixe de fazer. O que falta para
+acompanhar o paciente está entre avaliações, porque só a CIF tem rotas de consulta, histórico e comparação, e os
+outros seis formulários apenas gravam (Seção~\ref{sec:inv-arquitetura}). Essa lacuna é tratada como requisito na
+Seção~\ref{sec:especificacao}.
+
+O grau 4 também ficou vazio, mas esse resultado decorre do recorte e não deve ser lido como achado. Os formulários
+registram dados brutos e valores derivados, e não interpretações, e a contagem considera uma única avaliação. Quando
+o aplicativo mostra dois valores lado a lado, a leitura fica com o profissional: o MEEM exibe a pontuação total junto
+da pontuação esperada para a escolaridade, sem classificar o resultado (\arq{meemForm.dart}, linhas 1063--1068), e a
+comparação da CIF calcula a diferença entre duas avaliações em cada capítulo e em cada área, descrita no código como
+feita ``sem transformar valores em interpretação clínica'' (\arq{cifModels.dart}, linhas 899--901, 1106 e 1137).
+O julgamento clínico aparece no acompanhamento, quando é preciso decidir se a diferença entre duas avaliações tem
+importância clínica, e esse limiar ainda não está definido nem para o ISNCSCI \cite[p.~9]{ahuja2017traumatic}. Por
+isso, a interpretação da variação entre avaliações fica com a equipe, como discutido na
+Seção~\ref{sec:ref-reabilitacao}, e não entra nesta classificação.
+
+\subsection{Conformidade dos cálculos com o instrumento}
+\label{sec:aut-conformidade}
+
+Esta subseção compara cada valor do grau 2 com a regra que a fonte do instrumento descreve
+(Seção~\ref{sec:ref-instrumentos}). Os cálculos do servidor foram executados sobre casos fictícios por scripts que
+importam o próprio código do commit \texttt{a9059f0} (\arq{conferir_calculo_gas.py} e
+\arq{conferir_calculo_asia.py}, em \arq{entregas/scripts/}), enquanto os cálculos feitos apenas na tela, escritos em Dart, foram
+transcritos para o script ou conferidos na leitura do código. Pelo critério da Seção~\ref{sec:tecnicas}, quando o
+código diverge da regra publicada, o requisito segue o instrumento, e a divergência recebe um identificador, de DC1 a
+DC5, que a Seção~\ref{sec:especificacao} usa como fonte. Esses identificadores ficam separados dos problemas de
+dados da Seção~\ref{sec:inv-problemas}, porque o PD5 compara a tela com o servidor, ao passo que os DC comparam o
+aplicativo com o instrumento. A Tabela~\ref{tab:aut-conformidade} resume o resultado. A CIF fica fora dela, já que
+as suas regras de cálculo vêm da planilha da equipe, e não de uma fonte publicada, e as diferenças em relação ao
+manual da OMS foram tratadas na Seção~\ref{sec:cif-oms}.
+
+\begin{table}[H]
+	\centering
+	\caption{Conformidade dos valores calculados com a regra publicada do instrumento}
+	\label{tab:aut-conformidade}
+	\footnotesize
+	\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.19\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.18\textwidth}@{}}
+		\toprule
+		Valor & Código (arquivo, linhas) & Regra publicada & Resultado \\
+		\midrule
+		Total do MEEM & \arq{meemFormProvider.dart}, 45--70; \arq{main.py}, 354--366 & Soma dos itens, até 30
+			pontos \cite[p.~190]{folstein1975minimental} & Conforme \\
+		Pontuação esperada do MEEM & \arq{meemFormProvider.dart}, 72--88 & Medianas por escolaridade
+			\cite[p.~777]{brucki2003mem} & Diverge na faixa de 5 a 8 anos (DC2) \\
+		Peso da meta da GAS & \arq{GoalsModels.dart}, 46; \arq{gasCalculator.py}, 13 & Importância $\times$
+			dificuldade \cite[p.~365]{turnerstokes2009gas} & Conforme \\
+		Escores T e evolução da GAS & \arq{gasForm.dart}, 75--79; \arq{gasCalculator.py}, 37--41 &
+			Equação~\ref{eq:gas} com $\rho = 0{,}3$ \cite[p.~449]{kiresuk1968goal} & Diverge com duas metas ou
+			mais (DC1) \\
+		Níveis e nível neurológico da ASIA & \arq{asiaCalculator.py}, 61--131 & \citeonline[p.~15--22]{rupp2021isncsci}
+			& Conforme nos 9 casos concluídos \\
+		Grau AIS & \arq{asiaCalculator.py}, 204--238 & Árvore de decisão \cite[p.~18,~22]{rupp2021isncsci} &
+			Diverge em 7 dos 10 casos (DC3) \\
+		ZPP & \arq{asiaCalculator.py}, 241--290 & \citeonline[p.~18--19]{rupp2021isncsci} & Diverge em 7 dos 9
+			casos concluídos (DC4) \\
+		NT em S4-5 & \arq{asiaCalculator.py}, 216--218 & Resultado ND \cite[p.~3,~19]{rupp2021isncsci} & Erro de
+			execução (DC5) \\
+		IMC & \arq{dex.dart}, 225--235 & Massa dividida pelo quadrado da altura & Conforme \\
+		Índice de acomodação & \arq{eletroFormProvider.dart}, 23--39 & Sem fonte encontrada & Não avaliado \\
+		\bottomrule
+	\end{tabularx}
+	\fonte{Elaborada pelo autor a partir do código do aplicativo \cite{higa2026bemtevi}, das fontes citadas e dos
+	scripts \arq{conferir_calculo_gas.py} e \arq{conferir_calculo_asia.py}, em \arq{entregas/scripts/}.}
+\end{table}
+
+\textbf{GAS.} O peso de cada meta segue a fonte, porque a tela e o servidor multiplicam a importância pela
+dificuldade (\arq{GoalsModels.dart}, linha 46; \arq{gasCalculator.py}, linha 13), como descreve
+\citeonline[p.~365]{turnerstokes2009gas}. A divergência está no denominador do escore T. Os dois lados dividem a soma
+ponderada por $\sqrt{\sum w_i^2}$ (\arq{gasForm.dart}, linhas 75--79; \arq{gasCalculator.py}, linhas 37--41), o que
+equivale a aplicar a Equação~\ref{eq:gas} com $\rho = 0$, enquanto \citeonline[p.~449]{kiresuk1968goal} e
+\citeonline[p.~364]{turnerstokes2009gas} adotam $\rho = 0{,}3$ (DC1). Com uma só meta as duas contas coincidem, como
+visto na Seção~\ref{sec:ref-instrumentos}, e a diferença aparece a partir de duas metas, em um formulário que
+apresenta 13. Em um caso fictício com duas metas de pesos 4 e 3, linhas de base $-1$ e
+$-2$ e ambas no resultado esperado, a tela calcula escore inicial de 30,0 e evolução de $+20{,}0$, a fórmula
+publicada dá 32,4 e $+17{,}6$, e o servidor, que além disso troca por zero os valores ponderados negativos (PD5),
+grava 50,0 e 0,0. O escore alcançado é 50 nas três contas, porque todas as metas atingem o esperado. Corrigir apenas
+o PD5, portanto, deixaria o valor gravado igual ao da tela, mas ainda diferente do valor publicado.
+
+\textbf{MEEM.} O escore total está conforme, já que a tela e o servidor somam os pontos dos mesmos itens, cujo
+máximo é 30 (\arq{meemFormProvider.dart}, linhas 45--70; \arq{main.py}, linhas 354--366), como em
+\citeonline[p.~190]{folstein1975minimental}. A divergência está na pontuação exibida ao lado do total. A tela mostra
+20, 25, 26, 28 e 29 pontos conforme a escolaridade (\arq{meemFormProvider.dart}, linhas 72--88), e os valores que
+\citeonline[p.~777]{brucki2003mem} publicaram para as mesmas faixas são 20, 25, 26,5, 28 e 29. O DC2 é a diferença
+na faixa de 5 a 8 anos de estudo, em que o aplicativo mostra 26 e a fonte traz 26,5. O rótulo da tela,
+``Pontuação Mínima Esperada'' (\arq{meemForm.dart}, linha 1068), apresenta esses valores como o mínimo que o
+paciente deveria alcançar, enquanto os autores os publicaram como medianas de pessoas saudáveis e optaram por não
+delimitar pontos de corte \cite[p.~780]{brucki2003mem}. Usar uma mediana como limiar, porém, é uma escolha de quem
+aplica o instrumento e leva o cálculo para a fronteira entre análise e decisão descrita na
+Seção~\ref{sec:ref-automacao}. Por isso, o rótulo não é tratado como divergência e fica como pendência para a
+equipe, que deve indicar qual referência adota para a escolaridade.
+
+\textbf{ASIA.} O script \arq{conferir_calculo_asia.py} monta dez casos fictícios, cada um com o resultado esperado
+obtido à mão a partir das regras de \citeonline[p. 3, 16, 18, 19 e 22]{rupp2021isncsci}, e os submete ao calculador
+do servidor. Os valores esperados foram conferidos com o algoritmo público do Praxis Spinal Cord
+Institute, que implementa a revisão de 2019 do padrão \cite{praxis2023isncsci}, e coincidem com ele em todos os
+casos, com uma diferença de notação no caso 9, discutida adiante (\arq{entregas/praxis/}, no repositório do TCC).
+Os níveis sensitivo, motor e neurológico conferem em todos os casos que chegaram ao fim. O grau AIS
+confere em dois, a lesão completa (A) e a lesão incompleta motora com força de pelo menos 3 em todos os
+músculos-chave abaixo do nível (D), diverge em sete e não é obtido em um, que termina em erro. As divergências do
+grau AIS (DC3) têm causas distintas no \arq{asiaCalculator.py}:
+\begin{itemize}
+	\item quando o nível motor cai em um segmento sem músculo-chave, como T6, o lado é ignorado na busca por função
+	motora abaixo do nível (linhas 158--161), e a ausência de músculos examinados é lida como presença de função, o
+	que faz o grau B virar C (caso 2);
+	\item a busca começa no músculo-chave seguinte ao nível motor (linha 163), e não a mais de três níveis abaixo
+	dele, e por isso uma força 3 em C6 com nível motor em C5 também faz o grau B virar C (caso 3);
+	\item a função motora só conta com força de pelo menos 3 (linha 171), enquanto o padrão aceita qualquer função,
+	e um grau 1 em L2 faz o grau C virar B (caso 4);
+	\item a contração anal voluntária, sozinha, não leva a C, porque o grau B exige a ausência dela (linha 224) e os
+	graus C e D exigem função motora abaixo do nível (linhas 229 e 232), de modo que o caso termina em ND (caso 5);
+	\item a proporção de músculos-chave com força de pelo menos 3, que separa C de D, é contada abaixo do nível motor
+	de cada lado (linhas 179--195), e não abaixo do nível neurológico único, e um caso com níveis C5 e C8 passa de D a
+	C (caso 7);
+	\item o músculo não chave mais caudal com função é coletado e gravado (\arq{main.py}, linhas 167--168), mas o
+	calculador não o lê, e um caso em que só ele indica função em L2 passa de C a B (caso 8);
+	\item no exame normal, os lados com nível intacto são ignorados (linhas 155--156), o caso termina em C (linhas
+	229--230) e a condição do grau E, na linha 235, não é alcançada (caso 10).
+\end{itemize}
+
+A ZPP diverge em sete dos nove casos concluídos (DC4). A ZPP sensitiva só deixa de ser calculada quando há, ao mesmo
+tempo, contração anal e sensibilidade sacral (linhas 254--258), e por isso aparece mesmo com pressão anal profunda,
+situação em que o padrão manda registrar NA (casos 2, 3, 4, 6, 7 e 8). A ZPP motora registra o último músculo-chave
+com alguma força (linhas 272--278), sem considerar o nível, de modo que uma lesão em T6 sem preservação abaixo dele
+recebe T1, e não T6 (casos 1 e 2), e o músculo não chave fica fora da conta (caso 8). O caso 9, com S4-5 marcado como
+NT de um lado, termina com \texttt{TypeError} (DC5): o NT é convertido em valor nulo (linhas 54--55), que a
+comparação das linhas 216--218 não aceita. Como o cálculo é feito antes do bloco da rota que trata erros
+(\arq{main.py}, linha 127), a avaliação não é gravada e a API responde com erro interno, quando o padrão pede o
+registro de ND. Nesse caso, o algoritmo do Praxis não usa a marca ND e devolve os graus possíveis, A ou B, o que
+indica da mesma forma que o grau não pode ser determinado. Os totais motores e sensitivos não entraram nos casos.
+
+\textbf{IMC e índice de acomodação.} O IMC segue a definição matemática, com uma regra que não aparece na tela: a
+altura maior que 3 é dividida por 100 (\arq{dex.dart}, linha 233), o que permite digitá-la em centímetros ou em
+metros sem indicar a unidade. O índice de acomodação é a razão entre a acomodação e a reobase, arredondada para uma
+casa decimal (\arq{eletroFormProvider.dart}, linhas 23--39). Como este trabalho não encontrou uma fonte que o
+defina (Seção~\ref{sec:ref-instrumentos}), não há regra publicada para comparar, e a fórmula fica como pendência
+para a equipe, sem identificador de divergência.
+
+Na Seção~\ref{sec:especificacao}, os valores conformes viram regras de negócio tal como estão implementados, e os
+DC1 a DC5 viram regras que seguem o instrumento, tendo como critérios de aceitação os casos fictícios dos dois
+scripts. A conversão da altura no IMC passa a ser uma regra explícita. A correção não perde dados já coletados,
+porque o MEEM, a GAS e a ASIA gravam as respostas item a item (\arq{main.py}, linhas 86--106, 192--196 e 384--397),
+e os escores podem ser recalculados a partir delas. Isso atende à condição de
+\citeonline[p.~292]{parasuraman2000automation} para a automação da análise quando a confiabilidade não está garantida,
+que é o acesso aos dados brutos. Ficam com a equipe a fonte do índice de acomodação e a leitura dos escores, que
+continua sendo do profissional, como na classificação da Seção~\ref{sec:aut-classificacao}.

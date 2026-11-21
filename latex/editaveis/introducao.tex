@@ -67,71 +67,78 @@ cada um com sua própria estrutura e regras. Seu tamanho varia de
   
 No total, os formulários contêm 1.429 campos para a avaliação completa
 de um paciente do sexo masculino e 1.447 para o sexo feminino, sendo que aproximadamente 69\% desses campos
-pertencem à CIF, além disso, os instrumentos também diferem em sua organização interna. A GAS repete
+pertencem à CIF. Além disso, os instrumentos também diferem em sua organização interna: a GAS repete
 o mesmo bloco de campos para cada objetivo, e o eletrodiagnóstico repete um bloco para cada
 grupo muscular. A ASIA separa as respostas sensoriais das motoras, a CIF varia de acordo com o sexo
 do paciente e a anamnese contém texto livre.
   
-Concentrar esses dados em um só aplicativo não basta quando o significado e os vínculos de cada campo ficam implícitos
-no código. Na versão atual, os formulários GAS, ASIA, anamnese, eletrodiagnóstico, MEEM e densitometria localizam o
-paciente pelo nome completo e, se não o encontram, criam um novo cadastro apenas com esse nome. A tela da ASIA exibe um
-campo de comentários que não é enviado ao servidor. O MEEM registra sempre o mesmo avaliador, "Dr. Examinador", e a
-densitometria grava como data do exame a data do envio. Esses
-comportamentos são esperados em formulários criados antes da definição de um modelo de dados comum e de regras acordadas
-com a equipe, e por isso servem aqui como ponto de partida para os requisitos.
+Não basta reunir esses dados em um único aplicativo se o significado e
+as relações entre os campos individuais permanecerem implícitos no código. Na versão atual, os formulários GAS,
+ASIA, anamnese, eletrodiagnóstico, MEEM e densitometria pesquisam o paciente pelo
+nome completo e, caso não o encontrem, criam um novo registro apenas com esse nome. A tela ASIA exibe um campo para observações que não é enviado ao servidor. O MEEM
+sempre registra o mesmo avaliador, “Dr. Examinador”, e a densitometria registra como data
+do exame a data do envio. Esses comportamentos são esperados em formulários criados
+antes da definição de um modelo de dados comum e de regras acordadas pela equipe e,
+como tal, servem como ponto de partida para os requisitos.
   
-Esses casos correspondem a dimensões de qualidade descritas na literatura sobre registros eletrônicos de saúde. \citeonline{weiskopf2013dataquality} organizam a avaliação dessa qualidade em
-completude, correção, concordância, plausibilidade e atualidade.
-O comentário descartado compromete a completude, enquanto o avaliador fixo e a data de envio comprometem a correção. A
-identificação pelo nome tem consequência mais grave. \citeonline{just2016patientmatching} mostram que divergências nos
-campos de identificação estão entre as principais causas de cadastros duplicados de pacientes. No Bem-Te-Vi, um erro de digitação
-no nome basta para dividir o histórico de um paciente entre dois cadastros.
-  
-O acompanhamento das avaliações depende dessa mesma base. Histórico, estado de cada avaliação, resumos e comparações só
-são confiáveis quando cada resposta está ligada ao paciente, ao instrumento e à data corretos. Nenhum dos problemas
-descritos se resolve apenas com código. É preciso definir como identificar o paciente, quem responde pela avaliação,
-qual data vale como data do exame e quais campos devem ser acompanhados ao longo do tempo, e essas regras precisam
-estar especificadas antes de qualquer reestruturação do banco ou do aplicativo. Há ainda a questão da troca de dados.
-Uma base com estrutura própria resolve a organização interna, mas não conversa com outros sistemas de saúde. No
-Brasil, a Rede Nacional de Dados em Saúde (RNDS) adota o padrão HL7 FHIR para o intercâmbio de informações clínicas,
-e modelar a base segundo esse padrão desde o início evita uma conversão posterior. Por esses motivos, este trabalho
-trata o problema como uma questão de engenharia de requisitos e parte da seguinte pergunta: quais requisitos e qual
-modelo de dados devem orientar a evolução do aplicativo Bem-Te-Vi para estruturar os dados clínicos de forma
-interoperável e apoiar o acompanhamento das avaliações?
+Esses casos correspondem às dimensões de qualidade descritas na literatura especializada sobre prontuários eletrônicos. A avaliação dessa qualidade é dividida em
+integralidade, exatidão, conformidade, plausibilidade e atualidade.
+Um comentário excluído compromete a integralidade, enquanto um avaliador e uma data de envio fixos comprometem a exatidão.
+A identificação por nome tem consequências mais graves. \citeonline{just2016patientmatching} mostram que inconsistências nos
+campos de identificação estão entre as principais causas de registros duplicados de pacientes. No sistema Bem-Te-Vi, basta um erro na digitação
+do nome para que o histórico do paciente seja dividido entre dois registros.
+
+O acompanhamento das avaliações depende dessa mesma base de dados. O histórico, o status de cada avaliação, os resumos e as comparações são
+confiáveis somente se cada resposta estiver vinculada ao paciente, ao instrumento e à data corretos. Nenhum dos problemas descritos
+pode ser resolvido apenas por meio de um código. É necessário definir como identificar o paciente, quem é responsável pela avaliação,
+qual data é considerada a data do exame e quais campos devem ser monitorados ao longo do tempo, e essas regras devem
+ser especificadas antes de qualquer reestruturação do banco de dados ou do aplicativo. Além disso, há a questão da troca de dados.
+Um banco de dados com estrutura própria resolve a organização interna, mas não se comunica com outros sistemas da área da saúde. No
+Brasil, a Rede Nacional de Dados em Saúde (RNDS) utiliza o padrão HL7 FHIR para a troca de informações clínicas,
+e a modelagem do banco de dados de acordo com esse padrão desde o início evita conversões posteriores. Por esses motivos, este trabalho
+aborda esse problema como uma questão de engenharia de requisitos e parte da seguinte indagação: quais requisitos e qual
+modelo de dados deveriam orientar o desenvolvimento do aplicativo Bem-Te-Vi, para que ele estruture os dados clínicos de maneira que seja
+interoperável e permita o acompanhamento das avaliações?
 
 A pergunta central se desdobra nas seguintes questões:
 
 \begin{description}
-	\item [P1] Os recursos do HL7 FHIR conseguem representar os sete formulários clínicos, de 6 a 1.003 campos,
-	sem perda de informação? Quais estruturas, como blocos repetidos, variação por sexo, pontuações calculadas e
-	texto livre, exigem tratamento específico?
-	\item [P2] Quais requisitos funcionais, requisitos não funcionais e regras de negócio o aplicativo precisa
-	atender para acompanhar as avaliações, tomando como base o que o módulo CIF já implementa?
-	\item [P3] Qual é o nível de automação atual de cada escala, e quais etapas podem ser automatizadas por regra do
-	próprio instrumento, sem depender de julgamento clínico?
+	\item [P1] Os componentes HL7 FHIR são capazes de representar todos os sete formulários clínicos, com 6 a
+1.003 campos, sem perda de informações? Quais estruturas, como blocos repetidos,
+diferenças por gênero, escores calculados e texto livre, requerem processamento específico?
+	\item [P2] Quais requisitos funcionais e não funcionais e regras de negócio o aplicativo
+deve atender para poder acompanhar as avaliações baseadas no que o módulo
+CIF já implementa?
+	\item [P3] Qual é o nível atual de automação de cada escala e quais etapas podem ser
+automatizadas com base nas regras da própria ferramenta, sem depender da avaliação clínica?
 \end{description}
 
 \section{Justificativa}
 
-Na reabilitação, a avaliação não é um registro isolado. \citeonline{rauch2008icf} descrevem o manejo clínico como um
-ciclo de avaliar, definir metas, intervir e reavaliar, e defendem sistemas eletrônicos de documentação para sustentar
-esse ciclo. No Brasil, a CIF foi adotada no Sistema Único de Saúde \cite{cns452:2012}, o que reforça a importância de
+Na reabilitação, a avaliação não é um registro isolado, porque se repete ao longo do tratamento
+(Seção~\ref{sec:ref-reabilitacao}). \citeonline[p.~341]{rauch2008icf} apontam o tempo gasto com a documentação como uma limitação
+e sugerem que um sistema eletrônico baseado na CIF facilitaria o uso dessas ferramentas
+na prática clínica e permitiria a coleta de dados comparáveis. No Brasil, a CIF foi adotada no Sistema Único de Saúde \cite{cns452:2012}, o que reforça a importância de
 registrá-la de forma estruturada. No Bem-Te-Vi, apenas o fluxo CIF permite consultar o histórico e comparar avaliações.
-Nos demais instrumentos, acompanhar um paciente ainda exige reunir registros manualmente. Definir o que centralizar e como relacionar os dados, antes da implementação, reduz o risco de retrabalho na base e no aplicativo.
-A economia de tempo e de etapas manuais, porém, é uma expectativa, que só poderá ser medida depois da implementação.
+Nos demais instrumentos, o acompanhamento do paciente ainda exige
+a coleta manual de registros. Determinar o que centralizar e como interligar os dados, antes mesmo da
+implementação, reduz o risco de trabalho adicional no banco de dados e no aplicativo. A economia
+de tempo e de etapas manuais, no entanto, é uma expectativa que só poderá ser medida após
+a implementação.
 
-Para a Engenharia de Software, o problema reúne atividades centrais da engenharia de requisitos: elicitar requisitos com
-especialistas de outra área, modelar dados heterogêneos, especificar regras de negócio e manter a rastreabilidade entre
-a fonte clínica, o requisito e o critério de aceitação. São atividades em que falhas são comuns. No levantamento
-NaPiRE, requisitos incompletos e requisitos ambíguos aparecem entre os problemas mais frequentes relatados pela
-indústria \cite{mendezfernandez2017napire}. Na saúde, \citeonline{cysneiros2002health} acrescenta exigências próprias
-do domínio, como privacidade, confiabilidade e o uso de um vocabulário que a equipe de desenvolvimento não domina.
-Para organizar o processo, este trabalho adota como referência a ISO/IEC/IEEE 29148 \cite{iso29148:2018}.
+Para a engenharia de software, esse problema envolve atividades-chave no âmbito
+da engenharia de requisitos: elicitação de requisitos de especialistas de outras áreas, modelagem
+de dados heterogêneos, especificação de regras de negócio e garantia de rastreabilidade entre a fonte clínica,
+o requisito e o critério de aceitação. Trata-se de atividades nas quais frequentemente ocorrem erros. Na pesquisa NaPiRE, requisitos incompletos e ambíguos figuram entre os
+problemas mais frequentes relatados na indústria \cite{mendezfernandez2017napire}. Na saúde, \citeonline{cysneiros2002health} acrescenta exigências específicas desse setor, como
+proteção de privacidade, confiabilidade e uso de vocabulário que a equipe de desenvolvimento não domina. Para organizar esse processo, este trabalho baseia-se na norma ISO/IEC/IEEE
+29148 \cite{iso29148:2018}.
 
-O trabalho também é viável no prazo da disciplina. O aplicativo, o módulo CIF, o protótipo no Figma e os formulários
-já existem e podem ser analisados como artefatos. As regras de cálculo da CIF estão nas planilhas da equipe e no
-catálogo do aplicativo, e as das demais escalas estão descritas na literatura de cada instrumento, o que permite
-especificar e verificar o modelo sem depender de novas sessões com a equipe.
+O trabalho pode ser realizado dentro do prazo da disciplina, uma vez que o aplicativo, o módulo CIF, o protótipo no
+  Figma e os formulários já existem e podem ser analisados como artefatos. Como as regras de cálculo do CIF
+  estão indicadas nas tabelas da equipe e no catálogo do aplicativo, e as regras das demais escalas estão descritas na
+  literatura referente a cada ferramenta, é possível especificar e verificar o modelo sem a necessidade de novas reuniões
+  com a equipe.
 
 
 
@@ -139,55 +146,57 @@ especificar e verificar o modelo sem depender de novas sessões com a equipe.
 
 \subsection{Objetivo geral}
 
-Especificar os requisitos e o modelo de dados interoperável, baseado no padrão HL7 FHIR, para estruturar os dados
-clínicos do aplicativo Bem-Te-Vi e apoiar o acompanhamento das avaliações do projeto v-FES cycling, tomando como ponto
-de partida o módulo de avaliação CIF desenvolvido pelo autor.
+Definir os requisitos e um modelo de dados interoperável baseado no padrão HL7 FHIR para a estruturação
+de dados clínicos no aplicativo Bem-Te-Vi e apoiar o acompanhamento das avaliações no âmbito do projeto v-FES cycling, utilizando como ponto de partida
+o módulo de avaliação CIF desenvolvido pelo autor.
 
 \subsection{Objetivos específicos}
 
 \begin{enumerate}
-	\item Inventariar os sete formulários clínicos do aplicativo, descrevendo a estrutura de campos de cada um, as funções
-	já disponíveis e os problemas de registro encontrados no código, como a identificação do paciente pelo nome;
-	\item Descrever o módulo de avaliação CIF implementado, com catálogo versionado, cálculo hierárquico das pontuações,
-	rascunho, quadro resumo, histórico e comparação, e extrair dele os requisitos e as regras de negócio que já
-	estão em funcionamento;
-	\item Avaliar o nível de automação de cada escala, distinguindo os dados digitados, os valores que o aplicativo já
-	calcula, os que podem ser calculados por regra definida no próprio instrumento e os que dependem de julgamento clínico;
-	\item Especificar e priorizar os requisitos funcionais, os requisitos não funcionais e as regras de negócio, com fonte,
-	justificativa e critério de aceitação para cada item;
-	\item Modelar a base de dados clínicos com os recursos do HL7 FHIR, considerando os perfis adotados pela Rede
-	Nacional de Dados em Saúde, e mapear os formulários para esse modelo, com o CIF em maior detalhe;
-	\item Verificar o modelo quanto à cobertura dos campos dos sete formulários e quanto à resposta aos problemas de
-	registro inventariados, usando instâncias de exemplo com dados fictícios;
-	\item Consolidar a matriz de rastreabilidade e as pendências que orientarão a implementação da base no TCC 2.
+	\item Inventariar os sete formulários clínicos do aplicativo, descrevendo a estrutura dos campos de cada um, as funções
+	já disponíveis e os problemas de registro identificados no código, como a identificação do paciente pelo nome;
+	\item Descrever o módulo de avaliação CIF implementado, com catálogo de versões, cálculo hierárquico de pontuação,
+    esboço, quadro resumo, histórico e comparação, e, a partir dele, extrair os requisitos e regras de negócio que já
+    estão em operação;
+	\item Avaliar o nível de automação de cada escala, distinguindo entre dados inseridos manualmente, os valores que o aplicativo já
+    calcula, aqueles que podem ser calculados com base em uma regra definida pelo próprio instrumento e aqueles que dependem de julgamento clínico;
+	\item Especificar e classificar por prioridade os requisitos funcionais, os requisitos não funcionais e as regras de negócio, indicando a fonte,
+    a justificativa e os critérios de aceitação para cada item;
+	\item Criar um modelo de banco de dados clínico utilizando os recursos do HL7 FHIR, levando em consideração os perfis adotados pela
+    Rede Nacional de Dados de Saúde, e associar os formulários a esse modelo, com o CIF em maior detalhe;
+	\item Verificar o modelo quanto à cobertura dos campos dos sete formulários e quanto à resolução dos problemas identificados
+    no registro, utilizando instâncias de exemplo com dados fictícios;
+	\item Consolidar a matriz de rastreabilidade e as questões pendentes, que servirão de orientação na implementação do banco de dados no TCC 2.
 \end{enumerate}
 
 \section{Escopo e delimitação}
 
-O trabalho se divide em duas etapas. O TCC 1 especifica os requisitos e o modelo de dados em HL7 FHIR e apresenta,
-como resultado parcial, o módulo CIF já implementado. O TCC 2 implementa a base de dados e avalia os requisitos priorizados, em continuidade ao desenvolvimento previsto no plano de iniciação
-científica \cite{ochoadiaz2026plano}. O escopo do TCC 2 será definido a partir dos resultados desta etapa. Além do
-módulo CIF, já desenvolvido, nenhuma alteração no banco de dados ou no código do aplicativo faz parte do TCC 1. O
-aplicativo e o protótipo entram como artefatos de análise.
+O trabalho se divide em duas fases. Este trabalho especifica os requisitos e o modelo de dados no HL7 FHIR e, como
+  resultado parcial, apresenta o módulo CIF já implementado. O TCC 2, cujo escopo será definido com base nos resultados
+  desta fase, implementa o banco de dados e avalia os requisitos prioritários em consonância com o desenvolvimento
+  previsto no plano de iniciação científica \cite{ochoadiaz2026plano}.Com exceção do módulo CIF, o TCC 1 não inclui nenhuma alteração
+  no
+  banco de dados nem no código do aplicativo, sendo que o aplicativo e o protótipo são incluídos como
+  resultados da análise.
 
-Não há sessões de elicitação ou validação com a equipe de fisioterapia nesta etapa. As fontes dos requisitos são o
-código do aplicativo, as planilhas da CIF que deram origem ao catálogo, o plano de trabalho e a literatura dos
-instrumentos. A verificação do modelo usa instâncias de exemplo com dados fictícios, e as decisões que exigem
-julgamento clínico ficam registradas como pendências para validação no TCC 2.
+Nesta fase não há sessões de elicitação ou validação com a equipe de fisioterapia nesta etapa, e as fontes dos requisitos 
+são o código da aplicação, as planilhas da CIF a partir das quais o catálogo foi elaborado, o plano de trabalho e
+a literatura dos instrumentos. A verificação do modelo também é realizada sem a participação da equipe, 
+com instâncias de exemplo preenchidas com dados fictícios, e as decisões que exigem avaliação clínica são 
+registradas como questões em aberto para verificação no TCC 2.
 
-Os sete formulários clínicos são analisados pela estrutura, e não campo a campo. O modelo em HL7 FHIR deve cobrir
-todos eles, mas o mapeamento detalhado se concentra na CIF, que já conta com histórico, quadro resumo e comparação
-implementados e responde por cerca de 69\% dos campos. Os campos e funções que não forem tratados ficam registrados
-como pendências para o TCC 2.
+Os sete formulários clínicos são analisados pela estrutura, e não campo a campo: o modelo no HL7 FHIR deve cobrir
+todos eles; no entanto, o mapeamento detalhado concentra-se na CIF, que representa aproximadamente 69% dos campos e já possui
+implementados o histórico, quadro resumo e comparação. Os campos e funções que não são abordados nesta fase são
+registrados como tarefas pendentes para o TCC 2.
 
-O plano de trabalho prevê que a base de dados alimente um sistema de inteligência artificial generativa. Os algoritmos
-desse sistema são objeto do doutorado vinculado ao projeto. No TCC 1, cabe apenas descrever os dados que esse
-módulo deverá consumir. Também ficam fora do escopo a interpretação clínica dos resultados, que continua com a equipe, a
-integração efetiva com a RNDS, que exige credenciamento institucional, e outros padrões, como o openEHR, citados apenas
-como referência.
+O plano de trabalho prevê que a base de dados seja a fonte de dados para o sistema de inteligência artificial generativa, cujos
+algoritmos são objeto de um estudo de doutorado vinculado ao projeto; o escopo deste trabalho consiste apenas em descrever os dados que esse módulo utilizará. Ficam fora do escopo do projeto também a interpretação clínica dos resultados, que continua a ser tratada pela equipe,
+a integração efetiva com o RNDS, que requer credenciamento institucional, e outras normas, como o openEHR, que são mencionadas
+apenas como referência.
 
-Todas as atividades usam somente dados fictícios. O uso de dados reais de pacientes depende de autorização
-institucional e não está previsto nesta etapa.
+Em todas as atividades, são utilizados exclusivamente dados fictícios, e o uso de dados reais de pacientes, que depende de
+autorização institucional, não está previsto nesta fase.
 
 \section{Organização do trabalho}
 

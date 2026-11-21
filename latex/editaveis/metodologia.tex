@@ -4,25 +4,28 @@
 \section{Classificação da pesquisa}
 \label{sec:classificacao}
 
-Quanto à natureza, esta pesquisa é aplicada, porque parte de um problema concreto do aplicativo Bem-Te-Vi e produz
-artefatos destinados a resolvê-lo. A abordagem é qualitativa. O trabalho conta campos, estruturas e requisitos, mas
-essas contagens descrevem os artefatos e não passam por tratamento estatístico. As conclusões vêm da análise do
-código, de documentos e de normas.
+De acordo com a classificação de \citeonline[cap.~4]{gil2017}, esta pesquisa é aplicada quanto à finalidade, porque
+parte de um problema concreto do aplicativo Bem-Te-Vi e gera artefatos destinados à sua resolução; além disso, 
+trata-se de uma pesquisa qualitativa
+quanto à abordagem, pois apresenta seus resultados por meio de descrições verbais, e não em termos numéricos.
+As contagens de campos, estruturas e requisitos mencionadas no texto descrevem os artefatos e não são objeto
+de análise estatística.
 
-Quanto ao procedimento, o trabalho segue a metodologia de \textit{design science} de
-\citeonline[p.~3]{wieringa2014design}, que trata a pesquisa em Engenharia de Software como o projeto e a investigação
-de artefatos inseridos em um contexto de problema. Wieringa organiza esse trabalho em um ciclo de projeto com três
-tarefas: investigar o problema, projetar um tratamento e validá-lo \cite[p.~27]{wieringa2014design}. A validação,
-nessa metodologia, ocorre antes da implementação e examina se o artefato, uma vez inserido no contexto, contribuiria
-para os objetivos dos interessados \cite[p.~31]{wieringa2014design}.
+No que diz respeito ao procedimento, o trabalho segue a metodologia de \textit{design science} de
+\citeonline[p.~3]{wieringa2014design}, que considera a pesquisa na área de engenharia de software como o projeto
+e o estudo de artefatos inseridos no contexto do problema. Wieringa organiza
+esse trabalho em um ciclo de projeto com três tarefas: examinar o problema, projetar um tratamento e validá-lo  \cite[p.~27]{wieringa2014design}. 
+A validação, nessa metodologia,
+ocorre antes da implementação e investiga se o artefato, uma vez inserido no contexto,
+contribuiria para os objetivos das partes interessadas \cite[p.~31]{wieringa2014design}.
 
-Neste trabalho, o contexto é o acompanhamento das avaliações do projeto v-FES cycling, e os artefatos são a
-especificação de requisitos, a classificação do nível de automação das escalas e o modelo de dados em HL7 FHIR. As
-Seções~\ref{sec:inventario} a~\ref{sec:automacao} correspondem à investigação do problema, e as
-Seções~\ref{sec:especificacao} e~\ref{sec:modelo-fhir}, ao projeto. Como não há sessões com a equipe de fisioterapia
-nesta etapa, a validação com os interessados fica para o TCC 2, junto com as decisões que exigem julgamento clínico.
-No TCC 1, os artefatos passam por verificação: o modelo é conferido quanto à cobertura dos formulários e testado com
-instâncias de exemplo, conforme os critérios da Seção~\ref{sec:criterios}.
+Neste trabalho, o contexto é o acompanhamento das avaliações do projeto v-FES
+cycling e os artefatos são a especificação de requisitos, a classificação dos níveis de automação
+das escalas e o modelo de dados em HL7 FHIR. As Seções~\ref{sec:inventario} a~\ref{sec:automacao} correspondem à investigação do problema, e as
+Seções~\ref{sec:especificacao} e~\ref{sec:modelo-fhir}, ao projeto. Como, nesta fase, não há reuniões com
+a equipe de fisioterapia, a validação com as partes interessadas é adiada para a próxima fase do trabalho, juntamente com as decisões que exigem julgamento clínico. Neste trabalho, os artefatos
+passam por verificação: o modelo é verificado quanto à cobertura dos formulários e testado com
+instâncias de exemplo, de acordo com os critérios indicados na Seção~\ref{sec:criterios}.
 
 \section{Fontes}
 \label{sec:fontes}
@@ -223,6 +226,8 @@ Seção~\ref{sec:inventario} tem resposta no modelo.
 	\item Git, para versionar o texto e os artefatos. O código do aplicativo entra no repositório do trabalho como
 	submódulo, fixado no commit analisado;
 	\item Python, em scripts de conferência, como a comparação entre a planilha e o catálogo da CIF;
+	\item Node.js, para executar o algoritmo do ISNCSCI do Praxis Spinal Cord Institute \cite{praxis2023isncsci}, com o
+	qual os casos fictícios da ASIA são classificados e comparados com o servidor do aplicativo;
 	\item validador oficial do HL7 FHIR, executado em Java, para validar as instâncias de exemplo;
 	\item Figma, para consultar o protótipo das telas.
 \end{itemize}
