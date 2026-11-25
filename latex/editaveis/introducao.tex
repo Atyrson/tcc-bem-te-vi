@@ -20,7 +20,7 @@ O plano de trabalho da iniciação científica associado ao projeto descreve os 
 como distribuídos entre arquivos de texto, tabelas, arquivos PDF, imagens e formulários, sem um modelo padronizado. Esse
 mesmo plano prevê a criação de um banco de dados clínico estruturado e validado, que deveria servir de base para um futuro
 sistema de inteligência artificial generativa voltado para a personalização do plano de treinamento \cite{ochoadiaz2026plano}. 
-desse sistema são objeto de um estudo de doutorado associado a este projeto.
+Os algoritmos desse sistema são objeto de um estudo de doutorado associado a este projeto.
 
 Com o objetivo de reunir os registros em um único local, foi desenvolvido o aplicativo Bem-Te-Vi, que consiste
 em uma aplicação Flutter, uma API FastAPI e um banco de dados PostgreSQL. A primeira versão incluía login, cadastro
@@ -62,7 +62,7 @@ cada um com sua própria estrutura e regras. Seu tamanho varia de
 		Anamnese & 6 & 5 de identificação, contato e data e 1 de anotações \\
 		\bottomrule
 	\end{tabular}
-	\fonte{Elaborada pelo autor a partir do código do aplicativo \cite{higa2026bemtevi}.}
+	\fonte{Elaborada pelo autor a partir de \citeonline{higa2026bemtevi}.}
 \end{table}
   
 No total, os formulários contêm 1.429 campos para a avaliação completa
@@ -75,15 +75,16 @@ do paciente e a anamnese contém texto livre.
 Não basta reunir esses dados em um único aplicativo se o significado e
 as relações entre os campos individuais permanecerem implícitos no código. Na versão atual, os formulários GAS,
 ASIA, anamnese, eletrodiagnóstico, MEEM e densitometria pesquisam o paciente pelo
-nome completo e, caso não o encontrem, criam um novo registro apenas com esse nome. A tela ASIA exibe um campo para observações que não é enviado ao servidor. O MEEM
+nome completo e, caso não o encontrem, criam um novo registro apenas com esse nome. A tela ASIA exibe um campo de comentários que não é enviado ao servidor. O MEEM
 sempre registra o mesmo avaliador, “Dr. Examinador”, e a densitometria registra como data
 do exame a data do envio. Esses comportamentos são esperados em formulários criados
 antes da definição de um modelo de dados comum e de regras acordadas pela equipe e,
 como tal, servem como ponto de partida para os requisitos.
   
-Esses casos correspondem às dimensões de qualidade descritas na literatura especializada sobre prontuários eletrônicos. A avaliação dessa qualidade é dividida em
-integralidade, exatidão, conformidade, plausibilidade e atualidade.
-Um comentário excluído compromete a integralidade, enquanto um avaliador e uma data de envio fixos comprometem a exatidão.
+Esses casos correspondem às dimensões de qualidade dos dados de prontuários eletrônicos identificadas por
+\citeonline{weiskopf2013dataquality}: completude, correção, concordância, plausibilidade e atualidade
+(Seção~\ref{sec:ref-qualidade}).
+Um comentário descartado compromete a completude, enquanto um avaliador fixo e a data do envio gravada como data do exame comprometem a correção.
 A identificação por nome tem consequências mais graves. \citeonline{just2016patientmatching} mostram que inconsistências nos
 campos de identificação estão entre as principais causas de registros duplicados de pacientes. No sistema Bem-Te-Vi, basta um erro na digitação
 do nome para que o histórico do paciente seja dividido entre dois registros.
@@ -173,8 +174,8 @@ o módulo de avaliação CIF desenvolvido pelo autor.
 
 O trabalho se divide em duas fases. Este trabalho especifica os requisitos e o modelo de dados no HL7 FHIR e, como
   resultado parcial, apresenta o módulo CIF já implementado. O TCC 2, cujo escopo será definido com base nos resultados
-  desta fase, implementa o banco de dados e avalia os requisitos prioritários em consonância com o desenvolvimento
-  previsto no plano de iniciação científica \cite{ochoadiaz2026plano}.Com exceção do módulo CIF, o TCC 1 não inclui nenhuma alteração
+  desta fase, implementa o banco de dados e os requisitos prioritários e os avalia pelos critérios de aceitação, em
+  consonância com o desenvolvimento previsto no plano de iniciação científica \cite{ochoadiaz2026plano}. Com exceção do módulo CIF, o TCC 1 não inclui nenhuma alteração
   no
   banco de dados nem no código do aplicativo, sendo que o aplicativo e o protótipo são incluídos como
   resultados da análise.
@@ -185,9 +186,9 @@ a literatura dos instrumentos. A verificação do modelo também é realizada se
 com instâncias de exemplo preenchidas com dados fictícios, e as decisões que exigem avaliação clínica são 
 registradas como questões em aberto para verificação no TCC 2.
 
-Os sete formulários clínicos são analisados pela estrutura, e não campo a campo: o modelo no HL7 FHIR deve cobrir
-todos eles; no entanto, o mapeamento detalhado concentra-se na CIF, que representa aproximadamente 69% dos campos e já possui
-implementados o histórico, quadro resumo e comparação. Os campos e funções que não são abordados nesta fase são
+O modelo no HL7 FHIR deve cobrir os sete formulários clínicos, mas o mapeamento detalhado concentra-se na CIF, que
+representa aproximadamente 69\% dos campos e já possui implementados o histórico, quadro resumo e comparação. Os outros
+seis formulários são analisados pela estrutura, e não campo a campo. Os campos e funções que não são abordados nesta fase são
 registrados como tarefas pendentes para o TCC 2.
 
 O plano de trabalho prevê que a base de dados seja a fonte de dados para o sistema de inteligência artificial generativa, cujos
@@ -200,4 +201,18 @@ autorização institucional, não está previsto nesta fase.
 
 \section{Organização do trabalho}
 
-%
+O Capítulo~\ref{cap:referencial} reúne a base usada no restante do trabalho: os instrumentos de
+avaliação e as regras de cálculo que cada um define, a engenharia de requisitos e a qualidade de dados
+clínicos, o HL7 FHIR e a distinção entre análise de informação e decisão, que delimita a automação das
+escalas. O Capítulo~\ref{cap:metodologia} descreve o procedimento de \textit{design science}, as fontes
+documentais, as técnicas e os critérios com que cada questão de pesquisa é respondida.
+
+O Capítulo~\ref{cap:resultados} segue as etapas do trabalho. As Seções~\ref{sec:inventario}
+a~\ref{sec:automacao} examinam o problema: o estado atual do aplicativo e os seus problemas de dados, o
+módulo CIF implementado e o nível de automação das escalas, que responde à P3. As
+Seções~\ref{sec:especificacao} e~\ref{sec:modelo-fhir} apresentam a especificação de requisitos, que
+responde à P2, e o modelo de dados em HL7 FHIR, que responde à P1. A Seção~\ref{sec:consolidacao} liga
+esses resultados na matriz de rastreabilidade e reúne as pendências. O Capítulo~\ref{cap:consideracoes}
+retoma as três questões, as limitações desta fase e o que segue para o TCC 2. Os
+Apêndices~\ref{ap:requisitos} e~\ref{ap:matriz} contêm a especificação completa e a matriz de
+rastreabilidade.

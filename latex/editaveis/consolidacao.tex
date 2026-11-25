@@ -1,4 +1,35 @@
 \section{Consolidação}
 \label{sec:consolidacao}
 
-% Conteúdo planejado em ESTRUTURA-TCC1.md, seção 4.6.
+O Apêndice~\ref{ap:matriz} traz a matriz de rastreabilidade dos 67 requisitos. Cada linha liga o requisito à fonte de
+que foi derivado, ao tipo do seu critério de aceitação (Seção~\ref{sec:esp-verificacao}) e ao elemento do modelo em
+HL7 FHIR que o atende (Seção~\ref{sec:modelo-fhir}). As fontes usam os mesmos identificadores do
+Apêndice~\ref{ap:requisitos}.
+
+A linha do exemplo condutor mostra como ler a matriz. O RN07 vem do achado 1 e da decisão 1 da auditoria da CIF. O seu
+critério é um teste que já existe no aplicativo, e ele é atendido pela \textit{calculatedExpression} do item
+\texttt{b:E105} (Figura~\ref{fig:fhir-b167}). Assim, o b167 pode ser rastreado nos dois sentidos, da célula E105 da
+planilha ao item do questionário.
+
+Dos 67 requisitos, 48 têm um elemento correspondente no modelo. Outros 14 ficam fora dele, porque tratam do
+comportamento do servidor, da tela ou dos testes, como a proibição de editar uma avaliação concluída, o controle de
+acesso e o registro das operações. Esses são verificados no próprio aplicativo. Os 5 que dependem da equipe ainda
+não têm elemento correspondente, porque a regra que representariam ainda não foi definida.
+
+As pendências que seguem para o TCC 2 são de dois tipos. As que dependem de decisão clínica ou da equipe são:
+
+\begin{itemize}
+	\item as regras de RN23, RN29, RN32, RN33 e RN34 e as permissões de cada perfil de usuário (RNF11). RN32, RN33 e
+	RN34 vêm das questões 1, 2 e 4 que a auditoria da CIF deixou abertas (Seção~\ref{sec:cif-auditoria});
+	\item a questão 3 da auditoria, que pede confirmar a aba \textit{final} do Quadro Resumo como o resumo desejado;
+	\item a validação clínica da média sobre faixas de larguras diferentes (Seção~\ref{sec:cif-oms}) e das decisões da
+	auditoria, que são provisórias até essa validação;
+	\item a versão da CIF que a planilha segue, necessária para ligar o sistema de códigos à CIF publicada, e os quatro
+	códigos marcados como pendência no sistema de códigos (Seção~\ref{sec:fhir-cif});
+	\item o dicionário de dados (Seção~\ref{sec:fhir-escolhas}) e a revisão das prioridades atribuídas pelo autor
+	(Seção~\ref{sec:criterios}).
+\end{itemize}
+
+As pendências técnicas, que não dependem da equipe, consistem em instanciar e validar os outros seis formulários,
+escrever as expressões de cálculo e conferi-las com os casos dos critérios de aceitação, e escolher os códigos dos
+escores que forem extraídos para \textit{Observation} (Seção~\ref{sec:fhir-cobertura}).

@@ -1,3 +1,100 @@
 \section{Especificação de requisitos}
 \label{sec:especificacao}
 
+Nesta seção, é apresentada a especificação que responde à P2 e que se baseia nos resultados das
+Seções~\ref{sec:inventario} a~\ref{sec:automacao}. Os 67 requisitos, com todos os campos, encontram-se no
+Apêndice~\ref{ap:requisitos}, e o texto a seguir descreve como foram obtidos, comenta três exemplos e mostra até que
+ponto foi possível verificar esse conjunto nesta etapa.
+
+\subsection{Formato e origem dos requisitos}
+\label{sec:esp-formato}
+
+Cada requisito possui os campos definidos na Seção~\ref{sec:criterios} e também recebe uma situação, que pode ser
+implementado, proposto ou dependente da equipe. A numeração continua a da Seção~\ref{sec:cif-fluxo}, de modo que os
+21 requisitos já implementados pelo módulo CIF mantêm os identificadores de RF01 a RNF03, e os novos começam em RF08,
+RN12 e RNF04.
+
+Cada tipo de fonte deu origem aos requisitos à sua maneira. Os problemas de dados PD1 a PD5 levaram a requisitos que
+os corrigem, como a vinculação da avaliação ao identificador do paciente, em vez da pesquisa pelo nome. As
+divergências DC1 a DC5 levaram a regras de negócio que seguem o instrumento. A ausência de consulta, histórico e
+comparação nos outros seis formulários (Seção~\ref{sec:aut-classificacao}) levou à ampliação de requisitos que a CIF
+já atende, como a lista de avaliações do paciente (RF15, a partir de RF06) e a comparação entre duas delas (RF17, a
+partir de RF07). As normas, por fim, deram origem a requisitos que indicam o artigo de origem, como os de
+autenticação e de registro de operações, derivados da LGPD. A Tabela~\ref{tab:esp-resumo} resume o conjunto por
+grupo, tipo e prioridade.
+
+\begin{table}[htb]
+	\centering
+	\caption{Requisitos por grupo, tipo e prioridade}
+	\label{tab:esp-resumo}
+	\footnotesize
+	\begin{tabularx}{\textwidth}{@{}Xrrrrrr@{}}
+		\toprule
+		Grupo & RF & RN & RNF & Alta & Média & Baixa \\
+		\midrule
+		Implementados no módulo CIF & 7 & 11 & 3 & 21 & 0 & 0 \\
+		Identificação do paciente e do avaliador & 3 & 2 & 0 & 5 & 0 & 0 \\
+		Registro e estados da avaliação & 4 & 4 & 1 & 6 & 3 & 0 \\
+		Regras de cálculo & 0 & 12 & 3 & 7 & 8 & 0 \\
+		Histórico e comparação & 3 & 5 & 0 & 0 & 7 & 1 \\
+		Interoperabilidade & 0 & 0 & 2 & 1 & 1 & 0 \\
+		Privacidade, segurança e auditoria & 0 & 0 & 5 & 5 & 0 & 0 \\
+		Dados para o módulo de inteligência artificial & 0 & 0 & 2 & 0 & 0 & 2 \\
+		\midrule
+		Total & 17 & 34 & 16 & 45 & 19 & 3 \\
+		\bottomrule
+	\end{tabularx}
+	\fonte{Elaborada pelo autor a partir do Apêndice~\ref{ap:requisitos}.}
+\end{table}
+
+\subsection{Exemplos comentados}
+\label{sec:esp-exemplos}
+
+Dos 67 requisitos, 24 já estão implementados, um está implementado em parte, 37 são propostos e 5 dependem de uma
+decisão da equipe. As regras de cálculo constituem o maior grupo de requisitos novos, pois incluem não apenas as
+correções dos DC, mas também as regras que já estão em conformidade com o instrumento e passam a ser registradas como
+tal. No grupo de histórico e comparação, a regra de exibir a diferença entre as avaliações sem indicação de melhora ou
+piora (RN31) aplica a fronteira entre análise e decisão da Seção~\ref{sec:ref-automacao}. Os três exemplos a seguir
+mostram, cada um, uma origem diferente.
+
+\textbf{RN07, a média do b167.} A regra provém da auditoria da planilha da equipe, que constatou na fórmula do b167 o
+item b1678 contado duas vezes, e da decisão registrada de remover a segunda ocorrência sem substituí-la por outro
+item (Seção~\ref{sec:cif-auditoria}). A fonte do requisito remete às linhas da calculadora que aplicam essa decisão e
+ao achado da auditoria, e o critério de aceitação é o caso numérico da Figura~\ref{fig:cif-b167}. Como a calculadora
+já aplica essa decisão e possui um teste para ela, o requisito está implementado e serve como modelo para as demais
+regras de cálculo.
+
+\textbf{RF09, o profissional que realizou a avaliação.} Duas fontes independentes levam ao mesmo requisito. A
+Resolução COFFITO nº 414/2012 exige a indicação do nome completo e do número de registro no CREFITO do fisioterapeuta
+no prontuário eletrônico \cite[art.~2º, parágrafo único]{coffito414:2012}, e nenhuma tabela, nem mesmo a da CIF,
+armazena quem realizou a avaliação (Seções~\ref{sec:inv-arquitetura} e~\ref{sec:cif-fluxo}), enquanto o MEEM sempre
+registra o mesmo examinador (PD3). O requisito estabelece que os dados do profissional devem ser obtidos do usuário
+autenticado, e não digitados, e o critério de aceitação verifica se as avaliações registradas por dois usuários
+diferentes contêm, cada uma, os dados de quem a registrou.
+
+\textbf{RN18, o escore T da GAS.} O código usa a Equação~\ref{eq:gas} com $\rho = 0$, e o instrumento usa
+$\rho = 0{,}3$ (DC1). O requisito segue o instrumento, e o critério de aceitação reproduz o caso fictício de duas
+metas da Seção~\ref{sec:aut-conformidade}. O exemplo também mostra por que o problema de dados e a divergência de
+cálculo ficam em requisitos separados: a correção do PD5, pela RN19, iguala o valor gravado ao da tela, mas só a
+RN18 o leva ao valor publicado.
+
+\subsection{Verificação da especificação}
+\label{sec:esp-verificacao}
+
+Todos os 67 requisitos têm fonte, e os 62 cuja regra já está definida têm critério de aceitação. Os 5 restantes
+dependem de decisão da equipe, como a fórmula do índice de acomodação e o tratamento dos qualificadores 8 e 9 da
+CIF, e o conjunto estará completo, no sentido da ISO/IEC/IEEE 29148 (Seção~\ref{sec:ref-req-conceitos}), quando
+essas decisões forem tomadas. Por isso eles permanecem como pendências para a Seção~\ref{sec:consolidacao}, onde
+também está a matriz.
+
+Os critérios de aceitação são de três tipos. Nos 21 requisitos da CIF, o critério é um teste que já existe no
+repositório do aplicativo. Nas regras de cálculo, é um caso numérico com entrada e saída esperadas, que pode ser
+executado por um script, como nos exemplos da GAS e do b167. Nos demais requisitos, é um comportamento observável
+na API ou na tela, como a recusa de uma requisição sem credencial. Dos 67 requisitos, 45 têm prioridade alta: 21
+são os da CIF, já implementados, e os outros 24 tratam de um problema da Seção~\ref{sec:inventario}, de uma
+divergência da Seção~\ref{sec:automacao} ou se baseiam em uma norma.
+
+A especificação foi revisada apenas pelo autor, sem a participação da equipe de fisioterapia. Por isso, a
+justificativa e a prioridade de cada requisito ainda precisam ser confirmadas por quem usa o aplicativo, e os
+critérios dos requisitos propostos, redigidos antes da implementação, só serão executados no TCC 2.
+

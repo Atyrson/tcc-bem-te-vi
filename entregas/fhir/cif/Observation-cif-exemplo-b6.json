@@ -1,0 +1,55 @@
+{
+  "resourceType": "Observation",
+  "id": "cif-exemplo-b6",
+  "meta": {
+    "profile": [
+      "https://br-core.saude.gov.br/fhir/StructureDefinition/br-core-observation"
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>b6 FUNÇÕES GENITURINÁRIAS E REPRODUTIVAS: média 0.0 (exemplo condutor).</p></div>"
+  },
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "survey"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "https://bemtevi.unb.br/fhir/CodeSystem/cif-catalogo",
+        "version": "0.1.0",
+        "code": "b6",
+        "display": "FUNÇÕES GENITURINÁRIAS E REPRODUTIVAS"
+      }
+    ],
+    "text": "Média dos qualificadores de b6"
+  },
+  "subject": {
+    "reference": "Patient/paciente-ficticio"
+  },
+  "effectiveDateTime": "2026-11-22",
+  "performer": [
+    {
+      "reference": "Practitioner/avaliador-ficticio"
+    }
+  ],
+  "valueQuantity": {
+    "value": 0.0,
+    "unit": "1",
+    "system": "http://unitsofmeasure.org",
+    "code": "1"
+  },
+  "derivedFrom": [
+    {
+      "reference": "QuestionnaireResponse/cif-exemplo"
+    }
+  ]
+}

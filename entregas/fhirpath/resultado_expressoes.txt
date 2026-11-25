@@ -1,0 +1,25 @@
+fhirpath.js 5.2.3; expressões no Questionnaire: 230
+
+## exemplo condutor (masculino)
+- Expressões executadas: 220; iguais ao calculador: 220; divergentes: 0
+- Itens sem valor (pendentes): 0; avaliação definitiva no calculador: sim
+- Passadas até estabilizar: 5
+
+## notas aleatórias, semente 1 (masculino)
+- Expressões executadas: 220; iguais ao calculador: 220; divergentes: 0
+- Itens sem valor (pendentes): 0; avaliação definitiva no calculador: sim
+- Passadas até estabilizar: 5
+
+## notas aleatórias, semente 2 (feminino)
+- Expressões executadas: 224; iguais ao calculador: 224; divergentes: 0
+- Itens sem valor (pendentes): 0; avaliação definitiva no calculador: sim
+- Passadas até estabilizar: 5
+
+## semente 2 sem a resposta b:E408 (feminino)
+- Expressões executadas: 224; iguais ao calculador: 224; divergentes: 0
+- Itens sem valor (pendentes): 3; avaliação definitiva no calculador: não
+- Passadas até estabilizar: 5
+
+## Total
+- Expressões distintas executadas em pelo menos um caso: 230 de 230
+- Divergências: 0

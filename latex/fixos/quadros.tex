@@ -1,0 +1,54 @@
+% Ambiente de quadro, para informação textual com bordas fechadas (NBR 14724,
+% que remete às normas de apresentação tabular do IBGE). Tabela fica para
+% dado numérico. Definição baseada no exemplo do abnTeX2, sobre a classe memoir.
+\newcommand{\quadroname}{Quadro}
+\newcommand{\listofquadrosname}{Lista de quadros}
+\newfloat[chapter]{quadro}{loq}{\quadroname}
+\newlistof{listofquadros}{loq}{\listofquadrosname}
+\newlistentry{quadro}{loq}{0}
+\counterwithout{quadro}{chapter}
+\renewcommand{\cftquadroname}{\quadroname\space}
+\renewcommand*{\cftquadroaftersnum}{\hfill\textendash\hfill}
+
+% Quadros longos (xltabular/longtable) usam o contador e a lista de quadros
+\usepackage{ltcaption}
+% Linha parcial que não abre ponto de quebra (\cline abre) entre as duas linhas de um requisito
+\usepackage{hhline}
+
+% Quadros longos que passam de uma página, como na seção 8.3 das Normas de
+% apresentação tabular do IBGE (1993): o título e o cabeçalho se repetem, e
+% cada página indica (continua), (continuação) ou (conclusão). O cabeçalho do
+% longtable é uma caixa montada uma vez, então a indicação é escrita na saída
+% de cada página, na posição reservada no cabeçalho, com as páginas de início
+% e de fim gravadas no .aux. Precisa de duas compilações.
+%   \quadrolongo{nome}            registra o quadro (antes dele)
+%   \quadromarcaposicao{nome-1}   lugar da indicação no primeiro cabeçalho
+%   \quadromarcaposicao{nome-c}   lugar da indicação no cabeçalho repetido
+%   \quadromarcapagina{nome-ini}  página de início (primeiro cabeçalho)
+%   \quadromarcapagina{nome-fim}  página de fim (último rodapé)
+\makeatletter
+\newcommand*{\quadro@pag}[2]{\expandafter\gdef\csname quadro@pag@#1\endcsname{#2}}
+\newcommand*{\quadro@pos}[3]{\expandafter\gdef\csname quadro@pos@#1\endcsname{{#2}{#3}}}
+\newcommand*{\quadromarcapagina}[1]{\write\@auxout{\string\quadro@pag{#1}{\the\c@page}}}
+\newcommand*{\quadromarcaposicao}[1]{%
+	\pdfsavepos\write\@auxout{\string\quadro@pos{#1}{\the\pdflastxpos}{\the\pdflastypos}}}
+\def\quadro@longos{}
+\newcommand*{\quadrolongo}[1]{\g@addto@macro\quadro@longos{\quadro@indicacao{#1}}}
+\newcommand*{\quadro@escreve}[2]{%
+	\@ifundefined{quadro@pos@#1}{}{%
+		\expandafter\expandafter\expandafter\quadro@escreve@\csname quadro@pos@#1\endcsname{#2}}}
+\newcommand*{\quadro@escreve@}[3]{%
+	\put(0,0){\rlap{\kern#1sp\raise\dimexpr#2sp-\paperheight\relax\hbox{\llap{\normalfont\footnotesize #3}}}}}
+\newcommand*{\quadro@indicacao}[1]{%
+	\@ifundefined{quadro@pag@#1-ini}{}{\@ifundefined{quadro@pag@#1-fim}{}{%
+		\edef\quadro@ini{\csname quadro@pag@#1-ini\endcsname}%
+		\edef\quadro@fim{\csname quadro@pag@#1-fim\endcsname}%
+		\ifnum\quadro@ini<\quadro@fim\relax
+			\ifnum\c@page=\quadro@ini\relax \quadro@escreve{#1-1}{(continua)}\fi
+			\ifnum\c@page>\quadro@ini\relax
+				\ifnum\c@page<\quadro@fim\relax \quadro@escreve{#1-c}{(continuação)}\fi
+				\ifnum\c@page=\quadro@fim\relax \quadro@escreve{#1-c}{(conclusão)}\fi
+			\fi
+		\fi}}}
+\AddToHook{shipout/foreground}{\quadro@longos}
+\makeatother

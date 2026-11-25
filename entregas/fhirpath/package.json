@@ -1,0 +1,11 @@
+{
+  "name": "conferencia-fhirpath",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Execução das expressões de cálculo do Questionnaire da CIF com o fhirpath.js e comparação com o calculador do app",
+  "license": "UNLICENSED",
+  "type": "module",
+  "dependencies": {
+    "fhirpath": "5.2.3"
+  }
+}

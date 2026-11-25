@@ -13,8 +13,12 @@ v. 27, n. 2), nas páginas indicadas em REGRAS.
 Para a comparação, o script trata como "NA" (não se aplica) a cadeia vazia e o
 texto "N/A" que o servidor devolve nas zonas de preservação parcial (ZPP).
 
-Limitação: os valores esperados foram derivados à mão das regras citadas. Eles não
-foram comparados com um calculador validado do ISNCSCI.
+Limitação: os valores esperados foram derivados à mão das regras citadas e depois
+conferidos com o algoritmo do Praxis Spinal Cord Institute, que implementa a revisão
+de 2019 do ISNCSCI (entregas/praxis/conferir_praxis.mjs, com o resultado em
+entregas/praxis/resultado_praxis.txt). Coincidem em todos os casos, com uma diferença
+de notação no caso 9: o Praxis não usa a marca ND e devolve os valores possíveis do
+grau AIS (A ou B) e da ZPP sensitiva direita (NA ou T6).
 """
 from pathlib import Path
 import sys

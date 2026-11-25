@@ -1,3 +1,43 @@
 \chapter{Considerações finais}
+\label{cap:consideracoes}
 
-% Conteúdo planejado em ESTRUTURA-TCC1.md.
+O objetivo deste trabalho foi definir os requisitos e um modelo de dados interoperável baseado no padrão HL7 FHIR
+para estruturar os dados clínicos do aplicativo Bem-Te-Vi e apoiar o acompanhamento das avaliações no projeto v-FES
+cycling, a partir do módulo CIF. Nesta etapa, o trabalho inventariou os sete formulários clínicos e os problemas de
+registro encontrados no código (Seção~\ref{sec:inventario}), descreveu o módulo CIF implementado e a auditoria da
+planilha da equipe que deu origem ao seu cálculo (Seção~\ref{sec:modulo-cif}), classificou o nível de automação de
+cada escala (Seção~\ref{sec:automacao}), especificou 67 requisitos (Seção~\ref{sec:especificacao}) e construiu um
+modelo em FHIR R4, com os perfis do BR-Core e as extensões do SDC, verificado com instâncias fictícias da CIF
+(Seção~\ref{sec:modelo-fhir}). A matriz de rastreabilidade (Apêndice~\ref{ap:matriz}) reúne esses resultados. No
+exemplo condutor, a média do b167 pode ser rastreada da célula E105 da planilha até a regra RN07 e o item do
+questionário que a calcula.
+
+Quanto à P1, os recursos do FHIR R4, os perfis do BR-Core e as extensões do SDC representaram todas as estruturas da
+CIF, e a única adaptação foi um sistema de códigos próprio para os itens e os resultados. As instâncias da CIF
+comportaram todos os campos do formulário e passaram no validador. Nos outros seis formulários, a análise do
+esquema e das telas indica que as estruturas cabem nos mesmos recursos, mas a ausência de perda de informação só foi
+verificada na CIF, porque os demais não foram instanciados. Quanto à P2, os 67 requisitos têm fonte registrada, e os
+62 cuja regra já está definida têm critério de aceitação. Eles corrigem os problemas de dados PD1 a PD5, alinham ao
+instrumento os cálculos que divergem dele (DC1 a DC5), estendem aos demais formulários a consulta, o histórico e a
+comparação que a CIF já oferece e atendem à LGPD, à Resolução COFFITO 414/2012 e à Portaria 1.434/2020. Quanto à
+P3, o grau 3 ficou vazio. Dentro de uma avaliação, não há cálculo previsto pelos instrumentos que o aplicativo deixe
+de fazer, embora parte desses cálculos divirja do instrumento. A lacuna de automação está entre as avaliações, nos
+seis formulários que ainda não têm consulta, histórico nem comparação.
+
+Esses resultados têm limites que decorrem do recorte desta fase. Não houve sessões de elicitação nem de validação com
+a equipe de fisioterapia. As fontes dos requisitos foram o código, as planilhas da CIF, o plano de trabalho e a
+literatura sobre os instrumentos, e a justificativa e a prioridade de cada requisito foram atribuídas pelo autor. As
+decisões da auditoria da CIF continuam provisórias até a validação clínica, e todas as instâncias usam dados
+fictícios. O detalhamento campo a campo e a validação com instâncias ficaram restritos à CIF, enquanto os outros seis
+formulários foram analisados pela estrutura. Os critérios de aceitação dos requisitos propostos, escritos antes da
+implementação, ainda não foram executados.
+
+O TCC 2 parte das pendências registradas na Seção~\ref{sec:consolidacao}, que são de dois tipos. As que dependem da
+equipe de fisioterapia definem as regras ainda em aberto e confirmam as decisões provisórias da auditoria e as
+prioridades atribuídas pelo autor. As técnicas completam a verificação do modelo nos outros seis formulários.
+A implementação do banco de dados, a partir do modelo, e a dos requisitos prioritários não precisam esperar por essas
+pendências, porque 62 dos 67 requisitos já têm regra e critério de aceitação. Os 5 que dependem da equipe são
+incorporados à medida que as regras forem definidas, e o conjunto é avaliado pelos critérios de aceitação e com a
+equipe de fisioterapia. O modelo em HL7 FHIR não define como os dados são gravados no PostgreSQL. No TCC 2, essa
+escolha fica entre adotar um servidor FHIR que grave no próprio PostgreSQL e manter as tabelas relacionais atuais com
+uma camada que converta os registros para FHIR.

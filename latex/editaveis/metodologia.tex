@@ -14,10 +14,10 @@ de análise estatística.
 No que diz respeito ao procedimento, o trabalho segue a metodologia de \textit{design science} de
 \citeonline[p.~3]{wieringa2014design}, que considera a pesquisa na área de engenharia de software como o projeto
 e o estudo de artefatos inseridos no contexto do problema. Wieringa organiza
-esse trabalho em um ciclo de projeto com três tarefas: examinar o problema, projetar um tratamento e validá-lo  \cite[p.~27]{wieringa2014design}. 
+esse trabalho em um ciclo de projeto com três tarefas: examinar o problema, projetar um tratamento e validá-lo.
 A validação, nessa metodologia,
 ocorre antes da implementação e investiga se o artefato, uma vez inserido no contexto,
-contribuiria para os objetivos das partes interessadas \cite[p.~31]{wieringa2014design}.
+contribuiria para os objetivos das partes interessadas \cite[p.~27,~31]{wieringa2014design}.
 
 Neste trabalho, o contexto é o acompanhamento das avaliações do projeto v-FES
 cycling e os artefatos são a especificação de requisitos, a classificação dos níveis de automação
@@ -30,45 +30,46 @@ instâncias de exemplo, de acordo com os critérios indicados na Seção~\ref{se
 \section{Fontes}
 \label{sec:fontes}
 
-Sem sessões de elicitação, os requisitos e o modelo partem das fontes documentais da Tabela~\ref{tab:fontes}. O
+Sem sessões de elicitação, os requisitos e o modelo partem das fontes documentais do Quadro~\ref{qua:fontes}. O
 código do aplicativo é analisado no commit \texttt{a9059f0}, de 4 de novembro de 2026, da branch
 \texttt{feat/cif-avaliacoes} \cite{higa2026bemtevi}. As afirmações sobre o aplicativo indicam o arquivo e a linha
-desse commit, e cada requisito do Capítulo~\ref{cap:resultados} indica a fonte de onde foi derivado.
+desse commit, e cada requisito do Capítulo~\ref{cap:resultados} indica a fonte de onde foi derivado. Os caminhos de
+arquivo são relativos ao repositório do aplicativo. Os arquivos em Python estão em \arq{Backend/} e
+\arq{scripts/cif/}, e os arquivos em Dart, em \arq{lib/}. Os caminhos que começam em \arq{entregas/} são do
+repositório do TCC.
 
-\begin{table}[htb]
+\begin{quadro}[htb]
 	\centering
 	\caption{Fontes documentais do trabalho}
-	\label{tab:fontes}
+	\label{qua:fontes}
 	\footnotesize
-	\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.2\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.27\textwidth}@{}}
-		\toprule
-		Fonte & Conteúdo & Uso (seção) \\
-		\midrule
+	\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{0.2\textwidth}|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}p{0.27\textwidth}|}
+		\hline
+		Fonte & Conteúdo & Uso (seção) \\ \hline
 		Código do aplicativo & Telas em Flutter (\texttt{lib/}) e API em FastAPI (\texttt{Backend/})
 			\cite{higa2026bemtevi} & Estado atual, regras implementadas e problemas de dados
-			(\ref{sec:inventario}, \ref{sec:modulo-cif}) \\
+			(\ref{sec:inventario}, \ref{sec:modulo-cif}) \\ \hline
 		Esquema do banco & \texttt{Backend/schema.sql} e migração \texttt{001\_create\_avaliacoes\_cif.sql}
-			& Ponto de partida do modelo FHIR (\ref{sec:inventario}, \ref{sec:modelo-fhir}) \\
+			& Ponto de partida do modelo FHIR (\ref{sec:inventario}, \ref{sec:modelo-fhir}) \\ \hline
 		Planilha CIF da equipe & Abas Funções do Corpo, Estrutura do Corpo, Atividades e Participação, Fatores
-			Ambientais, Plan1 e Legenda & Origem do catálogo e das regras de cálculo (\ref{sec:modulo-cif}) \\
+			Ambientais, Plan1 e Legenda & Origem do catálogo e das regras de cálculo (\ref{sec:modulo-cif}) \\ \hline
 		Documentos do módulo CIF & Catálogo (\texttt{catalogo.v0.1.json}), auditoria (\texttt{auditoria.v0.1.json},
 			\texttt{regras-e-auditoria.md}) e plano do módulo (\texttt{docs/planos/cif.md}) & Regras verificáveis,
-			achados nas fórmulas, decisões pendentes e etapas do módulo (\ref{sec:modulo-cif}) \\
-		Protótipo & Arquivo no Figma e capturas das telas da CIF & Fluxo da avaliação CIF (\ref{sec:modulo-cif}) \\
+			achados nas fórmulas, decisões pendentes e etapas do módulo (\ref{sec:modulo-cif}) \\ \hline
+		Protótipo & Arquivo no Figma e capturas das telas da CIF & Fluxo da avaliação CIF (\ref{sec:modulo-cif}) \\ \hline
 		Plano de trabalho de iniciação científica & \citeonline{ochoadiaz2026plano} & Necessidades da base e dados
-			para o módulo de IA (\ref{sec:especificacao}) \\
+			para o módulo de IA (\ref{sec:especificacao}) \\ \hline
 		Padrões de interoperabilidade & FHIR R4, SDC, BR-Core e guia da RNDS
 			\cite{rnds2026guia} & Recursos, perfis e requisitos de interoperabilidade
-			(\ref{sec:especificacao}, \ref{sec:modelo-fhir}) \\
+			(\ref{sec:especificacao}, \ref{sec:modelo-fhir}) \\ \hline
 		Normas & Portaria 1.434/2020, LGPD e Resolução COFFITO 414/2012
-			\cite{portaria1434:2020,lgpd2018,coffito414:2012} & Requisitos normativos, de privacidade e de
-			registro (\ref{sec:especificacao}) \\
+			(\citeauthor{lgpd2018}, \citeyear{lgpd2018}, \citeyear{portaria1434:2020}; \citeauthor{coffito414:2012}, \citeyear{coffito414:2012}) & Requisitos normativos, de privacidade e de
+			registro (\ref{sec:especificacao}) \\ \hline
 		Literatura dos instrumentos & Referências apresentadas no Capítulo~\ref{cap:referencial} & Regras de
-			cálculo das escalas (\ref{sec:automacao}) \\
-		\bottomrule
+			cálculo das escalas (\ref{sec:automacao}) \\ \hline
 	\end{tabularx}
-	\fonte{Elaborada pelo autor.}
-\end{table}
+	\fonte{Elaborado pelo autor.}
+\end{quadro}
 
 Os exemplos e as instâncias de teste usam somente dados fictícios. Nenhum dado real de paciente é coletado ou
 analisado nesta etapa.
@@ -122,7 +123,7 @@ ele é acompanhado da planilha da equipe até o modelo em HL7 FHIR e a matriz de
 		\coordinate (fa) at ([yshift=8mm]g1.north west);
 		\coordinate (fb) at ([yshift=16mm]g3.north east);
 		\node[draw, rounded corners=2pt, fit=(fa)(fb), inner sep=0pt] (fontes) {};
-		\node at (fontes) {Fontes documentais (Tabela~\ref{tab:fontes})};
+		\node at (fontes) {Fontes documentais (Quadro~\ref{qua:fontes})};
 
 		% Fluxo
 		\draw[seta] (e1) -- (e2);
@@ -143,80 +144,104 @@ ele é acompanhado da planilha da equipe até o modelo em HL7 FHIR e a matriz de
 \section{Técnicas}
 \label{sec:tecnicas}
 
-\textbf{Engenharia reversa do código e do esquema.} \citeonline{chikofsky1990reverse} definem engenharia reversa
-como a análise de um sistema para identificar seus componentes e as relações entre eles e para representá-lo em um
-nível mais alto de abstração. No levantamento do estado atual (Seção~\ref{sec:inventario}), essa análise percorre,
-em cada formulário, a tela em Flutter, as rotas da API e as tabelas do \texttt{schema.sql}, e registra a estrutura dos
-campos, as funções disponíveis e os comportamentos que afetam a qualidade dos dados.
+\textbf{Engenharia reversa do código e do esquema.} \citeonline{chikofsky1990reverse} definem a engenharia reversa
+como a análise de um sistema com o objetivo de identificar seus componentes e as relações entre eles, bem como de
+representá-lo em um nível mais elevado de abstração. Na avaliação do estado atual (Seção~\ref{sec:inventario}), essa
+análise percorre, em cada formulário, a tela em Flutter, as rotas da API e as tabelas do arquivo \texttt{schema.sql},
+e registra a estrutura dos campos, as funções disponíveis e o comportamento que afeta a qualidade dos dados.
 
-\textbf{Recuperação de requisitos e regras de negócio.} O código também serve como fonte de requisitos.
-\citeonline{yu2005reverse} recuperam modelos de objetivos a partir de código legado, e \citeonline{sneed1996extracting}
-descrevem a extração de regras de negócio do código-fonte. O módulo CIF foi implementado antes de haver uma
-especificação formal e, por isso, é lido da mesma forma (Seção~\ref{sec:modulo-cif}). Cada comportamento
-implementado, como a média das notas dos itens filhos ou a pendência quando falta uma resposta, é registrado como
-requisito ou regra de negócio, com a indicação do arquivo que o implementa. Os cálculos dos demais formulários,
-levantados na Seção~\ref{sec:inventario}, passam pelo mesmo procedimento. Recuperar um requisito do código, porém,
-pode reproduzir um defeito. Quando o comportamento implementado diverge da regra publicada para o instrumento ou de
-uma norma, o requisito segue o instrumento ou a norma, e a divergência é registrada como achado.
+\textbf{Recuperação de requisitos e regras de negócio.} O código também serve como fonte de requisitos:
+\citeonline{yu2005reverse} extraem modelos de objetivos a partir de código legado, e \citeonline{sneed1996extracting}
+descrevem a extração de regras de negócio a partir do código-fonte. Como o módulo CIF foi implementado antes da
+criação de uma especificação formal, ele é lido da mesma maneira (Seção~\ref{sec:modulo-cif}), e cada comportamento
+implementado, como a média das notas dos itens filhos ou o estado pendente em caso de resposta ausente, é registrado
+como um requisito ou regra de negócio, com indicação do arquivo que o implementa. Os cálculos dos demais formulários,
+levantados na Seção~\ref{sec:inventario}, passam pelo mesmo procedimento. Como a obtenção de um requisito a partir do
+código-fonte pode reproduzir erros da implementação, o requisito deve seguir o instrumento ou a norma sempre que o
+comportamento implementado divergir da regra publicada para o instrumento ou de uma norma, e essa divergência é
+registrada como um achado.
 
-\textbf{Confronto da planilha com o catálogo.} O catálogo da CIF foi extraído da planilha da equipe. A análise
+\textbf{Confronto da planilha com o catálogo.} O catálogo da CIF foi extraído da planilha da equipe, e a análise
 compara, aba por aba, a hierarquia, os campos e as fórmulas da planilha com o catálogo versionado e com a auditoria
-registrada no repositório do aplicativo. Cada divergência é classificada como decidida, quando já há decisão
-registrada, ou pendente, quando depende de confirmação da equipe.
+registrada no repositório do aplicativo. Cada divergência é classificada como decidida, caso já exista uma decisão
+registrada, ou como pendente, caso dependa da confirmação da equipe.
 
-\textbf{Derivação de requisitos de normas e padrões.} \citeonline{breaux2008analyzing} propõem um método para
-extrair de textos normativos direitos, obrigações e restrições, mantendo cada requisito ligado ao trecho de onde veio.
-Este trabalho adota a parte do método que garante essa ligação: cada requisito derivado da LGPD, da Resolução COFFITO
-414/2012, da Portaria 1.434/2020 ou do BR-Core indica o artigo ou o perfil de origem. A análise completa proposta
-pelos autores não é aplicada.
+\textbf{Derivação de requisitos a partir de normas e padrões.} \citeonline{breaux2008analyzing} propõem um método
+para extrair de textos normativos direitos, obrigações e restrições, mantendo cada requisito vinculado ao trecho do
+qual se origina. Este trabalho não aplica a análise completa proposta pelos autores, mas apenas a parte que garante
+essa ligação: cada requisito derivado da LGPD, da Resolução COFFITO 414/2012, da Portaria 1.434/2020 ou do BR-Core
+indica o artigo ou o perfil do qual provém.
 
-\textbf{Classificação da automação.} Cada valor produzido pelos instrumentos, seja item, subtotal ou escore, recebe um
-dos quatro graus definidos na Seção~\ref{sec:criterios}. O grau atual vem do código do aplicativo, e o que pode ser
-calculado vem da regra publicada para o instrumento. A classificação é proposta neste trabalho. Ela se apoia na
-distinção de \citeonline[p.~288]{parasuraman2000automation} entre aquisição de informação, análise de informação e
-seleção de decisão. Os dois graus intermediários correspondem à automação da análise, que inclui a integração de
-várias variáveis em um único valor \cite[p.~288]{parasuraman2000automation}. O último grau marca o ponto em que a
-decisão permanece com o profissional.
+\textbf{Classificação da automação.} Cada valor produzido pelos instrumentos, seja um item, um subtotal ou um escore,
+recebe um dos quatro graus definidos na Seção~\ref{sec:criterios}: o grau atual baseia-se no código do aplicativo, e
+o grau possível baseia-se na regra publicada para o instrumento em questão. Essa classificação é proposta neste
+trabalho e baseia-se na distinção feita por \citeonline[p.~288]{parasuraman2000automation} entre aquisição de
+informação, análise de informação e seleção de decisão. Os dois graus intermediários correspondem à automação da
+análise, que envolve a integração de várias variáveis em um único valor, e o último grau indica o ponto em que a
+decisão cabe ao profissional. É considerado valor cada item do instrumento e cada dado que entra no cálculo por ele
+determinado, como o peso e a altura no IMC e a escolaridade na pontuação esperada do MEEM, enquanto identificação,
+datas, nome do examinador, equipamento e texto livre não são levados em consideração. Na GAS, a contagem considera as
+13 metas que o formulário sempre apresenta (\arq{gasForm.dart}, linhas 147--231), e, na CIF, são incluídos os itens
+da cadeia de fórmulas de cada sexo (Seção~\ref{sec:cif-catalogo}).
 
-\textbf{Mapeamento para o HL7 FHIR.} Cada estrutura dos formulários é associada a recursos do FHIR R4
-\cite{hl7fhirR4}, com preferência pelos perfis do BR-Core quando eles existem \cite{brcore2026}. Os cálculos são
-declarados com as expressões do SDC \cite{hl7sdc}. A CIF é mapeada em detalhe, e os demais formulários, pela
-estrutura.
+\textbf{Conferência dos cálculos.} Cada valor calculado pelo aplicativo é comparado com a regra descrita pela fonte
+do instrumento (Seção~\ref{sec:ref-instrumentos}). Os cálculos do servidor são executados sobre casos fictícios por
+meio de scripts que importam o próprio código do commit analisado (\arq{conferir_calculo_gas.py} e
+\arq{conferir_calculo_asia.py}, no diretório \arq{entregas/scripts/}), enquanto os cálculos realizados apenas na
+tela, escritos em Dart, são transcritos para o script ou verificados durante a leitura do código. Na ASIA, o
+resultado esperado de cada caso é obtido manualmente com base nas regras de
+\citeonline[p.~3,~16,~18--19,~22]{rupp2021isncsci} e conferido com o algoritmo público do Praxis Spinal Cord
+Institute, que implementa a revisão de 2019 do padrão \cite{praxis2023isncsci}. Se o código divergir da regra
+publicada, essa divergência recebe um identificador DC, distinto dos problemas de dados (PD), pois o PD5 compara a
+tela com o servidor, enquanto os DC comparam o aplicativo com o instrumento.
 
-\textbf{Verificação com instâncias de exemplo.} Para cada formulário, são criadas instâncias em JSON com dados
-fictícios, validadas contra a especificação R4 e contra os perfis do BR-Core usados no modelo. Neste trabalho,
-validar uma instância significa conferir a sua conformidade estrutural com a especificação e com os perfis: tipos,
-cardinalidade e correspondência entre as respostas e o questionário. A correção dos valores calculados é conferida à
-parte. As expressões de cálculo do SDC são executadas sobre as instâncias, e os resultados são comparados com os
-valores esperados, obtidos do calculador do aplicativo, no caso da CIF, e da regra publicada para o instrumento, nos
-demais formulários. As mesmas instâncias servem para conferir se cada problema de dados da
-Seção~\ref{sec:inventario} tem resposta no modelo.
+\textbf{Mapeamento para o HL7 FHIR.} Cada estrutura dos formulários é mapeada para recursos do FHIR R4
+\cite{hl7fhirR4}, com preferência pelos perfis do BR-Core, quando existentes \cite{brcore2026}, e os cálculos são
+declarados por meio de expressões do SDC \cite{hl7sdc}. A CIF é mapeada detalhadamente, e os demais formulários, de
+acordo com sua estrutura.
+
+\textbf{Verificação com instâncias de exemplo.} Para a CIF, são criadas instâncias em JSON com dados fictícios,
+validadas em relação à especificação R4 e aos perfis do BR-Core utilizados no modelo. Neste trabalho, validar uma
+instância significa conferir sua conformidade estrutural com a especificação e com os perfis, ou seja, os tipos, a
+cardinalidade e a correspondência entre as respostas e o questionário. A correção dos valores calculados é verificada
+separadamente: as expressões de cálculo do SDC são executadas sobre as instâncias, e os resultados são comparados com
+os valores esperados, obtidos a partir da calculadora do aplicativo. As mesmas instâncias servem para conferir se
+cada problema de dados da Seção~\ref{sec:inventario} tem uma resposta no modelo, enquanto os demais formulários,
+conforme o recorte do trabalho, são analisados pela estrutura, sem instâncias.
 
 \section{Critérios para responder às questões de pesquisa}
 \label{sec:criterios}
 
 \begin{description}
 	\item [P1] Cobertura do modelo. Em cada formulário, as estruturas de dados (bloco repetido, campo calculado,
-	variação por sexo, texto livre e valor ausente) são classificadas como representadas, quando um recurso ou
-	elemento padrão do FHIR basta; representadas com adaptação, quando exigem extensão, perfil ou sistema de códigos
-	próprio; ou não representadas. A resposta a P1 é positiva se nenhuma estrutura ficar como não representada e se
-	as instâncias de exemplo comportarem todos os campos do formulário. As adaptações mostram onde o modelo depende de
-	elementos próprios do projeto.
+	variação por sexo, texto livre e valor ausente) são classificadas como representadas, se um recurso ou elemento
+	padrão do FHIR for suficiente; representadas com adaptação, se exigirem extensão, perfil ou sistema de códigos
+	próprio; ou não representadas. A resposta à P1 é afirmativa se nenhuma estrutura ficar sem representação e, na
+	CIF, se as instâncias de exemplo contiverem todos os campos do formulário. As adaptações indicam onde o modelo
+	depende de elementos próprios do projeto.
 	\item [P2] Qualidade e rastreabilidade dos requisitos. Cada requisito funcional (RF), requisito não funcional
-	(RNF) ou regra de negócio (RN) recebe identificador, descrição, fonte da Tabela~\ref{tab:fontes}, justificativa,
-	prioridade e critério de aceitação. Os requisitos seguem as características de requisito bem formado da ISO/IEC/IEEE
-	29148, como ser necessário, não ambíguo e verificável \cite{iso29148:2018}. O autor atribui a prioridade em três
-	níveis: alta, para o requisito exigido por norma, já implementado no módulo CIF ou necessário para corrigir um
-	problema de dados da Seção~\ref{sec:inventario}; média, para o que o acompanhamento dos demais formulários exige,
-	como histórico, estado e comparação; e baixa, para os demais. A equipe revisa essa priorização no TCC 2. A
-	resposta a P2 está completa quando todo requisito tem fonte e critério de aceitação e aparece na matriz de
-	rastreabilidade.
-	\item [P3] Grau de automação. Cada valor das escalas é classificado em um de quatro graus: digitado, quando é um
+	(RNF) ou regra de negócio (RN) recebe identificador, descrição, fonte do Quadro~\ref{qua:fontes}, justificativa,
+	prioridade e critério de aceitação. Os requisitos atendem às características de um requisito bem formulado
+	segundo a ISO/IEC/IEEE 29148, como ser necessário, não ambíguo e verificável \cite{iso29148:2018}. O autor atribui
+	a prioridade em três níveis: alta, para requisitos exigidos por norma, já implementados no módulo CIF ou
+	necessários para corrigir problemas de dados da Seção~\ref{sec:inventario} ou divergências de cálculo da
+	Seção~\ref{sec:automacao}; média, para requisitos sem os quais o acompanhamento entre avaliações não funciona ou
+	perde confiabilidade, como histórico, estado, versão do formulário, comparação, regras de cálculo e de registro
+	dos valores comparados e representação dos dados no padrão de interoperabilidade adotado; e baixa, para
+	requisitos que ampliam o uso dos dados além do acompanhamento, como a exportação para fins de pesquisa. A equipe
+	deve revisar essa priorização no TCC 2. A resposta à P2 estará completa quando cada requisito tiver fonte e
+	critério de aceitação e estiver listado na matriz de rastreabilidade.
+	\item [P3] Grau de automação. Cada valor das escalas é classificado em um dos quatro graus: digitado, se for um
 	dado de entrada observado ou medido pelo profissional; calculado pelo aplicativo, quando o código já o obtém a
-	partir de outros valores; calculável por regra do instrumento, quando a literatura define uma regra determinística
-	que o aplicativo ainda não implementa; e dependente de julgamento clínico, quando o valor deriva de outros dados,
-	mas exige interpretação do profissional. O segundo grau é comprovado com arquivo e linha do código, e o terceiro,
-	com a referência do instrumento. Os valores do terceiro grau formam as oportunidades de automação.
+	partir de outros valores; calculável pela regra do instrumento, se a literatura definir uma regra determinística
+	que o aplicativo ainda não implementa; e dependente de julgamento clínico, se o valor decorrer de outros dados,
+	mas exigir a interpretação do profissional. O segundo grau é comprovado por arquivo e linha de código, e o
+	terceiro, pela referência do instrumento. Os valores do terceiro grau representam as oportunidades de automação.
+	Os do segundo grau são, além disso, conferidos com a regra publicada do instrumento, e cada divergência
+	recebe um identificador DC (Seção~\ref{sec:tecnicas}). A resposta a P3 é a distribuição dos valores pelos
+	quatro graus, com as divergências encontradas na conferência. Um terceiro grau vazio também é uma resposta
+	possível e indica que, dentro de uma avaliação, o aplicativo já calcula todos os valores que os instrumentos
+	definem por regra determinística.
 \end{description}
 
 \section{Ferramentas}
@@ -229,6 +254,8 @@ Seção~\ref{sec:inventario} tem resposta no modelo.
 	\item Node.js, para executar o algoritmo do ISNCSCI do Praxis Spinal Cord Institute \cite{praxis2023isncsci}, com o
 	qual os casos fictícios da ASIA são classificados e comparados com o servidor do aplicativo;
 	\item validador oficial do HL7 FHIR, executado em Java, para validar as instâncias de exemplo;
+	\item fhirpath.js \cite{hl7fhirpathjs}, executado em Node.js, para executar as expressões de cálculo do SDC sobre as
+	instâncias e comparar os resultados com o calculador do aplicativo;
 	\item Figma, para consultar o protótipo das telas.
 \end{itemize}
 
@@ -238,34 +265,32 @@ Os scripts, as instâncias em JSON e as tabelas completas ficam no repositório 
 \section{Cronograma}
 \label{sec:cronograma}
 
-A Tabela~\ref{tab:cronograma} apresenta o cronograma do TCC 1, com entrega em 1º de dezembro de 2026. O módulo CIF
+O Quadro~\ref{qua:cronograma} apresenta o cronograma do TCC 1, com entrega em 1º de dezembro de 2026. O módulo CIF
 foi implementado antes, como parte do trabalho no projeto, e aparece na primeira linha por ser o principal resultado
 parcial desta etapa. Uma versão completa do texto vai para a orientadora em 24 de novembro, e a última semana fica
 reservada às correções.
 
-\begin{table}[htb]
+\begin{quadro}[htb]
 	\centering
 	\caption{Cronograma do TCC 1}
-	\label{tab:cronograma}
+	\label{qua:cronograma}
 	\footnotesize
-	\begin{tabularx}{\textwidth}{@{}p{3.2cm}X@{}}
-		\toprule
-		Período (2026) & Atividades \\
-		\midrule
+	\begin{tabularx}{\textwidth}{|p{3.2cm}|X|}
+		\hline
+		Período (2026) & Atividades \\ \hline
 		até 30/09 & Implementação do módulo CIF no aplicativo: cálculo, persistência, formulário, histórico e
-			comparação \\
-		01/10 a 15/10 & Pré-TCC, levantamento da bibliografia e estudo dos formulários do aplicativo \\
-		16/10 a 31/10 & Ajustes no módulo CIF, revisão dos demais módulos e correção de falhas \\
-		01/11 a 07/11 & Recorte do tema, esquema do banco, auditoria da CIF e guia de implantação \\
-		08/11 a 14/11 & Introdução, reunião de orientação de 12/11, que redefiniu o escopo, e estrutura do trabalho \\
-		15/11 a 16/11 & Metodologia e Seção~\ref{sec:modulo-cif} \\
+			comparação \\ \hline
+		01/10 a 15/10 & Pré-TCC, levantamento da bibliografia e estudo dos formulários do aplicativo \\ \hline
+		16/10 a 31/10 & Ajustes no módulo CIF, revisão dos demais módulos e correção de falhas \\ \hline
+		01/11 a 07/11 & Recorte do tema, esquema do banco, auditoria da CIF e guia de implantação \\ \hline
+		08/11 a 14/11 & Introdução, reunião de orientação de 12/11, que redefiniu o escopo, e estrutura do trabalho \\ \hline
+		15/11 a 16/11 & Metodologia e Seção~\ref{sec:modulo-cif} \\ \hline
 		17/11 a 20/11 & Seções~\ref{sec:inventario}, \ref{sec:automacao} e~\ref{sec:especificacao}, instâncias em HL7
-			FHIR e parte do referencial teórico \\
+			FHIR e parte do referencial teórico \\ \hline
 		21/11 a 23/11 & Seções~\ref{sec:modelo-fhir} e~\ref{sec:consolidacao}, restante do referencial teórico,
-			considerações finais e resumo \\
-		24/11 & Envio da versão completa à orientadora \\
-		25/11 a 01/12 & Correções indicadas pela orientadora, conferência das normas ABNT e entrega \\
-		\bottomrule
+			considerações finais e resumo \\ \hline
+		24/11 & Envio da versão completa à orientadora \\ \hline
+		25/11 a 01/12 & Correções indicadas pela orientadora, conferência das normas ABNT e entrega \\ \hline
 	\end{tabularx}
-	\fonte{Elaborada pelo autor.}
-\end{table}
+	\fonte{Elaborado pelo autor.}
+\end{quadro}

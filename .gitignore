@@ -10,6 +10,7 @@
 *.lof
 *.log
 *.lot
+*.loq
 *.out
 *.toc
 *.synctex.gz

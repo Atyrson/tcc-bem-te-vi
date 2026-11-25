@@ -1,17 +1,21 @@
 \begin{resumo}
- O resumo deve ressaltar o objetivo, o método, os resultados e as conclusões 
- do documento. A ordem e a extensão
- destes itens dependem do tipo de resumo (informativo ou indicativo) e do
- tratamento que cada item recebe no documento original. O resumo deve ser
- precedido da referência do documento, com exceção do resumo inserido no
- próprio documento. (\ldots) As palavras-chave devem figurar logo abaixo do
- resumo, antecedidas da expressão Palavras-chave:, separadas entre si por
- ponto e finalizadas também por ponto. O texto pode conter no mínimo 150 e 
- no máximo 500 palavras, é aconselhável que sejam utilizadas 200 palavras. 
- E não se separa o texto do resumo em parágrafos.
+ O projeto v-FES cycling, realizado pela Plataforma Tecnológica BEM-TE-VI da Universidade de Brasília, acompanha
+ seus participantes por meio de avaliações regulares feitas por uma equipe de fisioterapeutas que utiliza sete
+ instrumentos. O aplicativo Bem-Te-Vi reúne esses formulários, mas trabalha com cada um deles separadamente, só
+ oferece histórico e comparação das avaliações no fluxo da CIF e apresenta problemas no registro de dados. Este
+ trabalho define os requisitos e um modelo de dados interoperável em HL7 FHIR para estruturar esses dados e
+ apoiar o acompanhamento das avaliações, tendo como ponto de partida o módulo CIF implementado pelo autor. A
+ pesquisa segue o método de \textit{design science} proposto por Wieringa e baseia-se no
+ código do aplicativo, na documentação do projeto e na literatura especializada sobre esses instrumentos, sem
+ consultas à equipe de fisioterapeutas. Foram especificados 67 requisitos, e o modelo, criado em FHIR R4,
+ representou todas as estruturas da CIF, com instâncias de dados fictícios aprovadas pelo validador. A análise
+ mostrou ainda que o aplicativo já automatiza os cálculos em cada avaliação, embora parte deles se desvie do
+ instrumento, mas não automatiza o acompanhamento entre as avaliações nos demais formulários. Esses resultados
+ servem como orientação para a implementação do banco de dados e a validação com a equipe de fisioterapeutas no
+ TCC 2.
 
  \vspace{\onelineskip}
-    
+
  \noindent
- \textbf{Palavras-chave}: latex. abntex. editoração de texto.
+ \textbf{Palavras-chave}: Engenharia de requisitos. Dados clínicos. CIF. HL7 FHIR. Fisioterapia.
 \end{resumo}

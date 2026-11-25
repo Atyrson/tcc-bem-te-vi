@@ -5,71 +5,521 @@
 \chapter{Especificação de requisitos}
 \label{ap:requisitos}
 
-Este apêndice reúne a especificação de requisitos do trabalho. A Tabela~\ref{tab:cif-requisitos} lista os requisitos
-e as regras de negócio que o módulo CIF já implementa (Seção~\ref{sec:cif-fluxo}), com os arquivos e as linhas do
-commit \texttt{a9059f0} que os implementam. Os caminhos são relativos ao repositório do aplicativo.
+Este apêndice contém a especificação de requisitos do trabalho, com os campos e os critérios de prioridade da
+Seção~\ref{sec:criterios}. Cada requisito do Quadro~\ref{qua:cif-requisitos} apresenta, na primeira linha, o
+identificador, a descrição, a prioridade e a situação e, abaixo, a fonte, a justificativa e o critério de aceitação.
 
-% Passo 5: acrescentar os demais requisitos e, para todos, fonte, prioridade e critério de aceitação.
+A fonte é indicada por identificadores que levam ao lugar onde a evidência está: os problemas de dados PD1 a PD5
+(Seção~\ref{sec:inv-problemas}), as divergências de cálculo DC1 a DC5 (Seção~\ref{sec:aut-conformidade}), as seções
+do trabalho, os requisitos já implementados e as normas, citadas pela sigla e pelo artigo: a LGPD \cite{lgpd2018}, a
+Resolução COFFITO 414/2012 \cite{coffito414:2012}, a Portaria 1.434/2020 \cite{portaria1434:2020} e o BR-Core
+\cite{brcore2026}. O plano de iniciação científica é o de \citeonline{ochoadiaz2026plano}. Nos 21 primeiros
+requisitos, de RF01 a RNF03, que o módulo CIF já implementa (Seção~\ref{sec:cif-fluxo}), a fonte indica os arquivos
+e as linhas do commit \texttt{a9059f0} que os implementam e as decisões da auditoria da CIF
+(\arq{docs/cif/regras-e-auditoria.md}), e o critério de aceitação indica os testes do aplicativo que os verificam. Os
+caminhos são relativos ao repositório do aplicativo. A expressão ``seis formulários'' designa a ASIA, a GAS, o MEEM,
+o eletrodiagnóstico, a densitometria e a anamnese. Os requisitos que dependem da equipe ainda não têm critério de
+aceitação, porque a regra só será definida no TCC 2.
 
-\begin{table}[htbp]
-	\centering
-	\caption{Requisitos e regras de negócio implementados no módulo CIF}
-	\label{tab:cif-requisitos}
-	\footnotesize
-	\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.34\textwidth}@{}}
-		\toprule
-		ID & Descrição & Implementação (arquivo: linhas) \\
-		\midrule
-		RF01 & Gerar o formulário conforme o sexo cadastrado do paciente, com 984 itens para o masculino e 1.002 para
-			o feminino & \arq{cif_api.py}: 196--208; \arq{cif_formulario.py}: 73--114 \\
-		RF02 & Salvar a avaliação como rascunho, com respostas parciais, e retomá-la depois & \arq{cif_api.py}:
-			244--329; \arq{cif_repository.py}: 141--254; \arq{cifForm.dart}: 890--925 \\
-		RF03 & Calcular uma prévia por capítulo e área, com os itens pendentes & \arq{cif_api.py}: 331--362;
-			\arq{cifForm.dart}: 393--400 \\
-		RF04 & Concluir a avaliação só quando todos os itens tiverem nota, com recálculo no servidor &
-			\arq{cif_repository.py}: 256--305; \arq{cif_api.py}: 364--402 \\
-		RF05 & Exibir o quadro resumo da avaliação concluída, com acesso às respostas originais &
-			\arq{cifSummary.dart}: 199--215, 307--313 \\
-		RF06 & Listar as avaliações do paciente, numeradas pela ordem de criação & \arq{cif_api.py}: 405--419;
-			\arq{cifHistoryProvider.dart}: 34--47 \\
-		RF07 & Comparar duas avaliações concluídas, com a diferença por área e capítulo &
-			\arq{cifComparisonProvider.dart}: 79--147; \arq{cifModels.dart}: 1001--1045 \\
-		\midrule
-		RN01 & A nota de um item digitado é um inteiro de 0 a 4, e item sem nota não vale zero &
-			\arq{calculador.py}: 568--569, 770--791 \\
-		RN02 & A nota de um item calculado é a média aritmética das células citadas na fórmula da planilha &
-			\arq{calculador.py}: 229--244, 593--618 \\
-		RN03 & A falta de nota na cadeia deixa pendentes o item, o capítulo e a área & \arq{calculador.py}:
-			612--613, 799--805 \\
-		RN04 & O cálculo não arredonda valores intermediários, e o valor exibido tem duas casas decimais &
-			\arq{calculador.py}: 247--254, 571--583 \\
-		RN05 & O sexo, masculino ou feminino, seleciona as variantes de b6, s6 e das raízes das áreas b e s &
-			\arq{calculador.py}: 24--29, 359--380, 713--734 \\
-		RN06 & Item calculado é somente leitura & \arq{calculador.py}: 758--767 \\
-		RN07 & Em b167 (E105), a segunda ocorrência de E119 é retirada, e a fórmula original fica registrada &
-			\arq{calculador.py}: 347--351, 675--686 \\
-		RN08 & Na linha 263 de Fatores Ambientais, o código válido é e595, e não e598 & \arq{calculador.py}:
-			331--337 \\
-		RN09 & A avaliação não tem resultado geral, e os resultados das quatro áreas ficam separados &
-			\arq{calculador.py}: 699--704, 817 \\
-		RN10 & Avaliação concluída não pode ser editada & \arq{cif_repository.py}: 228--229, 276--278;
-			\arq{cif_api.py}: 386--390 \\
-		RN11 & Só se comparam avaliações concluídas do mesmo paciente e com as mesmas versões de catálogo e regras &
-			\arq{cifComparisonProvider.dart}: 87--98, 129--139; \arq{cifModels.dart}: 1005--1012 \\
-		\midrule
-		RNF01 & Cada avaliação guarda as versões do catálogo e das regras e é sempre recalculada com elas &
-			\arq{001_create_avaliacoes_cif.sql}: 10--11; \arq{cif_versions.py}: 45--64 \\
-		RNF02 & Só o servidor calcula resultados, e o aplicativo não reimplementa as fórmulas & \arq{cif_api.py}:
-			1--4; \arq{cifFormProvider.dart}: 10--12 \\
-		RNF03 & A conclusão bloqueia o registro durante o recálculo, para não concluir um estado diferente do salvo &
-			\arq{cif_repository.py}: 266--271, 292--302 \\
-		\bottomrule
-	\end{tabularx}
-	\fonte{Elaborada pelo autor a partir do código do aplicativo no commit \texttt{a9059f0} \cite{higa2026bemtevi}.}
-\end{table}
+\newcommand{\reqgrupo}[1]{\multicolumn{4}{|l|}{\textbf{#1}} \\* \hline}
+\newcommand{\req}[7]{\textbf{#1} & #2 & #3 & #4 \\* \hhline{|~|---|} \noalign{\nobreak}
+	& \multicolumn{3}{>{\raggedright\arraybackslash}p{\dimexpr\linewidth-1.3cm-4\tabcolsep-3\arrayrulewidth\relax}|}{%
+		\textit{Fonte:} #5\newline
+		\textit{Justificativa:} #6\newline
+		\textit{Critério de aceitação:} #7} \\ \hline}
 
-\chapter{Segundo Apêndice}
+\quadrolongo{req}
+{\footnotesize\renewcommand{\LTcaptype}{quadro}
+\begin{xltabular}{\textwidth}{|>{\raggedright\arraybackslash}p{1.3cm}|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}p{1.6cm}|>{\raggedright\arraybackslash}p{2.35cm}|}
+	\caption{Especificação de requisitos}
+	\label{qua:cif-requisitos} \\
+	\multicolumn{4}{@{}r@{}}{\quadromarcaposicao{req-1}\quadromarcapagina{req-ini}\strut} \\
+	\hline
+	ID & Descrição & Prioridade & Situação \\
+	\hline
+	\endfirsthead
+	\caption[]{Especificação de requisitos} \\
+	\multicolumn{4}{@{}r@{}}{\quadromarcaposicao{req-c}\strut} \\
+	\hline
+	ID & Descrição & Prioridade & Situação \\
+	\hline
+	\endhead
+	\noalign{\quadromarcapagina{req-fim}}
+	\endlastfoot
 
-Texto do segundo apêndice.
+	\reqgrupo{Requisitos implementados no módulo CIF}
+	\req{RF01}{Gerar o formulário conforme o sexo cadastrado do paciente, com 984 itens para o masculino e 1.002 para
+		o feminino}{Alta}{Implementado}
+		{\arq{cif_api.py}, 196--208; \arq{cif_formulario.py}, 73--114.}
+		{A planilha da equipe tem itens próprios de cada sexo em b6 e s6 (Seção~\ref{sec:cif-catalogo}).}
+		{\arq{test_cif_formulario.py}, linha 20, e \arq{test_cif_api.py}, linhas 200 e 231: o formulário de cada sexo
+		tem os itens do calculador, na mesma ordem, e sexo ausente ou inválido não gera formulário.}
+	\req{RF02}{Salvar a avaliação como rascunho, com respostas parciais, e retomá-la depois}{Alta}{Implementado}
+		{\arq{cif_api.py}, 244--329; \arq{cif_repository.py}, 141--254; \arq{cifForm.dart}, 890--925.}
+		{Com mais de 980 itens, a avaliação nem sempre é preenchida de uma só vez.}
+		{\arq{test_cif_api.py}, linha 238; \arq{cif_form_provider_test.dart}, linha 94; e
+		\arq{cif_form_widget_test.dart}, linha 180: o rascunho é criado, atualizado e retomado com as respostas
+		parciais, e é salvo quando o profissional sai da avaliação.}
+	\req{RF03}{Calcular uma prévia por capítulo e área, com os itens pendentes}{Alta}{Implementado}
+		{\arq{cif_api.py}, 331--362; \arq{cifForm.dart}, 393--400.}
+		{O profissional vê o resultado parcial e o que falta responder antes de concluir.}
+		{\arq{test_cif_api.py}, linha 238, e \arq{cif_form_widget_test.dart}, linha 91: a prévia traz os valores
+		calculados em todas as áreas e indica os itens pendentes.}
+	\req{RF04}{Concluir a avaliação só quando todos os itens tiverem nota, com recálculo no servidor}{Alta}{Implementado}
+		{\arq{cif_repository.py}, 256--305; \arq{cif_api.py}, 364--402.}
+		{Só uma avaliação completa, calculada pelo servidor, é gravada como resultado.}
+		{\arq{test_cif_api.py}, linhas 294 e 316: com todas as notas, a conclusão grava os resultados e as versões;
+		com item sem nota, apenas a conclusão é bloqueada.}
+	\req{RF05}{Exibir o quadro resumo da avaliação concluída, com acesso às respostas originais}{Alta}{Implementado}
+		{\arq{cifSummary.dart}, 199--215 e 307--313.}
+		{O acompanhamento usa o resultado por capítulo e área, e o profissional precisa conferir as notas que o
+		originaram.}
+		{\arq{cif_summary_test.dart}, linhas 96, 109 e 175: o resumo mostra os 30 capítulos e as 4 áreas, não abre
+		para avaliação não concluída e dá acesso às respostas originais, somente para leitura.}
+	\req{RF06}{Listar as avaliações do paciente, numeradas pela ordem de criação}{Alta}{Implementado}
+		{\arq{cif_api.py}, 405--419; \arq{cifHistoryProvider.dart}, 34--47.}
+		{O histórico é a base do acompanhamento entre avaliações.}
+		{\arq{test_cif_api.py}, linha 353, e \arq{cif_history_test.dart}, linhas 75 e 205: a lista traz só as
+		avaliações do paciente e as numera pela ordem de criação.}
+	\req{RF07}{Comparar duas avaliações concluídas, com a diferença por área e capítulo}{Alta}{Implementado}
+		{\arq{cifComparisonProvider.dart}, 79--147; \arq{cifModels.dart}, 1001--1045.}
+		{A comparação mostra a variação entre avaliações sem interpretá-la (Seção~\ref{sec:ref-automacao}).}
+		{\arq{cif_comparison_test.dart}, linhas 52 e 176: a diferença é calculada por capítulo e área, preserva zero e
+		pendências e é exibida apenas como número.}
+	\req{RN01}{A nota de um item digitado é um inteiro de 0 a 4, e item sem nota não vale zero}{Alta}{Implementado}
+		{\arq{calculador.py}, 568--569 e 770--791; decisões 6 e 7 da auditoria.}
+		{Os qualificadores da CIF vão de 0 a 4 (Seção~\ref{sec:ref-instrumentos}), e tratar a falta de nota como zero
+		registraria ``nenhum problema'' onde não houve resposta.}
+		{\arq{test_calculador.py}, linhas 98, 107 e 114: o zero explícito é aceito, o valor decimal é rejeitado e o
+		campo vazio deixa a avaliação pendente.}
+	\req{RN02}{A nota de um item calculado é a média aritmética das células citadas na fórmula da planilha}{Alta}{Implementado}
+		{\arq{calculador.py}, 229--244 e 593--618; planilha da equipe; decisão 1 da auditoria.}
+		{Reproduz a regra da planilha da equipe (Seção~\ref{sec:cif-catalogo}).}
+		{\arq{test_calculador.py}, linha 124: grupos de tamanhos diferentes resultam na média dos grupos, como na
+		fórmula da planilha.}
+	\req{RN03}{A falta de nota na cadeia deixa pendentes o item, o capítulo e a área}{Alta}{Implementado}
+		{\arq{calculador.py}, 612--613 e 799--805; decisão 6 da auditoria.}
+		{Evita um resultado calculado com dados incompletos.}
+		{\arq{test_calculador.py}, linha 98: um campo vazio deixa pendentes o item, o capítulo e a área.}
+	\req{RN04}{O cálculo não arredonda valores intermediários, e o valor exibido tem duas casas decimais}{Alta}{Implementado}
+		{\arq{calculador.py}, 247--254 e 571--583.}
+		{Arredondar as etapas intermediárias mudaria o resultado final.}
+		{\arq{test_calculador.py}, linha 164: o valor calculado mantém a precisão, e só o exibido é arredondado, como
+		no b167, que vale 2,625 e é exibido como 2,63.}
+	\req{RN05}{O sexo, masculino ou feminino, seleciona as variantes de b6, s6 e das raízes das áreas b e s}{Alta}{Implementado}
+		{\arq{calculador.py}, 24--29, 359--380 e 713--734; decisão 4 da auditoria.}
+		{A planilha tem referências distintas para mulher e homem nesses itens.}
+		{\arq{test_calculador.py}, linhas 142, 154 e 182: cada sexo usa a sua variante, o sexo ausente deixa a
+		avaliação pendente e um valor diferente de masculino ou feminino é rejeitado.}
+	\req{RN06}{Item calculado é somente leitura}{Alta}{Implementado}
+		{\arq{calculador.py}, 758--767; decisão 8 da auditoria.}
+		{Um valor calculado não é dado de entrada.}
+		{\arq{test_calculador.py}, linha 192, e \arq{test_cif_formulario.py}, linha 46: o calculador recusa nota
+		para item calculado, e o formulário não o apresenta como campo.}
+	\req{RN07}{Em b167 (E105), a segunda ocorrência de E119 é retirada, e a fórmula original fica registrada}{Alta}{Implementado}
+		{\arq{calculador.py}, 347--351 e 675--686; achado 1 e decisão 1 da auditoria.}
+		{A fórmula da planilha conta duas vezes o b1678 (E119) na média.}
+		{\arq{test_calculador.py}, linha 133. Com b1670 = 2,5, b1671 = 1, b1672 = 3 e b1678 = 4, o b167 vale 2,625,
+		e não 2,9 (\arq{entregas/scripts/conferir_calculo_cif.py}, no repositório do TCC).}
+	\req{RN08}{Na linha 263 de Fatores Ambientais, o código válido é e595, e não e598}{Alta}{Implementado}
+		{\arq{calculador.py}, 331--337; decisão 2 da auditoria.}
+		{O título da linha indica e595, e a célula do código traz e598.}
+		{\arq{test_calculador.py}, linha 197: o código usado é e595, e a divergência fica registrada na auditoria.}
+	\req{RN09}{A avaliação não tem resultado geral, e os resultados das quatro áreas ficam separados}{Alta}{Implementado}
+		{\arq{calculador.py}, 699--704 e 817; decisão 6 da auditoria.}
+		{A auditoria só admite um resultado geral se uma regra específica for validada.}
+		{\arq{test_calculador.py}, linha 80: o resultado traz as quatro áreas separadas. A ausência do resultado geral
+		não tem teste próprio.}
+	\req{RN10}{Avaliação concluída não pode ser editada}{Alta}{Implementado}
+		{\arq{cif_repository.py}, 228--229 e 276--278; \arq{cif_api.py}, 386--390.}
+		{A avaliação concluída é a base das comparações e não deve mudar depois de registrada.}
+		{\arq{test_cif_api.py}, linha 294: a tentativa de alterar uma avaliação concluída recebe a resposta 409.}
+	\req{RN11}{Só se comparam avaliações concluídas do mesmo paciente e com as mesmas versões de catálogo e regras}{Alta}{Implementado}
+		{\arq{cifComparisonProvider.dart}, 87--98 e 129--139; \arq{cifModels.dart}, 1005--1012.}
+		{Avaliações calculadas com regras diferentes não são comparáveis.}
+		{\arq{cif_comparison_test.dart}, linha 86, e \arq{cif_summary_test.dart}, linha 143: versões incompatíveis e
+		paciente diferente impedem a comparação automática.}
+	\req{RNF01}{Cada avaliação guarda as versões do catálogo e das regras e é sempre recalculada com elas}{Alta}{Implementado}
+		{\arq{001_create_avaliacoes_cif.sql}, 10--11; \arq{cif_versions.py}, 45--64.}
+		{O catálogo e as regras ainda estão em revisão e podem mudar.}
+		{\arq{test_cif_api.py}, linha 336: uma versão incompatível bloqueia a prévia, a atualização e a conclusão.}
+	\req{RNF02}{Só o servidor calcula resultados, e o aplicativo não reimplementa as fórmulas}{Alta}{Implementado}
+		{\arq{cif_api.py}, 1--4; \arq{cifFormProvider.dart}, 10--12.}
+		{Um único cálculo evita a divergência entre a tela e o servidor, como a do PD5.}
+		{\arq{test_cif_api.py}, linha 363: resultados enviados pelo aplicativo não fazem parte do contrato da API.}
+	\req{RNF03}{A conclusão bloqueia o registro durante o recálculo, para não concluir um estado diferente do salvo}{Alta}{Implementado}
+		{\arq{cif_repository.py}, 266--271 e 292--302.}
+		{Impede que duas conclusões simultâneas gravem estados diferentes.}
+		{\arq{test_cif_repository_integration.py}, linha 180: conclusões concorrentes não duplicam o registro.}
+
+	\reqgrupo{Identificação do paciente e do avaliador}
+	\req{RF08}{Vincular a avaliação dos seis formulários ao identificador do paciente selecionado}{Alta}{Proposto}
+		{PD1; RF06, cujas rotas já recebem o identificador do paciente.}
+		{A busca pelo nome divide o histórico de um mesmo paciente em cadastros duplicados
+		(Seção~\ref{sec:ref-qualidade}).}
+		{Com um paciente selecionado, uma avaliação de cada formulário enviada com o nome alterado fica ligada ao
+		identificador selecionado, e o número de pacientes cadastrados não muda.}
+	\req{RN12}{A API não cria cadastro de paciente a partir de uma avaliação, e a avaliação de paciente inexistente é
+		rejeitada}{Alta}{Proposto}
+		{PD1 e PD4.}
+		{O cadastro criado só com o nome é a origem dos pacientes duplicados.}
+		{Uma avaliação enviada com um identificador de paciente inexistente é rejeitada, e nenhum cadastro é criado.}
+	\req{RN13}{O CPF é único entre os pacientes cadastrados}{Alta}{Proposto}
+		{Seções~\ref{sec:inv-arquitetura} e~\ref{sec:ref-qualidade}.}
+		{Dois cadastros com o mesmo CPF dividem o histórico de uma pessoa.}
+		{O cadastro de um segundo paciente com um CPF já existente é rejeitado.}
+	\req{RF09}{Registrar em toda avaliação o profissional que a aplicou, a partir do usuário autenticado, com nome
+		completo e número no CREFITO}{Alta}{Proposto}
+		{COFFITO 414/2012, art.~2º, parágrafo único; PD3; Seções~\ref{sec:inv-arquitetura} e~\ref{sec:cif-fluxo}.}
+		{A resolução exige o nome completo e o número no CREFITO do fisioterapeuta no prontuário eletrônico, e nenhuma
+		tabela guarda quem aplicou a avaliação.}
+		{Avaliações de cada formulário registradas por dois usuários diferentes guardam, cada uma, o identificador, o
+		nome e o CREFITO de quem a registrou.}
+	\req{RF10}{A anamnese usa os dados de identificação do cadastro do paciente, sem repetir nome, celular, e-mail e
+		data de nascimento}{Alta}{Proposto}
+		{Seção~\ref{sec:inv-arquitetura}.}
+		{Os dados repetidos podem divergir dos dados do cadastro.}
+		{Alterar o celular no cadastro altera o celular exibido na anamnese, e a tabela da anamnese não tem campos de
+		identificação além da ligação com o paciente.}
+
+	\reqgrupo{Registro e estados da avaliação}
+	\req{RF11}{Gravar os comentários da ASIA}{Alta}{Proposto}
+		{PD2.}
+		{O texto digitado pelo profissional se perde antes de chegar ao servidor.}
+		{Um comentário enviado na ASIA é lido de volta, sem alteração, na consulta da avaliação.}
+	\req{RN14}{Todo campo exibido no formulário é gravado ou sai da tela}{Alta}{Proposto}
+		{PD2.}
+		{Um campo exibido e não gravado leva o profissional a registrar uma informação que se perde.}
+		{Em cada formulário, todo campo da tela tem correspondente no corpo enviado à API e no banco, conferido por um
+		teste que compara as duas listas.}
+	\req{RF12}{O profissional informa a data do exame da densitometria, separada da data de registro}{Alta}{Proposto}
+		{PD4.}
+		{A data do envio não é a do exame, e a comparação entre exames depende da data correta.}
+		{Um exame informado com a data de 10/03/2026 e registrado em outro dia grava 10/03/2026 como data do exame e o
+		dia do envio como data de registro.}
+	\req{RN15}{Nenhum valor fictício substitui um dado ausente, e o envio sem paciente ou sem avaliador é
+		rejeitado}{Alta}{Proposto}
+		{PD3 e PD4.}
+		{Valores como ``Paciente Teste'' e ``Dr. Examinador'' entram no banco como se fossem verdadeiros.}
+		{O envio sem paciente ou sem avaliador é rejeitado, e nenhum registro contém ``Paciente Teste'' ou
+		``Dr. Examinador''.}
+	\req{RF13}{Toda avaliação dos seis formulários guarda a data de aplicação e a data de registro}{Alta}{Proposto}
+		{Seção~\ref{sec:inv-arquitetura}.}
+		{Sem data, as avaliações não podem ser ordenadas no histórico.}
+		{Toda avaliação gravada tem a data de aplicação, informada pelo profissional, e a data de registro, gerada
+		pelo servidor.}
+	\req{RN16}{Valor ausente é gravado como ausente, e não como texto no lugar do valor}{Alta}{Proposto}
+		{Seção~\ref{sec:inv-arquitetura}.}
+		{O texto ``N/A'' ocupa o lugar do índice de acomodação e impede o cálculo e a comparação.}
+		{Sem a reobase, o índice de acomodação é gravado como nulo, com o motivo da ausência, em um campo numérico.}
+	\req{RF14}{Salvar a avaliação dos seis formulários como rascunho e concluí-la depois}{Média}{Proposto}
+		{Extensão de RF02 e RF04; Seção~\ref{sec:inv-arquitetura}.}
+		{As tabelas dos seis formulários não registram o estado da avaliação.}
+		{Os critérios de RF02 e RF04, aplicados a cada formulário.}
+	\req{RN17}{Avaliação concluída dos seis formulários não pode ser editada}{Média}{Proposto}
+		{Extensão de RN10; Seção~\ref{sec:ref-req-fontes}.}
+		{A comparação precisa de registros que não mudam depois de concluídos.}
+		{O critério de RN10, aplicado a cada formulário.}
+	\req{RNF04}{Cada avaliação guarda a versão do formulário com que foi aplicada}{Média}{Proposto}
+		{Extensão de RNF01; Seção~\ref{sec:inv-arquitetura}.}
+		{Se o formulário mudar, a avaliação antiga continua interpretável e só é comparada com a mesma versão (RN30).}
+		{Toda avaliação gravada informa a versão do formulário, e uma avaliação feita antes de uma mudança de versão
+		mantém a versão original.}
+
+	\reqgrupo{Regras de cálculo}
+	\req{RN18}{O escore T da GAS segue a Equação~\ref{eq:gas}, com $\rho = 0{,}3$}{Alta}{Proposto}
+		{DC1.}
+		{Com duas metas ou mais, o denominador sem $\rho$ dá um valor diferente do publicado.}
+		{Com duas metas de pesos 4 e 3, linhas de base $-1$ e $-2$ e ambas no resultado esperado, o escore inicial é
+		32,4, o alcançado é 50,0 e a evolução é $+17{,}6$. Com uma só meta, o resultado não muda.}
+	\req{RN19}{A GAS não troca por zero os valores ponderados negativos}{Alta}{Proposto}
+		{PD5.}
+		{O servidor zera os valores negativos da linha de base, que no aplicativo é $-1$, e grava evolução nula.}
+		{Com uma meta de importância 2 e dificuldade 2, linha de base $-1$ e resultado 0, o escore inicial é 40, o
+		alcançado é 50 e a evolução é $+10$ (\arq{entregas/scripts/conferir_calculo_gas.py}).}
+	\req{RN20}{O peso da meta da GAS é o produto da importância pela dificuldade}{Média}{Implementado}
+		{Seção~\ref{sec:aut-conformidade}.}
+		{A regra já segue o instrumento e entra no escore comparado entre avaliações.}
+		{Uma meta de importância 2 e dificuldade 3 tem peso 6.}
+	\req{RN21}{O escore total do MEEM é a soma dos pontos dos itens, até 30}{Média}{Implementado}
+		{Seção~\ref{sec:aut-conformidade}.}
+		{A regra já segue o instrumento e produz o escore comparado entre avaliações.}
+		{Todos os itens com a pontuação máxima dão 30, e todos com zero dão 0.}
+	\req{RN22}{O valor de referência do MEEM para 5 a 8 anos de estudo é 26,5}{Alta}{Proposto}
+		{DC2.}
+		{O aplicativo mostra 26 nessa faixa.}
+		{Para 5 a 8 anos de estudo, o valor exibido é 26,5, e, nas demais faixas, 20, 25, 28 e 29.}
+	\req{RN23}{Referência por escolaridade adotada no MEEM e rótulo com que ela é exibida}{Média}{Depende da equipe}
+		{Seção~\ref{sec:aut-conformidade}.}
+		{A fonte publica medianas e não define pontos de corte, e usar a mediana como mínimo é decisão de quem aplica
+		o instrumento.}
+		{A definir com a equipe.}
+	\req{RN24}{Os níveis sensitivo, motor e neurológico da ASIA seguem o ISNCSCI}{Média}{Implementado}
+		{Seção~\ref{sec:aut-conformidade}.}
+		{A regra já segue o instrumento e é a base do grau AIS e da ZPP.}
+		{Nos nove casos concluídos de \arq{entregas/scripts/conferir_calculo_asia.py}, os níveis coincidem com os do
+		algoritmo do Praxis (Seção~\ref{sec:ferramentas}).}
+	\req{RN25}{O grau AIS segue a árvore de decisão do ISNCSCI}{Alta}{Proposto}
+		{DC3.}
+		{O grau calculado pelo aplicativo diverge em sete dos dez casos fictícios.}
+		{Nos casos 1 a 10 de \arq{conferir_calculo_asia.py}, o grau coincide com o esperado, conferido com o
+		algoritmo do Praxis.}
+	\req{RN26}{A ZPP segue o ISNCSCI e é NA quando a função sacral correspondente está presente}{Alta}{Proposto}
+		{DC4.}
+		{A ZPP calculada pelo aplicativo diverge em sete dos nove casos concluídos.}
+		{Nos casos concluídos de \arq{conferir_calculo_asia.py}, a ZPP coincide com a esperada: é NA com pressão anal
+		profunda e, sem preservação abaixo do nível, registra o próprio nível.}
+	\req{RN27}{O NT em S4-5 leva ao resultado ND, sem erro, e a avaliação é gravada}{Alta}{Proposto}
+		{DC5.}
+		{O cálculo termina em erro, e a avaliação não é gravada.}
+		{No caso 9 de \arq{conferir_calculo_asia.py}, a API responde com sucesso, grava a avaliação e registra o grau
+		como não determinável.}
+	\req{RN28}{O IMC é a massa dividida pelo quadrado da altura, com a unidade da altura indicada na tela e sem
+		conversão implícita}{Média}{Proposto}
+		{Seção~\ref{sec:aut-conformidade}.}
+		{A conversão atual aceita a altura em centímetros ou em metros sem indicar qual.}
+		{O campo de altura mostra a unidade; com 70 kg e 1,75 m, o IMC é 22,86; e um valor incompatível com a
+		unidade indicada é rejeitado, e não convertido.}
+	\req{RN29}{Fórmula, arredondamento e fonte do índice de acomodação}{Média}{Depende da equipe}
+		{Seções~\ref{sec:ref-instrumentos} e~\ref{sec:aut-conformidade}.}
+		{Este trabalho não encontrou uma fonte que defina o índice.}
+		{A definir com a equipe.}
+	\req{RNF05}{Os valores calculados dos seis formulários são obtidos no servidor e gravados com a avaliação, e a tela
+		exibe o valor devolvido}{Alta}{Proposto}
+		{Extensão de RNF02; PD5; Seção~\ref{sec:aut-classificacao}.}
+		{O IMC e o índice de acomodação são calculados só na tela, quatro totais da ASIA e a pontuação esperada do MEEM
+		não são gravados, e a GAS tem duas contas diferentes.}
+		{Para cada valor calculado da Tabela~\ref{tab:aut-graus}, o valor gravado é o calculado pelo servidor, e
+		o valor exibido depois do envio é igual ao gravado.}
+	\req{RNF06}{As respostas item a item são gravadas junto com o escore, para permitir o recálculo}{Média}{Implementado
+		em parte}
+		{Seções~\ref{sec:ref-automacao} e~\ref{sec:aut-conformidade}.}
+		{Guardar as respostas permite recalcular os escores quando uma regra for corrigida, como nos DC1 a DC5. A CIF,
+		o MEEM, a GAS e a ASIA já gravam as respostas.}
+		{Em cada formulário, o escore recalculado a partir das respostas gravadas é igual ao escore gravado.}
+	\req{RNF07}{Toda regra de cálculo tem teste automatizado com os casos do seu critério de aceitação}{Média}{Proposto}
+		{Seções~\ref{sec:aut-classificacao} e~\ref{sec:ref-req-conceitos}.}
+		{Fora da CIF, nenhum cálculo tem teste automatizado.}
+		{Cada regra de cálculo deste apêndice tem um teste com os casos do seu critério, executado no repositório do
+		aplicativo.}
+
+	\reqgrupo{Histórico e comparação}
+	\req{RF15}{Listar as avaliações do paciente em cada um dos seis formulários, em ordem de data}{Média}{Proposto}
+		{Extensão de RF06; Seções~\ref{sec:inv-arquitetura} e~\ref{sec:aut-classificacao}.}
+		{Fora da CIF, a API não tem rota para consultar as avaliações gravadas.}
+		{O critério de RF06, aplicado a cada formulário, com as avaliações em ordem de data de aplicação.}
+	\req{RF16}{Consultar uma avaliação registrada, com as respostas originais}{Média}{Proposto}
+		{Extensão de RF05; Seção~\ref{sec:inv-arquitetura}.}
+		{Sem consulta, a avaliação gravada não pode ser revista.}
+		{Uma avaliação gravada é lida de volta com todas as respostas enviadas e, se estiver concluída, não pode ser
+		editada.}
+	\req{RF17}{Comparar duas avaliações concluídas do mesmo formulário, com a diferença de cada escore}{Média}{Proposto}
+		{Extensão de RF07; Seção~\ref{sec:aut-classificacao}.}
+		{O que falta para acompanhar o paciente está entre as avaliações, e não dentro delas.}
+		{O critério de RF07, aplicado aos escores de cada formulário.}
+	\req{RN30}{Só se comparam avaliações concluídas do mesmo paciente e da mesma versão do formulário}{Média}{Proposto}
+		{Extensão de RN11; RNF04.}
+		{Avaliações feitas com versões diferentes do formulário podem não ser comparáveis.}
+		{O critério de RN11, aplicado a cada formulário.}
+	\req{RN31}{A comparação mostra a diferença sem rótulo de melhora ou piora}{Média}{Proposto}
+		{Seções~\ref{sec:ref-reabilitacao}, \ref{sec:ref-automacao} e~\ref{sec:aut-classificacao}.}
+		{A diferença mínima clinicamente importante ainda não está definida, e interpretar a variação é decisão do
+		profissional.}
+		{A tela de comparação mostra apenas valores e diferenças numéricas, como verifica
+		\arq{cif_comparison_test.dart}, linha 176, na CIF.}
+	\req{RN32}{Sequência das avaliações e marco a partir do qual contam os três meses}{Média}{Depende da equipe}
+		{Decisões pendentes da auditoria da CIF.}
+		{Não está definido se os três meses contam da avaliação inicial ou do início do treino.}
+		{A definir com a equipe.}
+	\req{RN33}{Tratamento dos qualificadores 8 e 9 e dos itens ``não especificados'' na CIF}{Média}{Depende da equipe}
+		{Seções~\ref{sec:ref-instrumentos} e~\ref{sec:cif-oms}; decisões pendentes da auditoria da CIF.}
+		{O aplicativo aceita só notas de 0 a 4, a OMS prevê também 8 e 9, e os itens não especificados ficam fora
+		das médias.}
+		{A definir com a equipe.}
+	\req{RN34}{Representação dos facilitadores nos fatores ambientais da CIF}{Baixa}{Depende da equipe}
+		{Decisões pendentes da auditoria da CIF.}
+		{Não está definido se os facilitadores terão sinal próprio.}
+		{A definir com a equipe.}
+
+	\reqgrupo{Interoperabilidade}
+	\req{RNF08}{Exportar as avaliações como recursos do HL7 FHIR R4, nos perfis do BR-Core quando
+		existirem}{Média}{Proposto}
+		{Portaria 1.434/2020; BR-Core.}
+		{A portaria adota padrões de interoperabilidade para a RNDS, e o modelo da Seção~\ref{sec:modelo-fhir} usa o
+		FHIR R4 e os perfis do BR-Core.}
+		{As instâncias exportadas passam, sem erros, no validador oficial do HL7 com os perfis do BR-Core.}
+	\req{RNF09}{Todo paciente tem CPF ou CNS}{Alta}{Proposto}
+		{BR-Core, regra \texttt{br-core-pat-2}.}
+		{O perfil de paciente do BR-Core exige um dos dois identificadores.}
+		{O cadastro sem CPF nem CNS é rejeitado pelo aplicativo, e o validador do HL7 rejeita o paciente exportado
+		nessa condição.}
+
+	\reqgrupo{Privacidade, segurança e auditoria}
+	\req{RNF10}{Só usuário autenticado acessa as rotas da API}{Alta}{Proposto}
+		{LGPD, art.~46.}
+		{Os dados de saúde são dados pessoais sensíveis, e a lei exige medidas de segurança contra acessos não
+		autorizados.}
+		{Toda rota da API, exceto a de login, recusa com a resposta 401 uma requisição sem credencial válida.}
+	\req{RNF11}{Cada perfil de usuário tem permissões definidas, e a API as aplica}{Alta}{Proposto; as permissões
+		dependem da equipe}
+		{LGPD, art.~46; Seção~\ref{sec:ref-req-fontes}.}
+		{O acesso aos dados deve seguir o papel de cada profissional.}
+		{Para cada perfil, a API recusa as operações que a matriz de permissões, definida com a equipe, não lhe
+		atribui.}
+	\req{RNF12}{As senhas são guardadas com uma função de hash própria para senhas}{Alta}{Proposto}
+		{LGPD, art.~46.}
+		{É uma das medidas técnicas de segurança exigidas pela lei.}
+		{Nenhuma senha é gravada em texto, e o login continua funcionando com a senha cadastrada.}
+	\req{RNF13}{Registrar quem criou, consultou ou alterou cada avaliação, e quando}{Alta}{Proposto}
+		{LGPD, art.~37; Seção~\ref{sec:ref-req-fontes}.}
+		{A lei exige o registro das operações de tratamento, e o prontuário exige saber quem inseriu cada dado.}
+		{Criar, consultar e alterar uma avaliação gera, para cada operação, um registro com o usuário, a ação, a
+		avaliação e a data e a hora.}
+	\req{RNF14}{Os dados trafegam criptografados entre o aplicativo e a API}{Alta}{Proposto}
+		{LGPD, art.~46.}
+		{É uma das medidas técnicas de segurança exigidas pela lei.}
+		{A API só aceita conexões HTTPS, e uma requisição por HTTP é recusada ou redirecionada.}
+
+	\reqgrupo{Dados para o módulo de inteligência artificial}
+	\req{RNF15}{Consultar as avaliações do paciente em ordem de data, com o código e a versão de cada
+		instrumento}{Baixa}{Proposto}
+		{Plano de iniciação científica.}
+		{O plano prevê uma base estruturada para o sistema que vai personalizar o treino, e esse uso depende da
+		sequência das avaliações de cada paciente.}
+		{A consulta de um paciente com avaliações em três instrumentos devolve todas, em ordem de data, cada uma com o
+		código e a versão do instrumento.}
+	\req{RNF16}{Exportar os dados sem identificação direta do paciente, para pesquisa}{Baixa}{Proposto}
+		{LGPD, art.~11, II, c, e art.~13; plano de iniciação científica.}
+		{A lei prevê a anonimização ou a pseudonimização dos dados, sempre que possível, em estudos de saúde.}
+		{O arquivo exportado não contém nome, CPF, CNS, contato nem data de nascimento, e as avaliações de um mesmo
+		paciente compartilham um identificador que não permite chegar ao cadastro.}
+\end{xltabular}
+}
+\fonte{Elaborado pelo autor a partir de \citeonline{higa2026bemtevi} e das
+fontes indicadas.}
+
+\chapter{Matriz de rastreabilidade}
+\label{ap:matriz}
+
+O Quadro~\ref{qua:matriz} associa cada requisito do Apêndice~\ref{ap:requisitos} à sua fonte, ao tipo do seu critério
+de aceitação e ao elemento do modelo em HL7 FHIR que o atende (Seção~\ref{sec:consolidacao}). A fonte usa os
+identificadores do Apêndice~\ref{ap:requisitos}. ``Código'' é o código do aplicativo no commit \texttt{a9059f0}, e os
+achados e as decisões vêm da auditoria da CIF. O critério de aceitação é um teste do aplicativo (T), um caso
+numérico com entrada e saída esperadas (C) ou um comportamento observável na API ou na tela (O); ``--'' significa
+que ele depende da equipe. ``Fora do modelo'' indica um requisito atendido pelo servidor, pela tela ou pelos testes
+do aplicativo.
+
+\newcommand{\mat}[4]{\textbf{#1} & #2 & #3 & #4 \\ \hline}
+
+\quadrolongo{mat}
+{\footnotesize\renewcommand{\LTcaptype}{quadro}
+\begin{xltabular}{\textwidth}{|>{\raggedright\arraybackslash}p{1.3cm}|>{\raggedright\arraybackslash}p{4.6cm}|>{\centering\arraybackslash}p{1.3cm}|>{\raggedright\arraybackslash}X|}
+	\caption{Matriz de rastreabilidade dos requisitos}
+	\label{qua:matriz} \\
+	\multicolumn{4}{@{}r@{}}{\quadromarcaposicao{mat-1}\quadromarcapagina{mat-ini}\strut} \\
+	\hline
+	ID & Fonte & Critério & Elemento do modelo \\
+	\hline
+	\endfirsthead
+	\caption[]{Matriz de rastreabilidade dos requisitos} \\
+	\multicolumn{4}{@{}r@{}}{\quadromarcaposicao{mat-c}\strut} \\
+	\hline
+	ID & Fonte & Critério & Elemento do modelo \\
+	\hline
+	\endhead
+	\noalign{\quadromarcapagina{mat-fim}}
+	\endlastfoot
+
+	\reqgrupo{Requisitos implementados no módulo CIF}
+	\mat{RF01}{Código}{T}{\textit{enableWhen} sobre o sexo, preenchido a partir de \textit{Patient.gender}}
+	\mat{RF02}{Código}{T}{\textit{QuestionnaireResponse.status} \textit{in-progress}}
+	\mat{RF03}{Código}{T}{\textit{calculatedExpression} sobre a resposta em rascunho}
+	\mat{RF04}{Código}{T}{\textit{status} \textit{completed}, com os itens obrigatórios respondidos}
+	\mat{RF05}{Código}{T}{\textit{Observation} por capítulo e área, com \textit{derivedFrom}}
+	\mat{RF06}{Código}{T}{\textit{QuestionnaireResponse.subject}}
+	\mat{RF07}{Código}{T}{\textit{Observation} de mesmo código}
+	\mat{RN01}{Código; decisões 6 e 7}{T}{Item \textit{integer} obrigatório, de 0 a 4}
+	\mat{RN02}{Código; planilha; decisão 1}{T}{\textit{calculatedExpression}}
+	\mat{RN03}{Código; decisão 6}{T}{\textit{calculatedExpression}, em que o vazio sobe pela cadeia}
+	\mat{RN04}{Código}{T}{\textit{calculatedExpression} sem arredondamento; \textit{Observation} com duas casas}
+	\mat{RN05}{Código; decisão 4}{T}{\textit{enableWhen} nos 44 itens exclusivos de um sexo}
+	\mat{RN06}{Código; decisão 8}{T}{Item \textit{readOnly}}
+	\mat{RN07}{Código; achado 1 e decisão 1}{T}{\textit{calculatedExpression} de \texttt{b:E105}
+		(Figura~\ref{fig:fhir-b167})}
+	\mat{RN08}{Código; decisão 2}{T}{\textit{CodeSystem}, com e595 e a propriedade de pendência}
+	\mat{RN09}{Código; decisão 6}{T}{\textit{Observation} das áreas, sem resultado geral}
+	\mat{RN10}{Código}{T}{Fora do modelo (servidor)}
+	\mat{RN11}{Código}{T}{\textit{Observation} de mesmo código e mesma versão do \textit{Questionnaire}}
+	\mat{RNF01}{Código}{T}{Versão do \textit{Questionnaire} e do \textit{CodeSystem}}
+	\mat{RNF02}{Código}{T}{\textit{calculatedExpression} declarada uma vez no \textit{Questionnaire}}
+	\mat{RNF03}{Código}{T}{Fora do modelo (servidor)}
+
+	\reqgrupo{Identificação do paciente e do avaliador}
+	\mat{RF08}{PD1; RF06}{O}{\textit{subject} (\textit{Patient}, BR-Core)}
+	\mat{RN12}{PD1 e PD4}{O}{Fora do modelo (servidor)}
+	\mat{RN13}{Seções~\ref{sec:inv-arquitetura} e~\ref{sec:ref-qualidade}}{O}{Fora do modelo (servidor)}
+	\mat{RF09}{COFFITO 414/2012, art.~2º; PD3; Seções~\ref{sec:inv-arquitetura} e~\ref{sec:cif-fluxo}}{O}{\textit{author}
+		(\textit{Practitioner}, BR-Core)}
+	\mat{RF10}{Seção~\ref{sec:inv-arquitetura}}{O}{Dados de identificação no \textit{Patient}}
+
+	\reqgrupo{Registro e estados da avaliação}
+	\mat{RF11}{PD2}{O}{Item \textit{text}}
+	\mat{RN14}{PD2}{O}{Itens do \textit{Questionnaire}, contra os quais a resposta é validada}
+	\mat{RF12}{PD4}{O}{Item da data do exame, separado de \textit{authored}}
+	\mat{RN15}{PD3 e PD4}{O}{Fora do modelo (servidor)}
+	\mat{RF13}{Seção~\ref{sec:inv-arquitetura}}{O}{\textit{authored} e item da data de aplicação}
+	\mat{RN16}{Seção~\ref{sec:inv-arquitetura}}{O}{Item sem resposta; \textit{dataAbsentReason}}
+	\mat{RF14}{RF02 e RF04; Seção~\ref{sec:inv-arquitetura}}{O}{\textit{status} \textit{in-progress} e
+		\textit{completed}}
+	\mat{RN17}{RN10; Seção~\ref{sec:ref-req-fontes}}{O}{Fora do modelo (servidor)}
+	\mat{RNF04}{RNF01; Seção~\ref{sec:inv-arquitetura}}{O}{Versão do \textit{Questionnaire} na resposta}
+
+	\reqgrupo{Regras de cálculo}
+	\mat{RN18}{DC1}{C}{\textit{calculatedExpression}}
+	\mat{RN19}{PD5}{C}{\textit{calculatedExpression}}
+	\mat{RN20}{Seção~\ref{sec:aut-conformidade}}{C}{\textit{calculatedExpression}}
+	\mat{RN21}{Seção~\ref{sec:aut-conformidade}}{C}{\textit{calculatedExpression}}
+	\mat{RN22}{DC2}{C}{\textit{calculatedExpression}}
+	\mat{RN23}{Seção~\ref{sec:aut-conformidade}}{--}{A definir}
+	\mat{RN24}{Seção~\ref{sec:aut-conformidade}}{C}{Item \textit{readOnly} com o valor do servidor}
+	\mat{RN25}{DC3}{C}{Item \textit{readOnly} com o valor do servidor}
+	\mat{RN26}{DC4}{C}{Item \textit{readOnly} com o valor do servidor}
+	\mat{RN27}{DC5}{C}{Opção de resposta NT; item \textit{readOnly} com ND}
+	\mat{RN28}{Seção~\ref{sec:aut-conformidade}}{C}{\textit{calculatedExpression}}
+	\mat{RN29}{Seções~\ref{sec:ref-instrumentos} e~\ref{sec:aut-conformidade}}{--}{A definir}
+	\mat{RNF05}{RNF02; PD5; Seção~\ref{sec:aut-classificacao}}{O}{Item \textit{readOnly} gravado na resposta}
+	\mat{RNF06}{Seções~\ref{sec:ref-automacao} e~\ref{sec:aut-conformidade}}{O}{Itens da
+		\textit{QuestionnaireResponse}; \textit{derivedFrom}}
+	\mat{RNF07}{Seções~\ref{sec:aut-classificacao} e~\ref{sec:ref-req-conceitos}}{O}{Fora do modelo (testes)}
+
+	\reqgrupo{Histórico e comparação}
+	\mat{RF15}{RF06; Seções~\ref{sec:inv-arquitetura} e~\ref{sec:aut-classificacao}}{O}{\textit{subject} e data da
+		\textit{QuestionnaireResponse}}
+	\mat{RF16}{RF05; Seção~\ref{sec:inv-arquitetura}}{O}{\textit{QuestionnaireResponse}}
+	\mat{RF17}{RF07; Seção~\ref{sec:aut-classificacao}}{O}{Itens calculados de mesmo \textit{linkId}}
+	\mat{RN30}{RN11; RNF04}{O}{\textit{subject}, \textit{status} e versão do \textit{Questionnaire}}
+	\mat{RN31}{Seções~\ref{sec:ref-reabilitacao}, \ref{sec:ref-automacao} e~\ref{sec:aut-classificacao}}{O}{Fora do
+		modelo (tela)}
+	\mat{RN32}{Auditoria da CIF}{--}{A definir}
+	\mat{RN33}{Seções~\ref{sec:ref-instrumentos} e~\ref{sec:cif-oms}; auditoria da CIF}{--}{A definir}
+	\mat{RN34}{Auditoria da CIF}{--}{A definir}
+
+	\reqgrupo{Interoperabilidade}
+	\mat{RNF08}{Portaria 1.434/2020; BR-Core}{O}{Todos os recursos do modelo}
+	\mat{RNF09}{BR-Core (\texttt{br-core-pat-2})}{O}{\textit{Patient} (BR-Core)}
+
+	\reqgrupo{Privacidade, segurança e auditoria}
+	\mat{RNF10}{LGPD, art.~46}{O}{Fora do modelo (servidor)}
+	\mat{RNF11}{LGPD, art.~46; Seção~\ref{sec:ref-req-fontes}}{O}{Fora do modelo (servidor)}
+	\mat{RNF12}{LGPD, art.~46}{O}{Fora do modelo (servidor)}
+	\mat{RNF13}{LGPD, art.~37; Seção~\ref{sec:ref-req-fontes}}{O}{Fora do modelo (servidor)}
+	\mat{RNF14}{LGPD, art.~46}{O}{Fora do modelo (servidor)}
+
+	\reqgrupo{Dados para o módulo de inteligência artificial}
+	\mat{RNF15}{Plano de iniciação científica}{O}{\textit{subject}, data e versão do \textit{Questionnaire}}
+	\mat{RNF16}{LGPD, arts.~11 e 13; plano de iniciação científica}{O}{Fora do modelo (exportação)}
+\end{xltabular}
+}
+\fonte{Elaborado pelo autor a partir do Apêndice~\ref{ap:requisitos} e da Seção~\ref{sec:modelo-fhir}.}
 
 \end{apendicesenv}

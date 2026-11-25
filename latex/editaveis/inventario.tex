@@ -1,9 +1,8 @@
 \section{Estado atual do aplicativo}
 \label{sec:inventario}
 
-Esta seção descreve o aplicativo no commit \texttt{a9059f0} \cite{higa2026bemtevi}, que corresponde à primeira etapa
-do trabalho (Seção~\ref{sec:etapas}). Os caminhos de arquivo são relativos ao repositório do aplicativo, e a
-quantidade de campos de cada formulário está na Tabela~\ref{tab:formularios}.
+Esta seção corresponde à primeira etapa do trabalho (Seção~\ref{sec:etapas}). A quantidade de campos de cada
+formulário está na Tabela~\ref{tab:formularios}.
 
 \subsection{Arquitetura e armazenamento}
 \label{sec:inv-arquitetura}
@@ -19,35 +18,27 @@ Cada um dos outros seis formulários envia a avaliação preenchida em uma únic
 o registro. Não há rota para ler essas avaliações de volta: fora da CIF, as únicas rotas de consulta são a raiz da
 API e a lista de pacientes (\arq{Backend/main.py}, linhas 39 e 549). Só a CIF tem rotas para listar as avaliações de
 um paciente e consultar uma delas (\arq{Backend/cif_api.py}, linhas 405 e 421). Por isso, histórico e comparação
-existem apenas na CIF. A Tabela~\ref{tab:inv-formularios} mostra as tabelas de cada formulário e os valores que o
-aplicativo calcula.
+existem apenas na CIF. O Quadro~\ref{qua:inv-formularios} mostra as tabelas de cada formulário.
 
-\begin{table}[htb]
+\begin{quadro}[htb]
 	\centering
-	\caption{Tabelas do banco e valores calculados de cada formulário}
-	\label{tab:inv-formularios}
+	\caption{Tabelas do banco de cada formulário}
+	\label{qua:inv-formularios}
 	\footnotesize
-	\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.18\textwidth}>{\raggedright\arraybackslash}p{0.29\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.16\textwidth}@{}}
-		\toprule
-		Formulário & Tabelas & Valores calculados & Onde é calculado \\
-		\midrule
-		CIF & \arq{avaliacoes_cif} & Notas dos itens calculados, dos capítulos e das áreas & Servidor \\
-		ASIA & \arq{avaliacoes_asia}, \arq{scores_motores}, \arq{scores_sensoriais} & Níveis sensoriais e motores,
-			nível neurológico, completude, grau AIS, zonas de preservação parcial e totais & Servidor \\
-		GAS & \arq{avaliacoes_gas}, \arq{metas_gas} & Ponderações das metas, escores T inicial e alcançado e
-			evolução & Tela e servidor, com resultados diferentes (PD5) \\
-		MEEM & \arq{avaliacoes_meem} & Pontuação total & Tela e servidor \\
-		& & Pontuação esperada para a escolaridade & Tela, sem gravação \\
-		Eletrodiagnóstico & \arq{avaliacoes_eletrodiagnostico}, \arq{medicoes_musculares} & Índice de acomodação
-			& Tela \\
-		Densitometria & \arq{avaliacoes_densitometria}, \arq{densitometria_regioes}, \arq{densitometria_tendencias}
-			& IMC & Tela \\
-		Anamnese & \arq{anamneses} & Nenhum & -- \\
-		\bottomrule
+	\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{0.22\textwidth}|>{\raggedright\arraybackslash}X|}
+		\hline
+		Formulário & Tabelas \\ \hline
+		CIF & \arq{avaliacoes_cif} \\ \hline
+		ASIA & \arq{avaliacoes_asia}, \arq{scores_motores}, \arq{scores_sensoriais} \\ \hline
+		GAS & \arq{avaliacoes_gas}, \arq{metas_gas} \\ \hline
+		MEEM & \arq{avaliacoes_meem} \\ \hline
+		Eletrodiagnóstico & \arq{avaliacoes_eletrodiagnostico}, \arq{medicoes_musculares} \\ \hline
+		Densitometria & \arq{avaliacoes_densitometria}, \arq{densitometria_regioes}, \arq{densitometria_tendencias} \\ \hline
+		Anamnese & \arq{anamneses} \\ \hline
 	\end{tabularx}
-	\fonte{Elaborada pelo autor a partir de \arq{Backend/schema.sql}, da migração da CIF e do código do aplicativo
-	\cite{higa2026bemtevi}. As tabelas \arq{pacientes} e \arq{usuarios} completam as 14 do esquema.}
-\end{table}
+	\fonte{Elaborado pelo autor a partir de \arq{Backend/schema.sql} e da migração da CIF \cite{higa2026bemtevi}. As
+	tabelas \arq{pacientes} e \arq{usuarios} completam as 14 do esquema.}
+\end{quadro}
 
 Cada formulário tem uma tabela principal, ligada ao paciente por \arq{paciente_id}, e os blocos repetidos ficam em
 tabelas filhas: os miótomos e dermátomos da ASIA, as metas da GAS, os grupos musculares do eletrodiagnóstico e as
@@ -63,67 +54,59 @@ mas o índice de acomodação é gravado como texto (linhas 138--139). Quando fa
 texto ``N/A'' no lugar do índice (\arq{eletroFormProvider.dart}, linhas 29 e 38), e a ausência do dado fica
 registrada como se fosse um valor.
 
-\subsection{Valores calculados}
-\label{sec:inv-calculos}
-
-Na ASIA, o servidor obtém os níveis sensoriais e motores, o nível neurológico da lesão, a completude, o grau na
-escala AIS, as zonas de preservação parcial e os totais (\arq{Backend/asiaCalculator.py}, linhas 22--50) e grava
-esses valores em \arq{avaliacoes_asia} (\arq{Backend/main.py}, linhas 147--190). Na GAS, a tela calcula os escores
-T inicial e alcançado e a evolução enquanto o usuário preenche (\arq{gasForm.dart}, linhas 59--90), e o servidor
-refaz a conta com código próprio antes de gravar (\arq{Backend/gasCalculator.py}, linhas 10--41). No MEEM, a tela e
-o servidor somam os pontos dos itens (\arq{meemFormProvider.dart}, linhas 45--70; \arq{Backend/main.py}, linhas
-354--366). Só a tela mostra a pontuação esperada para a escolaridade informada (\arq{meemFormProvider.dart}, linhas
-72--88), que não é gravada. O índice de acomodação do eletrodiagnóstico, razão entre a acomodação e a reobase, e o
-IMC da densitometria são calculados apenas na tela (\arq{eletroFormProvider.dart}, linhas 23--39;
-\arq{dex.dart}, linhas 225--235), e o servidor grava os valores recebidos sem recalculá-los (\arq{Backend/main.py},
-linhas 318--319 e 691).
-
-Fora da CIF, nenhum desses cálculos tem teste automatizado. Os testes do repositório cobrem a CIF, o cadastro de
-pacientes e a navegação entre as telas (\arq{test/} e \arq{Backend/test_*.py}). A Seção~\ref{sec:automacao}
-classifica esses valores quanto ao grau de automação.
-
 \subsection{Problemas de dados}
 \label{sec:inv-problemas}
 
 Os problemas encontrados recebem um identificador, de PD1 a PD5, que a Seção~\ref{sec:especificacao} usa como fonte
-dos requisitos. Os quatro primeiros foram apresentados na Seção~\ref{sec:problema} e recebem aqui a localização no
-código.
+dos requisitos. Os quatro primeiros já foram mencionados na Seção~\ref{sec:problema}. O Quadro~\ref{qua:inv-problemas}
+resume os cinco, com a localização no código, a dimensão de qualidade afetada (Seção~\ref{sec:ref-qualidade}) e os
+requisitos propostos para corrigi-los. O PD1 e o PD5 são detalhados em seguida.
 
-\textbf{PD1. Paciente identificado pelo nome.} Os outros seis formulários enviam o nome do paciente, e não o seu
-identificador. A API procura o nome por igualdade exata e, se não o encontra, cria um cadastro apenas com o
-nome (\arq{Backend/main.py}, linhas 54--61, 134--140, 220--227, 271--278, 344--351 e 675--682). Uma diferença de
-digitação, uma letra maiúscula ou um espaço a mais bastam para criar outro paciente e dividir o histórico. As telas
-preenchem o nome a partir do paciente selecionado, como em \arq{meemForm.dart}, linha 251, e em
-\arq{eletroForm.dart}, linha 269, mas o campo continua editável. O identificador do paciente selecionado está
-disponível no aplicativo (\arq{patientProvider.dart}, linha 10), e a CIF o utiliza. Na GAS, o nome do paciente é
-posto no campo ``Plano de intervenção do cliente'' (\arq{gasForm.dart}, linhas 51 e 406--411), e o conteúdo desse
-campo é enviado ao mesmo tempo como identificador do paciente e como plano de intervenção (linhas 109 e 112). Se o
-usuário escrever o plano nesse campo, como o rótulo indica, a API cria um paciente cujo nome é o texto do plano. A
-rota que atualiza o cadastro também localiza o paciente pelo nome (\arq{Backend/main.py}, linhas 605--613).
+\begin{quadro}[H]
+	\centering
+	\caption{Problemas de dados encontrados no código do aplicativo}
+	\label{qua:inv-problemas}
+	\footnotesize
+	\begin{tabularx}{\textwidth}{|l|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}p{0.24\textwidth}|>{\raggedright\arraybackslash}p{0.13\textwidth}|>{\raggedright\arraybackslash}p{0.11\textwidth}|}
+		\hline
+		& Problema & Código (arquivo, linhas) & Dimensão & Requisitos \\ \hline
+		PD1 & Paciente identificado pelo nome. Sem correspondência exata, a API cria um cadastro só com o nome &
+			\arq{main.py}, 54--61, 134--140, 220--227, 271--278, 344--351 e 675--682 & Identificação do paciente &
+			RF08, RN12 \\ \hline
+		PD2 & Comentários da ASIA descartados. O \textit{provider} guarda o texto, mas o objeto enviado não o inclui, e
+			nem o modelo da API nem a tabela \arq{avaliacoes_asia} têm onde guardá-lo & \arq{asiaForm.dart}, 410--417;
+			\arq{asiaFormProvider.dart}, 22 e 205; \arq{models.py}, 15--22 & Completude & RF11, RN14 \\ \hline
+		PD3 & Avaliador fixo no MEEM. O examinador é enviado sempre como ``Dr. Examinador'', qualquer que seja o
+			usuário que registrou a avaliação & \arq{meemForm.dart}, 82 & Correção & RF09, RN15 \\ \hline
+		PD4 & Data e paciente fictícios na densitometria. A data gravada como data do exame é a do envio, e, sem
+			paciente selecionado, o nome enviado é ``Paciente Teste'', que a regra do PD1 transforma em cadastro &
+			\arq{dex.dart}, 133 e 134 & Correção & RF12, RN12, RN15 \\ \hline
+		PD5 & Escore da GAS calculado de duas formas. A tela e o servidor usam a mesma fórmula, mas o servidor troca por
+			zero os valores ponderados negativos da linha de base e do resultado alcançado, e a tela não faz essa troca & \arq{gasCalculator.py}, 16--20;
+			\arq{GoalsModels.dart}, 48--49 & Concordância & RN19, RNF05 \\ \hline
+	\end{tabularx}
+	\fonte{Elaborado pelo autor a partir de \citeonline{higa2026bemtevi}. Dimensões de
+	\citeonline{weiskopf2013dataquality}; o PD1 é um problema de identificação do paciente, do tipo que gera cadastros
+	duplicados \cite{just2016patientmatching}.}
+\end{quadro}
 
-\textbf{PD2. Comentários da ASIA descartados.} A tela tem um campo de comentários (\arq{asiaForm.dart}, linhas
-410--417), e o \textit{provider} guarda o texto (\arq{asiaFormProvider.dart}, linha 22). O objeto enviado à API,
-montado na linha 205 do mesmo arquivo, não inclui esse campo, e nem o modelo da API (\arq{Backend/models.py}, linhas
-15--22) nem a tabela \arq{avaliacoes_asia} têm onde guardá-lo. O texto se perde antes de chegar ao servidor.
+\textbf{PD1. Paciente identificado pelo nome.} Os outros seis formulários enviam o nome do paciente, e não seu
+identificador. A API pesquisa o nome por correspondência exata e, se não o encontrar, cria um cadastro apenas com o
+nome. Basta um erro de digitação, uma letra maiúscula ou um espaço a mais para que seja criado um paciente diferente
+e o histórico seja dividido. As telas preenchem o nome com base no paciente selecionado, como em \arq{meemForm.dart},
+linha 251, e em \arq{eletroForm.dart}, linha 269, mas o campo permanece editável. O identificador do paciente
+selecionado está disponível no aplicativo (\arq{patientProvider.dart}, linha 10), e a CIF o utiliza. Na GAS, o nome
+do paciente é inserido no campo ``Plano de intervenção do cliente'' (\arq{gasForm.dart}, linhas 51 e 407--412), e o
+conteúdo desse campo é enviado simultaneamente como identificador do paciente e como plano de intervenção (linhas 109
+e 112). Se o usuário digitar o plano nesse campo, conforme indicado pelo rótulo, a API cria um paciente cujo nome é o
+texto do plano. A rota que atualiza o cadastro também pesquisa o paciente pelo nome (\arq{Backend/main.py}, linhas
+605--613).
 
-\textbf{PD3. Avaliador fixo no MEEM.} O nome do examinador é enviado sempre como ``Dr. Examinador''
-(\arq{meemForm.dart}, linha 82), qualquer que seja o usuário que registrou a avaliação.
+\textbf{PD5. Escore da GAS calculado de duas formas.} Na escala usada pelo aplicativo, que vai de $-2$ a $+2$, o
+nível $-1$ é a linha de base (\arq{gasForm.dart}, linhas 1140--1157), de modo que valores ponderados negativos são o
+caso comum. Com uma meta fictícia de importância 2, dificuldade 2, linha de base $-1$ e resultado alcançado 0, o
+servidor grava escore inicial 50, escore alcançado 50 e evolução 0. A conta da tela dá 40, 50 e $+10$
+(\arq{entregas/scripts/conferir_calculo_gas.py}). Depois do envio, a tela substitui os seus valores pelos do servidor
+(\arq{gasForm.dart}, linhas 117--126). Um paciente que sai da linha de base e atinge o resultado esperado fica, no
+banco, sem evolução.
 
-\textbf{PD4. Data e paciente fictícios na densitometria.} A data gravada como data do exame é a do envio
-(\arq{dex.dart}, linha 134). Sem paciente selecionado, o nome enviado é ``Paciente Teste'' (linha 133), e a regra
-descrita no PD1 transforma esse nome em um cadastro.
-
-\textbf{PD5. Escore da GAS calculado de duas formas.} A tela e o servidor usam a mesma fórmula, mas o servidor troca
-por zero os valores ponderados negativos da linha de base e do resultado alcançado (\arq{gasCalculator.py}, linhas
-16--20), e a tela não faz essa troca (\arq{GoalsModels.dart}, linhas 48--49). Na escala usada pelo aplicativo, que
-vai de $-2$ a $+2$, o nível $-1$ é a linha de base (\arq{gasForm.dart}, linhas 1140--1157), de modo que valores
-negativos são o caso comum. Com uma meta fictícia de importância 2, dificuldade 2, linha de base $-1$ e resultado
-alcançado 0, o servidor grava escore inicial 50, escore alcançado 50 e evolução 0. A conta da tela dá 40, 50 e
-$+10$ (\arq{entregas/scripts/conferir_calculo_gas.py}, no repositório do TCC). Depois do envio, a tela substitui os
-seus valores pelos do servidor (\arq{gasForm.dart}, linhas 117--126). Um paciente que sai da linha de base e atinge
-o resultado esperado fica, no banco, sem evolução. Assim como o PD3 e o PD4, esse problema compromete a correção do
-dado gravado \cite{weiskopf2013dataquality}.
-
-O protótipo no Figma, consultado em 7 de novembro de 2026, tem a mesma divisão. Só a CIF tem telas de
-acompanhamento, como histórico, quadro resumo e comparação. Os outros formulários têm apenas as telas de
-preenchimento, e as opções Laudo e Plano de treino aparecem no menu sem conteúdo.
